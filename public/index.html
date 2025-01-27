@@ -1,0 +1,1204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Riq Navigation</title>
+  <!-- Link to Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500;700&display=swap" rel="stylesheet">
+  <!-- Link to Font Awesome for Social Media Icons -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+  <style>
+    /* Social Media Icons container */
+    .social-icons {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    /* Circle effect for social media icons */
+    .social-icons .icon-circle {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background-color: #ffffff;
+      color: #0d4b9c; /* Default color for the icon */
+      font-size: 18px;
+      transition: background-color 0.3s, color 0.3s;
+      text-decoration: none; /* Remove underline from the icon */
+    }
+
+    /* Hover effect */
+    .social-icons .icon-circle:hover {
+      background-color: #37d4d9; /* Hover color for the circle */
+      color: white; /* Icon color on hover */
+    }
+
+    /* Circle effect for the heart (favorite) icon */
+    .favorite-icon {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background-color: #ffffff;
+      color: #0d4b9c;
+      font-size: 18px;
+      transition: background-color 0.3s, color 0.3s;
+      margin-right: 10px; /* Same spacing as social icons */
+      text-decoration: none; /* Remove underline from the heart icon */
+    }
+
+    .favorite-icon:hover {
+      background-color: #37d4d9; /* Hover color for the circle */
+      color: white; /* Icon color on hover */
+    }
+
+    /* Style for the 'Request a Quote' button */
+    .quote-button {
+      background-color: #007bff;
+      color: white;
+      padding: 10px 15px;
+      text-decoration: none;
+      border-radius: 10px; /* Rounded corners */
+      font-weight: bold;
+    }
+
+    /* Styling for navigation links */
+    .nav-links {
+      display: flex; /* Horizontal layout for nav links */
+      list-style: none; /* Removes default bullet points */
+      gap: 10px; /* Space between nav links */
+    }
+
+    .nav-links li {
+      position: relative; /* Allows positioning dropdown menus */
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: inherit;
+      font-weight: bold;
+      display: block; /* Ensure the background covers the entire area */
+      padding: 10px 10px; /* Adjust padding for a better hover effect */
+      border-radius: 5px; /* Optional: Adds a slight rounded effect */
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    .nav-links a:hover {
+      background-color: rgb(13, 75, 156); /* Blue background on hover */
+      color: white; /* Hover color effect */
+    }
+
+    /* Styling for the top bar and navigation bar */
+    .top-bar {
+      background-color: #f8f9fa;
+      padding: 10px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 14px;
+      border-bottom: 1px solid #ddd;
+    }
+
+    .nav-bar {
+      background-color: #002b5b;
+      color: white;
+      padding: 15px 20px;
+    }
+  </style>
+</head>
+<body style="margin: 0; font-family: 'Jost', sans-serif;">
+
+  <!-- Top Bar Section -->
+  <div class="top-bar">
+    <!-- Left Section: Flag and Dropdown -->
+    <div style="display: flex; align-items: center; gap: 15px;">
+      <div>
+        <img src="https://flagcdn.com/w40/ke.png" alt="Kenya Flag" style="width: 20px; height: auto;">
+        <span style="margin-left: 5px;">KE</span>
+        <span style="margin-left: 10px;">▼</span>
+      </div>
+      
+      <!-- Favorite Icon with Circle -->
+      <a href="#" class="favorite-icon">❤</a>
+      
+      <!-- Social Media Icons -->
+      <div class="social-icons">
+        <a href="https://facebook.com" target="_blank" class="icon-circle">
+          <i class="fab fa-facebook-f"></i>
+        </a>
+        <a href="https://x.com" target="_blank" class="icon-circle">
+          <i class="fab fa-x"></i> <!-- X logo for Twitter -->
+        </a>
+        <a href="https://instagram.com" target="_blank" class="icon-circle">
+          <i class="fab fa-instagram"></i>
+        </a>
+        <a href="https://linkedin.com" target="_blank" class="icon-circle">
+          <i class="fab fa-linkedin-in"></i>
+        </a>
+      </div>
+    </div>
+    
+    <!-- Center Section: Contact Info -->
+    <div>
+      <span>Call us today from 10am</span>
+      <a href="tel:+254707268547" style="text-decoration: none; color: #007bff; margin-left: 5px; font-weight: bold;">+254 707 268 547</a>
+    </div>
+    
+    <!-- Right Section: Request a Quote -->
+    <div>
+      <a href="#" class="quote-button">REQUEST A QUOTE</a>
+    </div>
+  </div>
+
+  <!-- Existing Riq Navigation Section -->
+  <nav class="nav-bar">
+    <div style="display: flex; justify-content: space-between; align-items: center;">
+
+      <!-- Logo Section -->
+      <div>
+        <a href="#" style="font-size: 24px; font-weight: bold; text-decoration: none; color: white;">
+          Riq to Link <span style="color: orange;">Tours</span>
+        </a>
+      </div>
+
+      <!-- Navigation Links -->
+      <ul class="nav-links" style="list-style: none; padding: 0; margin: 0; display: flex; gap: 10px;">
+        <li style="position: relative;">
+          <a href="#" style="text-decoration: none; color: black; padding: 5px;">Home</a>
+        </li>
+        <li style="position: relative;">
+          <a href="#" style="text-decoration: none; color: black; padding: 5px;">Destinations</a>
+          <ul style="display: none; position: absolute; background-color: white; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); padding: 10px; list-style: none; margin: 0; z-index: 10; font-size: 0.9rem; width: 200px;">
+            <li style="padding: 5px;"><a href="#" style="text-decoration: none; color: black;">Destination 1</a></li>
+            <li style="padding: 5px;"><a href="#" style="text-decoration: none; color: black;">Destination 2</a></li>
+            <li style="padding: 5px;"><a href="#" style="text-decoration: none; color: black;">Destination 3</a></li>
+            <li style="padding: 5px;"><a href="#" style="text-decoration: none; color: black;">Destination 4</a></li>
+          </ul>
+        </li>
+        <li style="position: relative;">
+          <a href="#" style="text-decoration: none; color: black; padding: 5px;">Trips</a>
+          <ul style="display: none; position: absolute; background-color: white; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); padding: 10px; list-style: none; margin: 0; z-index: 10; font-size: 0.9rem; width: 200px;">
+            <li style="padding: 5px;"><a href="#" style="text-decoration: none; color: black;">Trip 1</a></li>
+            <li style="padding: 5px;"><a href="#" style="text-decoration: none; color: black;">Trip 2</a></li>
+            <li style="padding: 5px;"><a href="#" style="text-decoration: none; color: black;">Trip 3</a></li>
+            <li style="padding: 5px;"><a href="#" style="text-decoration: none; color: black;">Trip 4</a></li>
+          </ul>
+        </li>
+        <li style="position: relative;">
+          <a href="#" style="text-decoration: none; color: black; padding: 5px;">Travellers</a>
+          <ul style="display: none; position: absolute; background-color: white; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); padding: 10px; list-style: none; margin: 0; z-index: 10; font-size: 0.9rem; width: 200px;">
+            <li style="padding: 5px;"><a href="#" style="text-decoration: none; color: black;">Traveller 1</a></li>
+            <li style="padding: 5px;"><a href="#" style="text-decoration: none; color: black;">Traveller 2</a></li>
+            <li style="padding: 5px;"><a href="#" style="text-decoration: none; color: black;">Traveller 3</a></li>
+            <li style="padding: 5px;"><a href="#" style="text-decoration: none; color: black;">Traveller 4</a></li>
+          </ul>
+        </li>
+       
+        <li style="position: relative;">
+          <a href="#" style="text-decoration: none; color: black; padding: 5px;">Contact</a>
+          <ul style="display: none; position: absolute; background-color: white; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); padding: 10px; list-style: none; margin: 0; z-index: 10; font-size: 0.9rem; width: 200px;">
+            <li style="padding: 5px;"><a href="#" style="text-decoration: none; color: black;">Our Contact Details</a></li>
+            <li style="padding: 5px;"><a href="#" style="text-decoration: none; color: black;">Bronchures</a></li>
+            <li style="padding: 5px;"><a href="#" style="text-decoration: none; color: black;">FAQ</a></li>
+          </ul>
+        </li>
+        <li style="position: relative;">
+          <a href="#" style="text-decoration: none; color: black; padding: 5px;">About</a>
+          <ul style="display: none; position: absolute; background-color: white; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); padding: 10px; list-style: none; margin: 0; z-index: 10; font-size: 0.9rem; width: 200px;">
+            <li style="padding: 5px;"><a href="/about" style="text-decoration: none; color: black;">Who we are</a></li>
+            <li style="padding: 5px;"><a href="#" style="text-decoration: none; color: black;">Join our Team</a></li>
+            <li style="padding: 5px;"><a href="#" style="text-decoration: none; color: black;">Our History</a></li>
+            <li style="padding: 5px;"><a href="#" style="text-decoration: none; color: black;">Our Vision</a></li>
+          </ul>
+        </li>
+        <li><a href="/guides" style="text-decoration: none; color: black; padding: 5px;">Guides</a></li>
+        <li><a href="/login" style="text-decoration: none; color: black; padding: 5px;">Login</a></li>
+      </ul>
+
+      <script>
+        const navLinks = document.querySelectorAll(".nav-links > li");
+
+        navLinks.forEach((link) => {
+          const dropdown = link.querySelector("ul");
+          if (dropdown) {
+            link.addEventListener("mouseenter", () => {
+              dropdown.style.display = "block";
+            });
+
+            link.addEventListener("mouseleave", () => {
+              dropdown.style.display = "none";
+            });
+          }  
+        });
+      </script>
+      
+      
+      
+    </div>
+  </nav>
+
+  <section style="position: relative; background-image: url('images/suswa.jpg'); background-size: cover; background-position: center; height: 600px; color: white;">
+
+    <!-- Hero Content -->
+    <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); text-align: center; width: 100%; max-width: 800px;">
+      <h1 style="font-size: 36px; font-weight: 700; text-shadow: 2px 2px 5px rgba(0,0,0,0.5); margin: 0;">Escorted group tours & private trips</h1>
+      <p style="font-size: 20px; margin: 10px 0 30px;">Discover the best destinations and unforgettable experiences</p>
+      
+      <!-- Search Form -->
+      <div style="display: flex; justify-content: center; gap: 10px; position: relative;">
+        
+        <!-- Where Field -->
+        <div style="position: relative; flex: 1; display: flex; flex-direction: column;">
+          <div id="whereField" style="background: white; padding: 10px 15px; border-radius: 50px; display: flex; align-items: center; gap: 10px; box-shadow: 0px 2px 5px rgba(0,0,0,0.2); cursor: pointer; transition: all 0.3s ease;" onclick="toggleDropdown()">
+            <label for="where" style="font-size: 14px; color: #888; flex: 1;">Where?</label>
+            <input type="text" id="where" placeholder="Take me to..." style="border: none; outline: none; font-size: 14px; flex: 2; cursor: pointer;" readonly>
+          </div>
+          <!-- Dropdown -->
+          <div id="dropdown" style="display: none; position: absolute; top: 100%; left: 0; right: 0; background: white; border-radius: 10px; box-shadow: 0px 2px 5px rgba(0,0,0,0.2); z-index: 1000; margin-top: 10px;">
+            <ul style="list-style: none; padding: 0; margin: 0; font-size: 14px; color: #333;">
+              <li style="padding: 10px; cursor: pointer; border-bottom: 1px solid #eee;">Egypt</li>
+              <li style="padding: 10px; cursor: pointer; border-bottom: 1px solid #eee;">Morocco</li>
+              <li style="padding: 10px; cursor: pointer; border-bottom: 1px solid #eee;">Iceland</li>
+              <li style="padding: 10px; cursor: pointer; border-bottom: 1px solid #eee;">Vietnam</li>
+              <li style="padding: 10px; cursor: pointer;">Turkey</li>
+            </ul>
+          </div>
+        </div>
+  
+        <!-- Other Fields -->
+        <div style="background: white; padding: 10px 15px; border-radius: 50px; display: flex; align-items: center; gap: 10px; box-shadow: 0px 2px 5px rgba(0,0,0,0.2);">
+          <label for="date" style="font-size: 14px; color: #888;">When?</label>
+          <input type="text" id="date" placeholder="Choose a date" style="border: none; outline: none; font-size: 14px;">
+        </div>
+        <div style="background: white; padding: 10px 15px; border-radius: 50px; display: flex; align-items: center; gap: 10px; box-shadow: 0px 2px 5px rgba(0,0,0,0.2);">
+          <label for="passengers" style="font-size: 14px; color: #888;">Passengers</label>
+          <input type="text" id="passengers" placeholder="2 Adults, 0 Child" style="border: none; outline: none; font-size: 14px;">
+        </div>
+        <button style="background-color: #ff6600; color: white; border: none; padding: 10px 20px; border-radius: 50px; font-size: 16px; cursor: pointer; box-shadow: 0px 2px 5px rgba(0,0,0,0.2);">
+          Search
+        </button>
+      </div>
+    </div>
+  </section>
+  
+  <script>
+    function toggleDropdown() {
+      const dropdown = document.getElementById("dropdown");
+      const whereField = document.getElementById("whereField");
+  
+      // Toggle dropdown visibility
+      dropdown.style.display = dropdown.style.display === "none" || dropdown.style.display === "" ? "block" : "none";
+  
+      // Add active styles
+      if (dropdown.style.display === "block") {
+        whereField.style.border = "2px solid #007BFF"; // Blue border
+        whereField.style.borderRadius = "10px"; // Adjusted border radius
+      } else {
+        whereField.style.border = "none"; // Reset border
+        whereField.style.borderRadius = "50px"; // Reset border radius
+      }
+    }
+  
+    // Close dropdown if clicked outside
+    document.addEventListener("click", function(event) {
+      const dropdown = document.getElementById("dropdown");
+      const whereField = document.getElementById("whereField");
+      const whereInput = document.getElementById("where");
+  
+      if (!whereInput.contains(event.target) && dropdown.style.display === "block") {
+        dropdown.style.display = "none";
+  
+        // Reset styles
+        whereField.style.border = "none";
+        whereField.style.borderRadius = "50px";
+      }
+    });
+  </script>
+  
+  <section class="popular-destinations" style="padding: 2rem; background-color: #f9f9f9; font-family: 'Jost', sans-serif;">
+    <div class="container" style="max-width: 1200px; margin: 0 auto;">
+      <h2 class="section-title" style="font-size: 2rem; text-align: center; margin-bottom: 1rem; color: #333;">Most popular destinations for our travellers</h2>
+      <p class="section-description" style="text-align: center; margin-bottom: 2rem; color: #555;">These are the places our travellers simply love to visit - where will you go next?</p>
+      <div class="destinations-grid" style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; margin-bottom: 2rem;">
+        <div class="destination-card" style="background: #fff; border-radius: 8px; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); overflow: hidden; transition: transform 0.3s ease;">
+          <img src="images/nairobi.jpg" alt="Africa tours" class="destination-image" style="width: 100%; height: 200px; object-fit: cover;">
+          <h3 class="destination-title" style="font-size: 1.5rem; margin: 1rem; color: #222; transition: background-color 0.3s ease, color 0.3s ease;">Africa tours</h3>
+          <p class="destination-description" style="margin: 0 1rem 1.5rem; color: #666;">Explore the vibrant cultures, stunning landscapes, and incredible wildlife of Africa.</p>
+        </div>
+        <div class="destination-card" style="background: #fff; border-radius: 8px; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); overflow: hidden; transition: transform 0.3s ease;">
+          <img src="images/nairobi.jpg" alt="Kenya tours" class="destination-image" style="width: 100%; height: 200px; object-fit: cover;">
+          <h3 class="destination-title" style="font-size: 1.5rem; margin: 1rem; color: #222; transition: background-color 0.3s ease, color 0.3s ease;">Kenya tours</h3>
+          <p class="destination-description" style="margin: 0 1rem 1.5rem; color: #666;">Experience the majestic safaris, breathtaking scenery, and unique culture of Kenya.</p>
+        </div>
+        <div class="destination-card" style="background: #fff; border-radius: 8px; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); overflow: hidden; transition: transform 0.3s ease;">
+          <img src="images/nairobi.jpg" alt="Asia tours" class="destination-image" style="width: 100%; height: 200px; object-fit: cover;">
+          <h3 class="destination-title" style="font-size: 1.5rem; margin: 1rem; color: #222; transition: background-color 0.3s ease, color 0.3s ease;">Asia tours</h3>
+          <p class="destination-description" style="margin: 0 1rem 1.5rem; color: #666;">Discover the beauty, history, and modern vibrancy of Asia.</p>
+        </div>
+        <div class="destination-card" style="background: #fff; border-radius: 8px; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); overflow: hidden; transition: transform 0.3s ease;">
+          <img src="images/nairobi.jpg" alt="Europe tours" class="destination-image" style="width: 100%; height: 200px; object-fit: cover;">
+          <h3 class="destination-title" style="font-size: 1.5rem; margin: 1rem; color: #222; transition: background-color 0.3s ease, color 0.3s ease;">Europe tours</h3>
+          <p class="destination-description" style="margin: 0 1rem 1.5rem; color: #666;">Explore the rich culture, art, and cuisine across Europe.</p>
+        </div>
+      </div>
+      <div class="more-destinations" style="text-align: center; margin-top: 2rem;">
+        <a href="#" class="more-link" style="display: inline-block; margin: 0.5rem; padding: 0.75rem 1.5rem; color: #fff; background-color: #007bff; text-decoration: none; border-radius: 5px; transition: background-color 0.3s ease; font-size: 1rem;">
+          Discover all of our destinations
+          <span class="fa fa-arrow-right" style="margin-left: 0.5rem;"></span>
+        </a>
+        <a href="#" class="see-more-link" style="display: inline-block; margin: 0.5rem; padding: 0.75rem 1.5rem; color: #fff; background-color: #007bff; text-decoration: none; border-radius: 5px; transition: background-color 0.3s ease; font-size: 1rem;">
+          See more than 70 destinations
+          <span class="fa fa-arrow-circle-right" style="margin-left: 0.5rem;"></span>
+        </a>
+      </div>
+    </div>
+  </section>
+  
+  <script>
+    // Hover effect on the destination titles
+    const destinationTitles = document.querySelectorAll('.destination-title');
+    destinationTitles.forEach(title => {
+      title.addEventListener('mouseenter', () => {
+        title.style.backgroundColor = '#007bff';
+        title.style.color = '#fff';
+      });
+      title.addEventListener('mouseleave', () => {
+        title.style.backgroundColor = 'transparent';
+        title.style.color = '#222';
+      });
+    });
+  </script>
+
+  
+  
+ 
+  <!DOCTYPE html>
+  <html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cards with Map</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <style>
+      /* Ensure the map container has a height of 200px */
+      .map-container {
+        width: 100%;
+        height: 200px;
+      }
+  
+      .cards-container {
+        display: flex;
+        gap: 20px;
+        justify-content: center;
+        align-items: flex-start;
+        padding: 20px;
+      }
+  
+      .card {
+        width: 300px;
+        background: white;
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      }
+  
+      .location-label {
+        position: absolute;
+        background-color: rgba(0, 0, 0, 0.7);
+        color: white;
+        padding: 5px 10px;
+        font-size: 12px;
+        border-radius: 5px;
+        font-weight: bold;
+      }
+  
+      .start-label {
+        top: 10px;
+        left: 10px;
+      }
+  
+      .end-label {
+        bottom: 10px;
+        right: 10px;
+      }
+  
+      .save-label {
+        position: absolute;
+        bottom: 10px;
+        left: 10px;
+        background-color: #dc3545;
+        color: white;
+        padding: 5px 10px;
+        font-size: 12px;
+        border-radius: 5px;
+        font-weight: bold;
+        z-index: 1000;
+      }
+  
+      .best-seller-label {
+        position: absolute;
+        bottom: 30px;
+        left: 10px;
+        background-color: #ffc107;
+        color: white;
+        padding: 5px 10px;
+        font-size: 12px;
+        border-radius: 5px;
+        font-weight: bold;
+        z-index: 1000;
+      }
+    </style>
+  </head>
+  <body style="margin: 0; font-family: Arial, sans-serif; background-color: #f4f4f4; display: flex; justify-content: center; align-items: center; min-height: 100vh;">
+  
+    <div class="cards-container">
+      <!-- Card 1 -->
+      <div class="card">
+        <div style="position: relative;">
+          <span class="location-label start-label">Start: Reykjavik</span>
+          <span class="location-label end-label">End: Reykjavik</span>
+          <div id="map1" class="map-container"></div>
+          <span class="promo-label best-seller-label">Best Seller</span>
+          <span class="save-label">Save 30%</span>
+        </div>
+        <div style="padding: 20px;">
+          <h3 style="font-size: 18px; font-weight: bold; color: #333; margin-bottom: 15px;">Land of the Northern Lights</h3>
+          <ul style="list-style: none; padding: 0; margin: 0; font-size: 14px; color: #666;">
+            <li style="margin-bottom: 5px;"><strong>Duration:</strong> 5 days</li>
+            <li style="margin-bottom: 5px;"><strong>Tour Type:</strong> Tours</li>
+            <li style="margin-bottom: 5px;"><strong>Starts:</strong> Reykjavik</li>
+            <li style="margin-bottom: 5px;"><strong>Ends:</strong> Reykjavik</li>
+            <li style="margin-bottom: 5px;"><strong>Max Group Size:</strong> 40</li>
+          </ul>
+          <div style="margin-top: 20px; display: flex; justify-content: space-between; align-items: center;">
+            <span style="text-decoration: line-through; color: #999;">£1,045 pp</span>
+            <span style="color: #dc3545; font-weight: bold;">£732 pp</span>
+          </div>
+        </div>
+      </div>
+  
+      <!-- Card 2 -->
+      <div class="card">
+        <div style="position: relative;">
+          <span class="location-label start-label">Start: Reykjavik</span>
+          <span class="location-label end-label">End: Reykjavik</span>
+          <div id="map2" class="map-container"></div>
+          <span class="promo-label best-seller-label">Best Seller</span>
+          <span class="save-label">Save 30%</span>
+        </div>
+        <div style="padding: 20px;">
+          <h3 style="font-size: 18px; font-weight: bold; color: #333; margin-bottom: 15px;">Land of the Northern Lights</h3>
+          <ul style="list-style: none; padding: 0; margin: 0; font-size: 14px; color: #666;">
+            <li style="margin-bottom: 5px;"><strong>Duration:</strong> 5 days</li>
+            <li style="margin-bottom: 5px;"><strong>Tour Type:</strong> Tours</li>
+            <li style="margin-bottom: 5px;"><strong>Starts:</strong> Reykjavik</li>
+            <li style="margin-bottom: 5px;"><strong>Ends:</strong> Reykjavik</li>
+            <li style="margin-bottom: 5px;"><strong>Max Group Size:</strong> 40</li>
+          </ul>
+          <div style="margin-top: 20px; display: flex; justify-content: space-between; align-items: center;">
+            <span style="text-decoration: line-through; color: #999;">£1,045 pp</span>
+            <span style="color: #dc3545; font-weight: bold;">£732 pp</span>
+          </div>
+        </div>
+      </div>
+  
+      <!-- Card 3 -->
+      <div class="card">
+        <div style="position: relative;">
+          <span class="location-label start-label">Start: Reykjavik</span>
+          <span class="location-label end-label">End: Reykjavik</span>
+          <div id="map3" class="map-container"></div>
+          <span class="promo-label best-seller-label">Best Seller</span>
+          <span class="save-label">Save 30%</span>
+        </div>
+        <div style="padding: 20px;">
+          <h3 style="font-size: 18px; font-weight: bold; color: #333; margin-bottom: 15px;">Land of the Northern Lights</h3>
+          <ul style="list-style: none; padding: 0; margin: 0; font-size: 14px; color: #666;">
+            <li style="margin-bottom: 5px;"><strong>Duration:</strong> 5 days</li>
+            <li style="margin-bottom: 5px;"><strong>Tour Type:</strong> Tours</li>
+            <li style="margin-bottom: 5px;"><strong>Starts:</strong> Reykjavik</li>
+            <li style="margin-bottom: 5px;"><strong>Ends:</strong> Reykjavik</li>
+            <li style="margin-bottom: 5px;"><strong>Max Group Size:</strong> 40</li>
+          </ul>
+          <div style="margin-top: 20px; display: flex; justify-content: space-between; align-items: center;">
+            <span style="text-decoration: line-through; color: #999;">£1,045 pp</span>
+            <span style="color: #dc3545; font-weight: bold;">£732 pp</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script>
+      const initializeMap = (mapId) => {
+        const map = L.map(mapId).setView([64.1355, -21.8954], 10);
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(map);
+        L.marker([64.1355, -21.8954]).addTo(map).bindPopup('Start: Reykjavik').openPopup();
+      };
+  
+      // Initialize each map with unique IDs
+      initializeMap('map1');
+      initializeMap('map2');
+      initializeMap('map3');
+    </script>
+  
+  </body>
+  </html>
+
+  <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Inspiration Section</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap">
+  <style>
+    body {
+      font-family: 'Roboto', sans-serif;
+      margin: 0;
+      background-color: #f4f8fc;
+    }
+
+    .inspiration-section {
+      max-width: 1200px;
+      margin: 40px auto;
+      padding: 20px;
+      background-color: white;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .inspiration-header {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .inspiration-header h2 {
+      font-size: 24px;
+      font-weight: 700;
+      color: #333;
+      margin-bottom: 10px;
+    }
+
+    .inspiration-header p {
+      font-size: 14px;
+      color: #666;
+      line-height: 1.6;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .cards-container {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr); /* Ensure 3 equal columns */
+      gap: 10px; /* Smaller spacing between cards */
+    }
+
+    .card {
+      background-color: white;
+      border-radius: 8px; /* Added border radius */
+      overflow: hidden;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .card img {
+      width: 100%;
+      height: 150px;
+      object-fit: cover;
+      border-top-left-radius: 8px; /* Ensure radius applies to the top */
+      border-top-right-radius: 8px;
+    }
+
+    .card-content {
+      padding: 15px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      flex-grow: 1;
+    }
+
+    .card-content h3 {
+      font-size: 16px;
+      font-weight: 700;
+      margin: 0 0 10px;
+      color: #0074d9;
+    }
+
+    .card-content p {
+      font-size: 14px;
+      color: #555;
+      margin: 0;
+    }
+
+    .inspiration-footer {
+      text-align: center;
+      margin-top: 30px;
+    }
+
+    .inspiration-footer p {
+      font-size: 14px;
+      color: #555;
+      margin-bottom: 10px;
+    }
+
+    .inspiration-footer .button-container {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+    }
+
+    .inspiration-footer button {
+      background-color: #0074d9;
+      color: white;
+      border: none;
+      padding: 12px 20px;
+      font-size: 14px;
+      font-weight: 700;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .inspiration-footer button:hover {
+      background-color: #005bb5;
+    }
+
+    .inspiration-footer button.secondary {
+      background-color: #f8f9fa;
+      color: #0074d9;
+      border: 1px solid #0074d9;
+    }
+
+    .inspiration-footer button.secondary:hover {
+      background-color: #e2e6ea;
+    }
+
+    .inspiration-footer button .icon {
+      width: 16px;
+      height: 16px;
+    }
+
+    @media (max-width: 768px) {
+      .cards-container {
+        grid-template-columns: 1fr; /* Stacks cards on smaller screens */
+      }
+    }
+  </style>
+</head>
+<body>
+  <section class="inspiration-section">
+    <div class="inspiration-header">
+      <h2>Need some inspiration?</h2>
+      <p>Start planning your next adventure and get inspired with our travel guide articles, filled with useful tips and advice to help you plan and enjoy your next adventure.</p>
+    </div>
+    <div class="cards-container">
+      <!-- Card 1 -->
+      <div class="card">
+        <img src="images/nairobi.jpg" alt="Card Image">
+        <div class="card-content">
+          <h3>Stargazing and Northern Lights Tours</h3>
+          <p>Discover the beauty of the nights sky on a selection of guided tours.</p>
+        </div>
+      </div>
+      <!-- Card 2 -->
+      <div class="card">
+        <img src="images/nairobi.jpg" alt="Card Image">
+        <div class="card-content">
+          <h3>Spotting Africa's Big 5 on a Safari Tour</h3>
+          <p>Travel to the best countries and spot Africa's big 5.</p>
+        </div>
+      </div>
+      <!-- Card 3 -->
+      <div class="card">
+        <img src="images/nairobi.jpg" alt="Card Image">
+        <div class="card-content">
+          <h3>Blue Lagoon vs Sky Lagoon</h3>
+          <p>Compare Iceland’s iconic lagoons with this read to help you decide.</p>
+        </div>
+      </div>
+    </div>
+    <div class="inspiration-footer">
+      <p>We've got loads more guides to help you plan</p>
+      <div class="button-container">
+        <button>
+          Visit the On The Go Tours Travel Guide
+        </button>
+        <button class="secondary">
+          <img src="https://via.placeholder.com/16x16" alt="Icon" class="icon">
+          Get in touch today
+        </button>
+      </div>
+    </div>
+  </section>
+</body>
+</html>
+
+<section style="max-width: 1200px; margin: 40px auto; padding: 20px 30px; background-color: #ffffff; border-radius: 8px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); line-height: 1.6;">
+    <div style="text-align: center; margin-bottom: 20px;">
+      <h2 style="font-size: 28px; font-weight: 700; color: #0074d9; margin-bottom: 10px;">Why book an organized tour?</h2>
+    </div>
+    <div style="margin-bottom: 20px;">
+      <p style="font-size: 16px; margin: 10px 0; color: #555;">
+        We work with operators who expertly organize tours, taking care of all the logistics: 
+        <span style="font-weight: 700; color: #0074d9;">local transport, knowledgeable guides, immersive activities, accommodations, and meals.</span> 
+        All you have to do is show up and enjoy the experience.
+      </p>
+      <p style="font-size: 16px; margin: 10px 0; color: #555;">
+        With <span style="font-weight: 700; color: #0074d9;">deals of up to 60% off</span> thousands of tours worldwide, whatever you’re after, you’ll find it on TourRadar!
+      </p>
+    </div>
+    <div style="padding: 15px; background-color: #f4f8fc; border-left: 4px solid #0074d9; border-radius: 8px; margin-bottom: 20px;">
+      <p style="font-size: 16px; margin: 0; color: #333;">
+        <strong>Top savings tip:</strong> Secure your trip 
+        <span style="font-weight: 700; color: #0074d9;">2+ months in advance</span> with a deposit starting at $200 and pay the rest in smaller, interest-free installments. The earlier you book, the lower your payments.
+      </p>
+    </div>
+    <div style="text-align: center;">
+      <p style="font-size: 16px; margin-bottom: 15px; color: #555;">
+        Know someone who loves travel deals? Tell them about our Mega Sale before it’s gone!
+      </p>
+      <button style="background-color: #0074d9; color: white; font-size: 16px; font-weight: 700; padding: 12px 25px; border: none; border-radius: 5px; cursor: pointer; transition: background-color 0.3s ease;"
+        onmouseover="this.style.backgroundColor='#005bb5'" 
+        onmouseout="this.style.backgroundColor='#0074d9'">
+        Tell a Friend
+      </button>
+    </div>
+  </section>
+
+  <!DOCTYPE html>
+  <html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coolcations Section</title>
+  </head>
+  <body style="margin: 0; font-family: Arial, sans-serif; background-color: #f9f9f9;">
+  
+    <!-- Coolcations Section -->
+    <section style="padding: 20px; max-width: 1200px; margin: 0 auto; background-color: #fff;">
+  
+      <!-- Header -->
+      <div style="margin-bottom: 20px;">
+        <h2 style="font-size: 2rem; margin: 0;">Coolcations</h2>
+        <p style="font-size: 1.2rem; color: #e74c3c; font-weight: bold; margin: 5px 0;">
+          Flash Sale: <span id="timer">01:09 hours left</span>
+        </p>
+        <p style="margin: 0; color: #666;">Enjoy off-season coolness or bask in the shade during summer</p>
+      </div>
+  
+      <!-- Carousel Wrapper -->
+      <div style="position: relative; margin-bottom: 20px;">
+  
+        <!-- Card Carousel -->
+        <div id="carousel" style="display: flex; gap: 20px; overflow: hidden; scroll-snap-type: x mandatory; transition: transform 0.3s ease;">
+          <!-- Cards will be dynamically inserted here -->
+        </div>
+      </div>
+  
+      <!-- See All Trips -->
+      <div style="text-align: center; margin-bottom: 20px;">
+        <button style="background-color: #3498db; color: #fff; border: none; padding: 10px 20px; border-radius: 5px; font-size: 1rem; cursor: pointer;">See all trips</button>
+      </div>
+  
+      <!-- Navigation Buttons -->
+      <div style="text-align: center;">
+        <button onclick="prevCard()" style="background-color: rgba(0, 0, 0, 0.5); color: #fff; border: none; padding: 10px 20px; border-radius: 5px; font-size: 1rem; cursor: pointer; margin-right: 10px;">&#10094; Prev</button>
+        <button onclick="nextCard()" style="background-color: rgba(0, 0, 0, 0.5); color: #fff; border: none; padding: 10px 20px; border-radius: 5px; font-size: 1rem; cursor: pointer;">Next &#10095;</button>
+      </div>
+  
+    </section>
+  
+    <!-- JavaScript for Navigation and Dynamic Content -->
+    <script>
+      let currentIndex = 0;
+  
+      function prevCard() {
+        const carousel = document.getElementById('carousel');
+        const cardWidth = carousel.children[0].offsetWidth + 20; // Card width + gap
+        currentIndex = Math.max(currentIndex - 1, 0);
+        carousel.style.transform = `translateX(-${currentIndex * cardWidth}px)`;
+      }
+  
+      function nextCard() {
+        const carousel = document.getElementById('carousel');
+        const cardWidth = carousel.children[0].offsetWidth + 20; // Card width + gap
+        const maxIndex = carousel.children.length - 1;
+        currentIndex = Math.min(currentIndex + 1, maxIndex);
+        carousel.style.transform = `translateX(-${currentIndex * cardWidth}px)`;
+      }
+  
+      // Function to dynamically load the JSON data
+      async function loadPackages() {
+        try {
+          const response = await fetch('data/packages.json');
+          const data = await response.json();
+  
+          const carousel = document.getElementById('carousel');
+          data.packages.forEach(packageData => {
+            const card = document.createElement('div');
+            card.style.minWidth = '300px';
+            card.style.height = '400px';
+            card.style.backgroundImage = `url(${packageData.image || 'images/nairobi.jpg'})`;
+            card.style.backgroundSize = 'cover';
+            card.style.backgroundPosition = 'center';
+            card.style.borderRadius = '8px';
+            card.style.scrollSnapAlign = 'start';
+            card.style.position = 'relative';
+            card.style.textAlign = 'left';
+            card.style.color = '#fff';
+            card.style.padding = '15px';
+            card.style.display = 'flex';
+            card.style.flexDirection = 'column';
+            card.style.justifyContent = 'flex-end';
+  
+            // Promo label
+            const promoLabel = document.createElement('span');
+            promoLabel.style.position = 'absolute';
+            promoLabel.style.top = '10px';
+            promoLabel.style.left = '10px';
+            promoLabel.style.backgroundColor = '#e74c3c';
+            promoLabel.style.color = '#fff';
+            promoLabel.style.fontSize = '0.8rem';
+            promoLabel.style.padding = '5px 10px';
+            promoLabel.style.borderRadius = '4px';
+            promoLabel.textContent = packageData.promoLabels[0] || 'Offer';
+            card.appendChild(promoLabel);
+  
+            // Title
+            const title = document.createElement('h3');
+            title.style.fontSize = '1.2rem';
+            title.style.margin = '0 0 5px';
+            title.textContent = packageData.title;
+            card.appendChild(title);
+  
+            // Details
+            const details = document.createElement('p');
+            details.style.margin = '0 0 10px';
+            details.style.fontSize = '0.9rem';
+            details.textContent = packageData.details.duration + ' | ' + packageData.details.tourType;
+            card.appendChild(details);
+  
+            // Price and discount
+            const priceWrapper = document.createElement('div');
+            const originalPrice = document.createElement('span');
+            originalPrice.style.fontSize = '1.4rem';
+            originalPrice.style.fontWeight = 'bold';
+            originalPrice.textContent = packageData.price.discounted;
+            priceWrapper.appendChild(originalPrice);
+  
+            const lineThrough = document.createElement('span');
+            lineThrough.style.textDecoration = 'line-through';
+            lineThrough.style.marginLeft = '10px';
+            lineThrough.textContent = packageData.price.original;
+            priceWrapper.appendChild(lineThrough);
+  
+            const discount = document.createElement('span');
+            discount.style.color = '#e74c3c';
+            discount.style.fontWeight = 'bold';
+            discount.style.marginLeft = '10px';
+            discount.textContent = `-${packageData.price.discount}`;
+            priceWrapper.appendChild(discount);
+  
+            card.appendChild(priceWrapper);
+  
+            carousel.appendChild(card);
+          });
+        } catch (error) {
+          console.error('Error loading packages:', error);
+        }
+      }
+  
+      // Call the function to load the packages on page load
+      loadPackages();
+    </script>
+  
+  </body>
+  </html>
+
+  <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Adventure Styles</title>
+  <!-- Include Font Awesome -->
+  <link
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    rel="stylesheet"
+  >
+</head>
+<body style="font-family: Arial, sans-serif; margin: 0; padding: 0; background-color: #f5f5f5;">
+  <section style="padding: 20px; text-align: center; background-color: #fff;">
+    <h2 style="margin-bottom: 20px; font-size: 2rem;">Adventure Styles</h2>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px;">
+      
+      <!-- Card 1 -->
+      <div style="position: relative; background-image: url('https://via.placeholder.com/300x200'); background-size: cover; background-position: center; color: #fff; height: 200px; border-radius: 10px; overflow: hidden; display: flex; flex-direction: column; justify-content: flex-end; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
+        <div style="content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: linear-gradient(to top, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.3));"></div>
+        <div style="position: absolute; top: 10px; left: 10px; background-color: red; color: #fff; padding: 5px 10px; font-size: 0.9rem; font-weight: bold; border-radius: 5px;">UP TO 57% OFF</div>
+        <div style="position: relative; z-index: 2; padding: 10px;">
+          <h3 style="margin: 0; font-size: 1.2rem;">River Cruise</h3>
+          <p style="margin: 5px 0 0; font-size: 1rem; display: flex; align-items: center;">
+            53 deals 
+            <i class="fas fa-chevron-right" style="margin-left: 5px; font-size: 0.9rem;"></i>
+          </p>
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div style="position: relative; background-image: url('https://via.placeholder.com/300x200'); background-size: cover; background-position: center; color: #fff; height: 200px; border-radius: 10px; overflow: hidden; display: flex; flex-direction: column; justify-content: flex-end; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
+        <div style="content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: linear-gradient(to top, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.3));"></div>
+        <div style="position: absolute; top: 10px; left: 10px; background-color: red; color: #fff; padding: 5px 10px; font-size: 0.9rem; font-weight: bold; border-radius: 5px;">UP TO 73% OFF</div>
+        <div style="position: relative; z-index: 2; padding: 10px;">
+          <h3 style="margin: 0; font-size: 1.2rem;">Safari</h3>
+          <p style="margin: 5px 0 0; font-size: 1rem; display: flex; align-items: center;">
+            125 deals 
+            <i class="fas fa-chevron-right" style="margin-left: 5px; font-size: 0.9rem;"></i>
+          </p>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div style="position: relative; background-image: url('https://via.placeholder.com/300x200'); background-size: cover; background-position: center; color: #fff; height: 200px; border-radius: 10px; overflow: hidden; display: flex; flex-direction: column; justify-content: flex-end; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
+        <div style="content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: linear-gradient(to top, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.3));"></div>
+        <div style="position: absolute; top: 10px; left: 10px; background-color: red; color: #fff; padding: 5px 10px; font-size: 0.9rem; font-weight: bold; border-radius: 5px;">UP TO 70% OFF</div>
+        <div style="position: relative; z-index: 2; padding: 10px;">
+          <h3 style="margin: 0; font-size: 1.2rem;">Hiking & Trekking</h3>
+          <p style="margin: 5px 0 0; font-size: 1rem; display: flex; align-items: center;">
+            231 deals 
+            <i class="fas fa-chevron-right" style="margin-left: 5px; font-size: 0.9rem;"></i>
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+</body>
+</html>
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Need Help with Booking Section</title>
+    <!-- FontAwesome for Icons -->
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body style="font-family: Arial, sans-serif; margin: 0; padding: 0; box-sizing: border-box;">
+
+    <div style="display: flex; align-items: center; justify-content: space-between; padding: 40px 20px; background-color: #f9f9f9; max-width: 1200px; margin: auto;">
+        <!-- Text Section -->
+        <div style="flex: 1; max-width: 600px;">
+            <h2 style="font-size: 24px; margin-bottom: 20px; color: #333;">Need help with booking?</h2>
+            <p style="font-size: 16px; color: #555; line-height: 1.6;">
+                Our team of experienced adventure specialists has traveled to hundreds of countries 
+                around the globe and has decades of first-hand travel experience to share. Contact us now to get all of your trip-related questions answered!
+            </p>
+            <button style="margin-top: 20px; padding: 10px 20px; font-size: 16px; color: white; background-color: #007bff; border: none; border-radius: 5px; cursor: pointer;">
+                Contact us
+            </button>
+        </div>
+
+        <!-- Profile Images Section -->
+        <div style="flex: 0 0 auto; display: flex; gap: 10px;">
+            <img src="https://via.placeholder.com/50" alt="Profile 1" style="width: 50px; height: 50px; border-radius: 50%; border: 2px solid #ccc;">
+            <img src="https://via.placeholder.com/50" alt="Profile 2" style="width: 50px; height: 50px; border-radius: 50%; border: 2px solid #ccc;">
+            <img src="https://via.placeholder.com/50" alt="Profile 3" style="width: 50px; height: 50px; border-radius: 50%; border: 2px solid #ccc;">
+        </div>
+    </div>
+
+</body>
+</html>
+
+  
+</body>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Footer</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Jost', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        footer {
+            background-color: #f9f9f9;
+            padding: 40px 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .footer-container {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            max-width: 1200px;
+            width: 100%;
+        }
+
+        .footer-section {
+            margin: 20px;
+            flex: 1 1 200px;
+        }
+
+        .footer-section h4 {
+            font-size: 18px;
+            margin-bottom: 15px;
+        }
+
+        .footer-section ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-section ul li a {
+            text-decoration: none;
+            color: #333;
+            transition: color 0.3s;
+        }
+
+        .footer-section ul li a:hover {
+            color: #0073e6;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 15px;
+        }
+
+        .social-icons a {
+            text-decoration: none;
+            font-size: 20px;
+            color: #6a0dad;
+        }
+
+        .footer-bottom {
+            margin-top: 20px;
+            text-align: center;
+            font-size: 14px;
+            color: #666;
+        }
+
+        .language-location {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .dropdown {
+            padding: 5px;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+
+<footer>
+    <div class="footer-container">
+        <div class="footer-section">
+            <h4>Riq Adventures</h4>
+            <ul>
+                <li><a href="#">About us</a></li>
+                <li><a href="#">Values</a></li>
+                <li><a href="#">Tours</a></li>
+                <li><a href="#">Careers</a></li>
+                <li><a href="#">Media centre</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-section">
+            <h4>Support</h4>
+            <ul>
+                <li><a href="#">Contact us</a></li>
+                <li><a href="#">FAQs</a></li>
+                <li><a href="#">Riq Adventures Travel resources</a></li>
+                <li><a href="#">Pre-departure info</a></li>
+                <li><a href="#">Safety updates</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-section">
+            <h4>Community</h4>
+            <ul>
+                <li><a href="#">Blog</a></li>
+                <li><a href="#">Newsletter</a></li>
+                <li><a href="#">The Great Adventurers Club</a></li>
+                <li><a href="#">Affiliate program</a></li>
+                <li><a href="#">Brochures</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-section">
+            <h4>Travel Agents</h4>
+            <ul>
+                <li><a href="#">Agent login</a></li>
+                <li><a href="#">Agent registration</a></li>
+                <li><a href="#">Find an agent</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-section">
+            <h4>Riq Nation</h4>
+            <div class="social-icons">
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-pinterest"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-television"></i></a>
+                <a href="#"><i class="fas fa-link"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <div class="language-location">
+        <select class="dropdown">
+            <option>English</option>
+            <option>Spanish</option>
+            <option>French</option>
+        </select>
+        <select class="dropdown">
+            <option>Kenya</option>
+            <option>USA</option>
+            <option>India</option>
+        </select>
+    </div>
+
+    <div class="footer-bottom">
+        © 2025 Riq Adventures. All rights reserved. <a href="#">Terms and Conditions</a> · <a href="#">Privacy Policy</a> · <a href="#">Manage Cookies</a> · <a href="#">API</a>
+    </div>
+</footer>
+
+</body>
+</html>
+
+</html>

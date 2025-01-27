@@ -3,16 +3,161 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Responsive Riq Navigation</title>
+  <title>Riq Navigation</title>
   <!-- Link to Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500;700&display=swap" rel="stylesheet">
+  <!-- Link to Font Awesome for Social Media Icons -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
   <style>
-    body {
-      margin: 0;
-      font-family: 'Jost', sans-serif;
+    /* Responsive Styles */
+    @media (max-width: 768px) {
+      /* Top bar adjustments */
+      .top-bar {
+        flex-wrap: wrap; /* Allow wrapping for inline elements */
+        gap: 10px; /* Add spacing between items */
+      }
+
+      .top-bar > div {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 10px;
+        flex-wrap: wrap; /* Wrap content if needed */
+      }
+
+      /* Navigation bar adjustments */
+      .nav-bar {
+        padding: 10px;
+      }
+
+      .nav-links {
+        flex-wrap: wrap; /* Allow wrapping for navigation links */
+        gap: 5px; /* Adjust gap between links */
+        justify-content: center; /* Center align on smaller screens */
+      }
+
+      .nav-links a {
+        padding: 8px 10px; /* Adjust padding for smaller screens */
+      }
     }
 
-    /* General Styling */
+    @media (max-width: 480px) {
+      /* Adjust top bar for very small screens */
+      .top-bar {
+        gap: 8px; /* Smaller gaps for compact layout */
+        font-size: 12px; /* Reduce font size */
+      }
+
+      .social-icons .icon-circle,
+      .favorite-icon {
+        width: 35px;
+        height: 35px; /* Smaller icons */
+        font-size: 14px;
+      }
+
+      .quote-button {
+        font-size: 12px;
+        padding: 8px 10px; /* Adjust button size */
+      }
+
+      .nav-links {
+        gap: 5px; /* Tighter gaps */
+      }
+
+      .nav-links a {
+        padding: 6px 8px; /* Adjust link padding */
+        font-size: 14px; /* Reduce font size */
+      }
+    }
+  </style>
+
+  <style>
+    /* Social Media Icons container */
+    .social-icons {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    /* Circle effect for social media icons */
+    .social-icons .icon-circle {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background-color: #ffffff;
+      color: #0d4b9c; /* Default color for the icon */
+      font-size: 18px;
+      transition: background-color 0.3s, color 0.3s;
+      text-decoration: none; /* Remove underline from the icon */
+    }
+
+    /* Hover effect */
+    .social-icons .icon-circle:hover {
+      background-color: #37d4d9; /* Hover color for the circle */
+      color: white; /* Icon color on hover */
+    }
+
+    /* Circle effect for the heart (favorite) icon */
+    .favorite-icon {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background-color: #ffffff;
+      color: #0d4b9c;
+      font-size: 18px;
+      transition: background-color 0.3s, color 0.3s;
+      margin-right: 10px; /* Same spacing as social icons */
+      text-decoration: none; /* Remove underline from the heart icon */
+    }
+
+    .favorite-icon:hover {
+      background-color: #37d4d9; /* Hover color for the circle */
+      color: white; /* Icon color on hover */
+    }
+
+    /* Style for the 'Request a Quote' button */
+    .quote-button {
+      background-color: #007bff;
+      color: white;
+      padding: 10px 15px;
+      text-decoration: none;
+      border-radius: 10px; /* Rounded corners */
+      font-weight: bold;
+    }
+
+    /* Styling for navigation links */
+    .nav-links {
+      display: flex; /* Horizontal layout for nav links */
+      list-style: none; /* Removes default bullet points */
+      gap: 10px; /* Space between nav links */
+    }
+
+    .nav-links li {
+      position: relative; /* Allows positioning dropdown menus */
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: inherit;
+      font-weight: bold;
+      display: block; /* Ensure the background covers the entire area */
+      padding: 10px 10px; /* Adjust padding for a better hover effect */
+      border-radius: 5px; /* Optional: Adds a slight rounded effect */
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    .nav-links a:hover {
+      background-color: rgb(13, 75, 156); /* Blue background on hover */
+      color: white; /* Hover color effect */
+    }
+
+    /* Styling for the top bar and navigation bar */
     .top-bar {
       background-color: #f8f9fa;
       padding: 10px 20px;
@@ -28,113 +173,132 @@
       color: white;
       padding: 15px 20px;
     }
-
-    /* Navigation Links */
-    .nav-links {
-      display: flex;
-      list-style: none;
-      padding: 0;
-      margin: 0;
-      gap: 10px;
-    }
-
-    .nav-links a {
-      text-decoration: none;
-      color: wheat;
-      padding: 10px;
-      font-weight: bold;
-      border-radius: 5px;
-      transition: background-color 0.3s ease, color 0.3s ease;
-    }
-
-    .nav-links a:hover {
-      background-color: rgb(13, 75, 156);
-      color: white;
-    }
-
-    /* Responsive Styling */
-    .hamburger {
-      display: none;
-      font-size: 24px;
-      cursor: pointer;
-      color: white;
-    }
-
-    @media (max-width: 768px) {
-      .nav-links {
-        display: none;
-        flex-direction: column;
-        gap: 0;
-        position: absolute;
-        top: 60px;
-        right: 0;
-        background-color: #002b5b;
-        width: 100%;
-        text-align: center;
-        z-index: 1000;
-      }
-
-      .nav-links.show {
-        display: flex;
-      }
-
-      .hamburger {
-        display: block;
-      }
-    }
   </style>
 </head>
-<body>
+<body style="margin: 0; font-family: 'Jost', sans-serif;">
 
   <!-- Top Bar Section -->
   <div class="top-bar">
-    <div>
-      <img src="https://flagcdn.com/w40/ke.png" alt="Kenya Flag" style="width: 20px; height: auto;">
-      <span style="margin-left: 5px;">KE</span>
-      <span style="margin-left: 10px;">▼</span>
+    <!-- Left Section: Flag and Dropdown -->
+    <div style="display: flex; align-items: center; gap: 15px;">
+      <div>
+        <img src="https://flagcdn.com/w40/ke.png" alt="Kenya Flag" style="width: 20px; height: auto;">
+        <span style="margin-left: 5px;">KE</span>
+        <span style="margin-left: 10px;">▼</span>
+      </div>
+      
+      <!-- Favorite Icon with Circle -->
+      <a href="#" class="favorite-icon">❤</a>
+      
+      <!-- Social Media Icons -->
+      <div class="social-icons">
+        <a href="https://facebook.com" target="_blank" class="icon-circle">
+          <i class="fab fa-facebook-f"></i>
+        </a>
+        <a href="https://x.com" target="_blank" class="icon-circle">
+          <i class="fab fa-x"></i> <!-- X logo for Twitter -->
+        </a>
+        <a href="https://instagram.com" target="_blank" class="icon-circle">
+          <i class="fab fa-instagram"></i>
+        </a>
+        <a href="https://linkedin.com" target="_blank" class="icon-circle">
+          <i class="fab fa-linkedin-in"></i>
+        </a>
+      </div>
     </div>
+    
+    <!-- Center Section: Contact Info -->
     <div>
-      <a href="tel:+254707268547" style="text-decoration: none; color: #007bff; font-weight: bold;">+254 707 268 547</a>
+      <span>Call us today from 10am</span>
+      <a href="tel:+254707268547" style="text-decoration: none; color: #007bff; margin-left: 5px; font-weight: bold;">+254 707 268 547</a>
     </div>
+    
+    <!-- Right Section: Request a Quote -->
     <div>
-      <a href="#" class="quote-button" style="background-color: #007bff; color: white; padding: 10px 15px; text-decoration: none; border-radius: 10px;">REQUEST A QUOTE</a>
+      <a href="#" class="quote-button">REQUEST A QUOTE</a>
     </div>
   </div>
 
-  <!-- Navigation Bar -->
+  <!-- Existing Riq Navigation Section -->
   <nav class="nav-bar">
     <div style="display: flex; justify-content: space-between; align-items: center;">
-      <a href="#" style="font-size: 24px; font-weight: bold; text-decoration: none; color: white;">
-        Riq to Link <span style="color: orange;">Tours</span>
-      </a>
 
-      <!-- Hamburger Menu -->
-      <div class="hamburger" id="hamburger">
-        ☰
+      <!-- Logo Section -->
+      <div>
+        <a href="#" style="font-size: 24px; font-weight: bold; text-decoration: none; color: white;">
+          Riq to Link <span style="color: orange;">Tours</span>
+        </a>
       </div>
+
+      <!-- Navigation Links -->
+      <ul class="nav-links" style="list-style: none; padding: 0; margin: 0; display: flex; gap: 10px;">
+        <li style="position: relative;">
+          <a href="#" style="text-decoration: none; color: wheat; padding: 5px;">Home</a>
+        </li>
+        <li style="position: relative;">
+          <a href="#" style="text-decoration: none; color: wheat; padding: 5px;">Destinations</a>
+          <ul style="display: none; position: absolute; background-color: white; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); padding: 10px; list-style: none; margin: 0; z-index: 10; font-size: 0.9rem; width: 200px;">
+            <li style="padding: 5px;"><a href="#" style="text-decoration: none; color: black;">Destination 1</a></li>
+            <li style="padding: 5px;"><a href="#" style="text-decoration: none; color: black;">Destination 2</a></li>
+            <li style="padding: 5px;"><a href="#" style="text-decoration: none; color: black;">Destination 3</a></li>
+            <li style="padding: 5px;"><a href="#" style="text-decoration: none; color: black;">Destination 4</a></li>
+          </ul>
+        </li>
+        <li style="position: relative;">
+          <a href="#" style="text-decoration: none; color: wheat; padding: 5px;">Trips</a>
+          <ul style="display: none; position: absolute; background-color: white; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); padding: 10px; list-style: none; margin: 0; z-index: 10; font-size: 0.9rem; width: 200px;">
+            <li style="padding: 5px;"><a href="#" style="text-decoration: none; color: black;">Trip 1</a></li>
+            <li style="padding: 5px;"><a href="#" style="text-decoration: none; color: black;">Trip 2</a></li>
+            <li style="padding: 5px;"><a href="#" style="text-decoration: none; color: black;">Trip 3</a></li>
+            <li style="padding: 5px;"><a href="#" style="text-decoration: none; color: black;">Trip 4</a></li>
+          </ul>
+        </li>
+        
+       
+        <li style="position: relative;">
+          <a href="#" style="text-decoration: none; color: wheat; padding: 5px;">Contact</a>
+          <ul style="display: none; position: absolute; background-color: white; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); padding: 10px; list-style: none; margin: 0; z-index: 10; font-size: 0.9rem; width: 200px;">
+            <li style="padding: 5px;"><a href="#" style="text-decoration: none; color: black;">Our Contact Details</a></li>
+            <li style="padding: 5px;"><a href="#" style="text-decoration: none; color: black;">Bronchures</a></li>
+            <li style="padding: 5px;"><a href="#" style="text-decoration: none; color: black;">FAQ</a></li>
+          </ul>
+        </li>
+        <li style="position: relative;">
+          <a href="#" style="text-decoration: none; color: wheat; padding: 5px;">About</a>
+          <ul style="display: none; position: absolute; background-color: white; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); padding: 10px; list-style: none; margin: 0; z-index: 10; font-size: 0.9rem; width: 200px;">
+            <li style="padding: 5px;"><a href="/about" style="text-decoration: none; color: black;">Who we are</a></li>
+            <li style="padding: 5px;"><a href="#" style="text-decoration: none; color: black;">Join our Team</a></li>
+            <li style="padding: 5px;"><a href="#" style="text-decoration: none; color: black;">Our History</a></li>
+            <li style="padding: 5px;"><a href="#" style="text-decoration: none; color: black;">Our Vision</a></li>
+          </ul>
+        </li>
+        <li><a href="/experiences" style="text-decoration: none; color: wheat; padding: 5px;">Experiences</a></li>
+
+        <li><a href="/guides" style="text-decoration: none; color: wheat; padding: 5px;">Guides</a></li>
+        <li><a href="/login" style="text-decoration: none; color: wheat; padding: 5px;">Login</a></li>
+      </ul>
+
+      <script>
+        const navLinks = document.querySelectorAll(".nav-links > li");
+
+        navLinks.forEach((link) => {
+          const dropdown = link.querySelector("ul");
+          if (dropdown) {
+            link.addEventListener("mouseenter", () => {
+              dropdown.style.display = "block";
+            });
+
+            link.addEventListener("mouseleave", () => {
+              dropdown.style.display = "none";
+            });
+          }  
+        });
+      </script>
+      
+      
+      
     </div>
-
-    <!-- Navigation Links -->
-    <ul class="nav-links" id="nav-links">
-      <li><a href="#">Home</a></li>
-      <li><a href="#">Destinations</a></li>
-      <li><a href="#">Trips</a></li>
-      <li><a href="#">Contact</a></li>
-    </ul>
   </nav>
-
-  <script>
-    // Toggle navigation links on hamburger click
-    const hamburger = document.getElementById('hamburger');
-    const navLinks = document.getElementById('nav-links');
-
-    hamburger.addEventListener('click', () => {
-      navLinks.classList.toggle('show');
-    });
-  </script>
-
-</body>
-</html>
 
 
 <body>

@@ -25,6 +25,10 @@ app.get('/experiences', (req, res) => {
 app.get('/guides', (req, res) => {
     res.sendFile(path.join(__dirname, 'public', 'guides.html'));
   });
+  app.get('/quote', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public', 'quote.html'));
+  });
+
 
 app.get('/contact', (req, res) => {
   res.sendFile(path.join(__dirname, 'public', 'contact.html'));

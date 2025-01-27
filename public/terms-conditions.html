@@ -1,0 +1,936 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Favicon Link -->
+  <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+  <!-- Bootstrap CSS -->
+  <link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+
+  <style>
+    /* General styles */
+    body {
+      font-family: jost, sans-serif;
+      margin: 0;
+      padding: 0;
+      transition: padding-top 0.3s ease-in-out; /* Smooth transition for content */
+    }
+
+    .top-bar {
+      background-color: rgb(13, 75, 156);
+      color: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 20px;
+      font-family: 'Jost', sans-serif;
+      font-weight: 600;
+      font-size: 20px;
+      color: rgb(13, 75, 156);
+      height: 80px;
+    }
+
+    .social-icons {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .social-icons .icon-circle {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background-color: #ffffff;
+      color: #0d4b9c;
+      font-size: 16px;
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    .social-icons .icon-circle:hover {
+      background-color: #37d4d9;
+      color: white;
+    }
+
+    .contact-info {
+      display: flex;
+      gap: 20px;
+    }
+
+    .contact-link {
+      display: flex;
+      align-items: center;
+      color: #ffffff;
+      font-size: 16px;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+
+    .contact-link i {
+      margin-right: 5px;
+    }
+
+    .contact-link:hover {
+      color: #37d4d9;
+    }
+    /* Navbar */
+.navbar {
+    position: sticky;
+    top: 0; /* Stick to the top of the viewport */
+    z-index: 10;
+   
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+ 
+  }
+.navbar img {
+  height: 60px; /* Logo size */
+  width:60px;
+}
+
+.nav-links {
+  display: flex; /* Horizontal layout for nav links */
+  list-style: none; /* Removes default bullet points */
+  gap: 20px; /* Space between nav links */
+}
+
+.nav-links li {
+  position: relative; /* Allows positioning dropdown menus */
+}
+
+.nav-links a {
+ text-decoration: none;
+  color: inherit;
+  font-weight: bold;
+  display: block; /* Ensure the background covers the entire area */
+  padding: 10px 15px; /* Adjust padding for a better hover effect */
+  border-radius: 5px; /* Optional: Adds a slight rounded effect */
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+.nav-links a:hover {
+   background-color: rgb(13, 75, 156); /* Blue background on hover */
+  color: white; /*  /* Hover color effect */
+}
+
+.dropdown {
+  display: none; /* Initially hides dropdown menus */
+  position: absolute; /* Positions dropdown relative to parent */
+  top: 100%; /* Positions dropdown below parent */
+  left: 0; /* Aligns dropdown to left */
+  background-color: rgb(13, 75, 156);; /* Background color of dropdown */
+  list-style: none; /* Removes default bullet points */
+  padding: 10px; /* Inner spacing for dropdown */
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+.nav-links li:hover .dropdown {
+  display: block; /* Shows dropdown on hover */
+}
+
+.dropdown a {
+  display: block; /* Block layout for easy clicking */
+  padding: 5px 10px; /* Inner spacing for dropdown items */
+  color: #0d4b9c; /* Primary color for dropdown items */
+}
+
+.dropdown a:hover {
+  color: #37d4d9; /* Hover color effect for dropdown items */
+}
+
+    
+  </style>
+</head>
+<body>
+  <!-- Top Bar -->
+  <div class="top-bar">
+    <div class="social-icons">
+      <a href="https://www.facebook.com/NairusTravel" class="icon-circle" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+      <a href="#" class="icon-circle" title="Twitter"><i class="fab fa-twitter"></i></a>
+      <a href="#" class="icon-circle" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+      <a href="#" class="icon-circle" title="YouTube"><i class="fab fa-youtube"></i></a>
+    </div>
+
+    <a href="https://www.nairustours.com/my-bookings" 
+   style="
+     display: inline-flex;
+     align-items: center;
+     text-decoration: none;
+     background-color: #01b8ff; /* Light blue background */
+     color: white; /* White text color */
+     padding: 10px 20px; /* Padding for the button */
+     border-radius: 5px; /* Rounded corners */
+     font-size: 1rem; /* Adjust font size */
+     font-weight: bold; /* Bold text */
+     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+     transition: all 0.3s ease; /* Smooth hover effect */
+   " 
+   onmouseover="this.style.backgroundColor='#017bbf'; this.style.transform='scale(1.05)';"
+   onmouseout="this.style.backgroundColor='#01b8ff'; this.style.transform='scale(1)';">
+   <i class="fas fa-book" style="margin-right: 8px; font-size: 1.2rem;"></i> My Booking
+</a>
+
+  </div>
+
+ <!-- Navbar -->
+<nav class="navbar" style="display: flex; align-items: center; justify-content: space-between; padding: 10px 40px; background-color: white; border-bottom: 2px solid #ddd;">
+    <!-- Logo -->
+    <div class="logo" style="flex: 0 0 auto; margin-right: 70px;"> <!-- Increased space between logo and "Home" -->
+        <a href="/">
+            <img src="images/logo-latest.jpg" alt="Nairus Logo" style="height: 55px; width: 55px;">
+        </a>
+    </div>
+
+    <!-- Hamburger Button (Initially hidden on larger screens) -->
+    <button id="hamburger" style="display: none; background: none; border: none; font-size: 30px;">☰</button>
+
+    <!-- Navigation Links -->
+    <ul id="nav-links" class="nav-links" style="display: flex; justify-content: flex-end; align-items: center; list-style: none; margin: 0; padding: 0; font-family: Jost, sans-serif; flex: 1; font-size: 16px;">
+        <!-- Regular Links -->
+        <li style="margin: 0 2px;">
+            <a href="/" style="color: black; text-decoration: none; padding: 5px 10px;">Home</a>
+        </li>
+        <li style="margin: 0 0px;">
+            <a href="/who-we-are" style="color: black; text-decoration: none; padding: 5px 10px;">Who We Are</a>
+        </li>
+        <li style="margin: 0 0px;">
+            <a href="/hajj-umrah" style="color: black; text-decoration: none; padding: 5px 10px;">Hajj & Umrah</a>
+        </li>
+
+        <!-- Dropdown Menu -->
+        <li style="position: relative; margin: 0 0px;">
+            <a href="#" style="color: black; text-decoration: none; padding: 5px 10px;">Safaris Packages 
+                <i class="fas fa-caret-down" style="margin-left: 5px; font-size: 16px;"></i>
+            </a>
+            <ul class="dropdown" style="display: none; position: absolute; top: 100%; left: 0; background-color: rgb(13, 75, 156); list-style: none; margin: 0; padding: 0; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
+                <li><a href="/kenya" style="display: block; padding: 10px 15px; color: white; text-decoration: none;">Kenya</a></li>
+                <li><a href="/tanzania" style="display: block; padding: 10px 15px; color: white; text-decoration: none;">Tanzania</a></li>
+            </ul>
+        </li>
+
+        <li style="margin: 0 0px;">
+            <a href="/daily-packages" style="color: black; text-decoration: none; padding: 5px 10px;">Daily Packages</a>
+        </li>
+        <li style="margin: 0 0px;">
+            <a href="/gallery-section" style="color: black; text-decoration: none; padding: 5px 10px;">Gallery</a>
+        </li>
+
+        <!-- Contact Us Button -->
+        <li style="margin: 0 0px;">
+            <a href="/contact-us" 
+               style="color: white; background-color: rgb(13, 75, 156); padding: 8px 15px; text-decoration: none; font-size: 16px; border-radius: 5px; transition: background-color 0.3s ease;" 
+               onmouseover="this.style.backgroundColor='#37d4d9';" 
+               onmouseout="this.style.backgroundColor='rgb(13, 75, 156)';">
+                Contact Us
+            </a>
+        </li>
+    </ul>
+</nav>
+
+<script>
+    // Dropdown hover logic
+    const safariMenu = document.querySelector('li > a[href="#"]');
+    const dropdown = document.querySelector('.dropdown');
+
+    // Show dropdown on hover
+    safariMenu.addEventListener('mouseenter', () => {
+        dropdown.style.display = 'block';
+    });
+
+    safariMenu.addEventListener('mouseleave', () => {
+        setTimeout(() => {
+            if (!dropdown.matches(':hover')) dropdown.style.display = 'none';
+        }, 200);
+    });
+
+    dropdown.addEventListener('mouseenter', () => {
+        dropdown.style.display = 'block';
+    });
+
+    dropdown.addEventListener('mouseleave', () => {
+        dropdown.style.display = 'none';
+    });
+
+    // Hamburger menu for mobile
+    document.getElementById("hamburger").onclick = function() {
+        const navLinks = document.getElementById("nav-links");
+        // Toggle the display of navigation links
+        if (navLinks.style.display === "flex") {
+            navLinks.style.display = "none";
+        } else {
+            navLinks.style.display = "flex";
+        }
+        navLinks.style.flexDirection = "column";
+        navLinks.style.position = "absolute";
+        navLinks.style.top = "60px";
+        navLinks.style.right = "0";
+        navLinks.style.backgroundColor = "white";
+        navLinks.style.padding = "10px 0";
+        navLinks.style.width = "100%";
+    };
+
+    // Responsive behavior
+    window.addEventListener('resize', function() {
+        const navLinks = document.getElementById("nav-links");
+        if (window.innerWidth <= 768) {
+            document.getElementById("hamburger").style.display = "block";
+            navLinks.style.display = "none"; // Hide nav links initially on mobile
+        } else {
+            document.getElementById("hamburger").style.display = "none";
+            navLinks.style.display = "flex"; // Show nav links on larger screens
+        }
+    });
+
+    window.dispatchEvent(new Event('resize'));
+</script>
+
+</body>
+</html>
+
+
+
+
+<section>
+    <h1 style="text-align: center; color: #0033cc; background-color: #f9f9f9; padding: 20px;">Terms & Conditions</h1>
+    <div style="height: 3px; display: flex; justify-content: center; margin: 10px 0;">
+  <div style="flex: 1; background-color: blue; max-width: 20%;"></div>
+  <div style="flex: 1; background-color: maroon; max-width: 20%;"></div>
+  <div style="flex: 1; background-color: black; max-width: 20%;"></div>
+  <div style="flex: 1; background-color: gold; max-width: 20%;"></div>
+</div>
+  <p style="padding: 20px; font-family: 'Jost', sans-serif;font-size:18px;">
+    <i class="fa fa-info-circle" style="color: #0056b3; margin-right: 10px;"></i>The terms and conditions provided here are general in nature. For specific terms related to your booking, please refer to the details provided under "Your Booking" or the attached booking receipt email. If you're unable to find the information you need, look for the "fine print" link on the relevant page.
+</p>
+<div style="height: 3px; display: flex; justify-content: center; margin: 10px 0;">
+  <div style="flex: 1; background-color: blue; max-width: 20%;"></div>
+  <div style="flex: 1; background-color: maroon; max-width: 20%;"></div>
+  <div style="flex: 1; background-color: black; max-width: 20%;"></div>
+  <div style="flex: 1; background-color: gold; max-width: 20%;"></div>
+</div>
+
+    <ul style="list-style-type: none; padding: 20px; font-family: Arial, sans-serif;">
+        <li style="margin: 10px 0;"><a href="#bookings" style="color: #0033cc; text-decoration: none;">Bookings & Prices</a></li>
+        <li style="margin: 10px 0;"><a href="#payments" style="color: #0033cc; text-decoration: none;">Payments, Refunds & Credits</a></li>
+        <li style="margin: 10px 0;"><a href="#changes" style="color: #0033cc; text-decoration: none;">Changes</a></li>
+        <li style="margin: 10px 0;"><a href="#cancellations" style="color: #0033cc; text-decoration: none;">Cancellations</a></li>
+        <li style="margin: 10px 0;"><a href="#services" style="color: #0033cc; text-decoration: none;">Included Services</a></li>
+        <li style="margin: 10px 0;"><a href="#trip" style="color: #0033cc; text-decoration: none;">Trip Operation</a></li>
+        <li style="margin: 10px 0;"><a href="#participation" style="color: #0033cc; text-decoration: none;">Participation</a></li>
+        <li style="margin: 10px 0;"><a href="#passports" style="color: #0033cc; text-decoration: none;">Passports, Visas & Entry Requirements</a></li>
+        <li style="margin: 10px 0;"><a href="#privacy" style="color: #0033cc; text-decoration: none;">Your Information & Privacy</a></li>
+        <li style="margin: 10px 0;"><a href="#miscellaneous" style="color: #0033cc; text-decoration: none;">miscellaneous</a></li>
+    </ul>
+    
+   <div id="bookings" style="padding: 20px; font-family: 'Jost', sans-serif; font-size: 18px;">
+   <h2 style="color: #0033cc; font-size: 24px; text-align: center;">Bookings & Prices</h2>
+
+    <div style="height: 3px; display: flex; justify-content: center; margin: 10px 0;">
+  <div style="flex: 1; background-color: blue; max-width: 20%;"></div>
+  <div style="flex: 1; background-color: maroon; max-width: 20%;"></div>
+  <div style="flex: 1; background-color: black; max-width: 20%;"></div>
+  <div style="flex: 1; background-color: gold; max-width: 20%;"></div>
+</div>
+    <p><i class="fa fa-info-circle" style="color: #0056b3; margin-right: 10px;"></i>We do our best to provide accurate and up-to-date information on our website, but errors may occur. Please confirm pricing and details with us prior to making a booking.</p>
+    <p><i class="fa fa-check-circle" style="color: #28a745; margin-right: 10px;"></i>By making travel bookings on our website or with one of our agents, or otherwise purchasing any travel services offered by Friendly Planet, you warrant that:</p>
+    <ul style="list-style: none;">
+        <li><i class="fa fa-chevron-right" style="color: #0033cc; margin-right: 10px;"></i>You are at least 18 years of age and have the legal authority to create a binding legal obligation.</li>
+        <li><i class="fa fa-chevron-right" style="color: #0033cc; margin-right: 10px;"></i>You accept and agree to all the Terms presented herein.</li>
+        <li><i class="fa fa-chevron-right" style="color: #0033cc; margin-right: 10px;"></i>All information supplied by you for the purposes of that booking is true, accurate, current, and complete to the best of your knowledge.</li>
+    </ul>
+    <h3><i class="fa fa-user-plus" style="color: #0033cc; margin-right: 10px; font-size: 16px;"></i>Booking on Behalf of Others</h3>
+    <p><i class="fa fa-info-circle" style="color: #0056b3; margin-right: 10px;"></i>If you make a booking for anyone other than yourself, you are considered the designated contact person for those other travelers. You represent and warrant that you are legally authorized to act on their behalf; that you have obtained all required consents; and that you will inform them of these Terms and warrant that they accept and agree to them.</p>
+    <h3><i class="fa fa-pencil-alt" style="color: #0033cc; margin-right: 10px; font-size: 16px;"></i>Registration</h3>
+    <p><i class="fa fa-info-circle" style="color: #0056b3; margin-right: 10px;"></i>After you complete your booking, we'll send you an email containing a link to a secure traveler registration form. For most packages, you must complete this form within 5 days of booking.</p>
+    <h3><i class="fa fa-envelope" style="color: #0033cc; margin-right: 10px; font-size: 16px;"></i>Confirmation</h3>
+    <p><i class="fa fa-info-circle" style="color: #0056b3; margin-right: 10px;"></i>After we receive your booking and deposit, we will confirm availability of all components and send you a confirmation email within 1–2 business days.</p>
+</div>
+
+    <div id="payments" style="padding: 20px; font-family: 'Jost', sans-serif;">
+    <h2 style="color: #0033cc;text-align:center;">Payments, Refunds & Credits</h2>
+     <div style="height: 3px; display: flex; justify-content: center; margin: 10px 0;">
+  <div style="flex: 1; background-color: blue; max-width: 20%;"></div>
+  <div style="flex: 1; background-color: maroon; max-width: 20%;"></div>
+  <div style="flex: 1; background-color: black; max-width: 20%;"></div>
+  <div style="flex: 1; background-color: gold; max-width: 20%;"></div>
+</div>
+    <div id="payments" style="padding: 20px; font-family: Arial, sans-serif;">
+    <h3><i class="fa fa-credit-card" style="font-size: 20px; margin-right: 10px; color: #0033cc;"></i>Payments</h3>
+    <p><i class="fa fa-info-circle" style="color: #0056b3; margin-right: 10px;"></i><strong>Deposits:</strong> To secure your Tour Only booking, a deposit—paid via one of our accepted payment methods—is required and will be applied toward your package cost. If your tour includes airfare, the required deposit amount may be higher. Deposits vary depending on the package, departure date, and city. For exact deposit requirements, check the package page, start a booking, or contact us. Customizations or changes to packages may require an increased deposit. Once your booking is confirmed, deposits are generally non-refundable unless covered by our Carefree Booking policy or if we cancel your departure.</p>
+    <p><i class="fa fa-info-circle" style="color: #0056b3; margin-right: 10px;"></i>When adding Travel Protection coverage during booking, the premium will be included in your deposit.</p>
+    <p><i class="fa fa-info-circle" style="color: #0056b3; margin-right: 10px;"></i><strong>Final Payment:</strong> If there’s a balance remaining after your initial deposit, it must be paid in full by the final payment due date. This date typically falls 75 days before departure and is outlined during booking, in your receipt email, under Your Booking, and on your invoice. Partial payments can be made at any time until the due date. Late payments will incur a $50 fee, and bookings unpaid 21 days after the due date will be canceled, forfeiting the deposit. Overpayments can be refunded or applied as Travel Credits without expiration.</p>
+
+    <h3><i class="fa fa-credit-card" style="font-size: 20px; margin-right: 10px; color: #0033cc;"></i>Accepted Payment Methods</h3>
+    <ul style="list-style: none; padding-left: 0;">
+        <li><i class="fa fa-chevron-right" style="font-size: 16px; margin-right: 10px;"></i><strong>Credit Cards:</strong> Visa, MasterCard, Discover, and American Express are accepted for deposits or balances, either online or via phone with an agent. Multiple cards may be used by contacting us directly.</li>
+        <li><i class="fa fa-chevron-right" style="font-size: 16px; margin-right: 10px;"></i><strong>PayPal:</strong> Payments can be made via your PayPal account on our website.</li>
+        <li><i class="fa fa-chevron-right" style="font-size: 16px; margin-right: 10px;"></i><strong>Checks:</strong> Personal checks, cashier’s checks, or money orders from U.S. institutions are accepted. Include your booking number on the check and mail it to our office. For deposit payments via check, we recommend calling us first to start your booking and then mailing the check promptly to ensure space and pricing availability.</li>
+        <li><i class="fa fa-chevron-right" style="font-size: 16px; margin-right: 10px;"></i><strong>Travel Credits:</strong> If you have Travel Credits issued by us, contact us to redeem them.</li>
+    </ul>
+    <p><i class="fa fa-info-circle" style="color: #0056b3; margin-right: 10px;"></i>Payments are accepted globally in multiple currencies via the payment methods mentioned above. Currency conversion fees may apply depending on the payment method and location.</p>
+
+    <h3><i class="fa fa-money" style="font-size: 20px; margin-right: 10px; color: #0033cc;"></i>Returned Payments</h3>
+    <p><i class="fa fa-info-circle" style="color: #0056b3; margin-right: 10px;"></i>If a check is returned due to insufficient funds, stop payment, or other reasons, a $50 fee will be added to your balance. Alternate payment arrangements must be made before the final due date. If a returned check is reported after the final payment due date, a replacement payment is required within 48 hours to avoid booking cancellation.</p>
+
+    <h3><i class="fa fa-undo" style="font-size: 20px; margin-right: 10px; color: #0033cc;"></i>Refunds</h3>
+    <p><i class="fa fa-info-circle" style="color: #0056b3; margin-right: 10px;"></i>Refunds are processed as quickly as possible, typically within six weeks of the request. If we must recover funds from our partners, the refund will be issued after those funds are secured. Payments made by credit card will be refunded to the same card, provided the refund doesn’t exceed the amount paid on that card; otherwise, refunds will be issued via check.</p>
+
+    <h3><i class="fa fa-gift" style="font-size: 20px; margin-right: 10px; color: #0033cc;"></i>Travel Credits</h3>
+    <p><i class="fa fa-info-circle" style="color: #0056b3; margin-right: 10px;"></i>Travel Credits may be issued for reasons like cancellations, referrals, promotions, or other situations. Some credits come with expiration dates, while others do not. Credits must be applied to a booking made before they expire, though travel does not need to occur before the expiration date. Expired credits cannot be redeemed.</p>
+    <p><i class="fa fa-info-circle" style="color: #0056b3; margin-right: 10px;"></i>Credits are typically issued to the individual who made the booking or the person who referred a new traveler. They can be transferred to another person by notifying us in writing.</p>
+    <p><i class="fa fa-info-circle" style="color: #0056b3; margin-right: 10px;"></i>Credits are issued in U.S. dollars and can be applied toward future bookings but cannot be used for visa fees, optional excursions, airport fees, or other items not payable to Friendly Planet. Credits cannot be exchanged for cash, and unused credits will remain available for future bookings, provided they have not expired.</p>
+</div>
+
+<div id="changes" style="padding: 20px; font-family: 'Jost', sans-serif;">
+    <h2 style="color: #0033cc;text-align: center;">Changes</h2>
+     <div style="height: 3px; display: flex; justify-content: center; margin: 10px 0;">
+  <div style="flex: 1; background-color: blue; max-width: 20%;"></div>
+  <div style="flex: 1; background-color: maroon; max-width: 20%;"></div>
+  <div style="flex: 1; background-color: black; max-width: 20%;"></div>
+  <div style="flex: 1; background-color: gold; max-width: 20%;"></div>
+</div>
+    <h3 style="color: #0033cc;">Carefree Booking</h3>
+    <p><i class="fa fa-info-circle" style="color: #0056b3; margin-right: 10px;"></i>The Carefree Booking policy applies exclusively to new bookings that do not use funds from previously canceled reservations. This policy is limited to your original booking, allowing only one rebooking. Subsequent bookings will follow standard cancellation policies, and discounts or coupons from the canceled booking will not transfer to the new one.</p>
+    <p><strong>If you decide to cancel for any reason before your final payment due date, you can:</strong></p>
+    <ul style="padding-left: 20px; list-style: none; padding-right: 0;">
+        <li><i class="fa fa-chevron-right" style="color: #800000; margin-right: 10px;"></i><strong>Rebook:</strong> Apply all payments, including travel insurance premiums, towards a new departure on the same or a different package for the same or greater number of travelers.</li>
+        <li><i class="fa fa-chevron-right" style="color: #800000; margin-right: 10px;"></i><strong>Travel Credits:</strong> Receive Travel Credits for the full amount paid (excluding insurance premiums). These credits are valid for 5 years and can be transferred.</li>
+        <li><i class="fa fa-chevron-right" style="color: #800000; margin-right: 10px;"></i><strong>Refund with Travel Credits:</strong> Get a refund for all payments made, minus $199 per person issued as Travel Credits, valid for 5 years.</li>
+    </ul>
+    <p><strong>Important Notes:</strong></p>
+    <ul style="padding-left: 20px; list-style: none; padding-right: 0;">
+        <li><i class="fa fa-chevron-right" style="color: #800000; margin-right: 10px;"></i>Airline change or cancellation fees may apply if special flight arrangements were requested, or if airline tickets were issued for an earlier booking before being transferred to the new one.</li>
+        <li><i class="fa fa-chevron-right" style="color: #800000; margin-right: 10px;"></i>Cancellations after the final payment due date are subject to standard cancellation fees.</li>
+        <li><i class="fa fa-chevron-right" style="color: #800000; margin-right: 10px;"></i>The Carefree Booking policy does not apply to all packages (e.g., private groups, custom group departures, and Biblical Journeys). Check the package page for eligibility.</li>
+    </ul>
+</div>
+
+<div id="cancellations" style="padding: 20px; font-family: 'Jost', sans-serif;">
+    <h2 style="color: #0033cc;text-align: center;">Cancellations</h2>
+     <div style="height: 3px; display: flex; justify-content: center; margin: 10px 0;">
+  <div style="flex: 1; background-color: blue; max-width: 20%;"></div>
+  <div style="flex: 1; background-color: maroon; max-width: 20%;"></div>
+  <div style="flex: 1; background-color: black; max-width: 20%;"></div>
+  <div style="flex: 1; background-color: gold; max-width: 20%;"></div>
+</div>
+    <h3 style="color: #0033cc;">Cancellations by You</h3>
+    <p><i class="fa fa-info-circle" style="color: #0056b3; margin-right: 10px;"></i>If you choose to cancel your booking, you must notify us in writing. Unless covered by our Carefree Booking policy, cancellations are subject to fees that vary based on your booking date, cancellation date, and package. These fees are outlined in the cancellation schedule effective at the time of your booking. The applicable schedule can be found under "Your Booking" or attached to your booking receipt email.</p>
+    <p><i class="fa fa-info-circle" style="color: #0056b3; margin-right: 10px;"></i>Upon cancellation, we will refund all payments made, minus:</p>
+    <ul style="padding-left: 20px; list-style: none; padding-right: 0;">
+        <li><i class="fa fa-chevron-right" style="color: #800000; margin-right: 10px;"></i>Your deposit or the applicable cancellation fee, whichever is greater.</li>
+        <li><i class="fa fa-chevron-right" style="color: #800000; margin-right: 10px;"></i>The cost of issued flight tickets if they are nonrefundable, or any cancellation fee assessed by the airline if refundable.</li>
+    </ul>
+    <p><i class="fa fa-info-circle" style="color: #0056b3; margin-right: 10px;"></i>When you request a cancellation, we will calculate and inform you of the total fees and any refundable amount. In some cases, part of the cancellation fee may be converted into a Travel Credit, which does not expire and can be applied to any future booking.</p>
+    <p><i class="fa fa-info-circle" style="color: #0056b3; margin-right: 10px;"></i>If you booked for multiple travelers, one or more travelers may cancel while allowing others to continue. Cancellation fees will only apply to the canceling travelers. However, if the change results in a double occupancy room or cabin being converted to single occupancy, the remaining traveler(s) must cover the single occupancy rate. In some instances, a new traveler may replace a canceled traveler, subject to a name change fee and any applicable airline or vendor charges for issued flight tickets.</p>
+</div>
+
+
+<div id="services" style="padding: 20px; font-family: 'Jost', sans-serif;">
+    <h2 style="color: #0033cc;text-align:center;">Included Services</h2>
+     <div style="height: 3px; display: flex; justify-content: center; margin: 10px 0;">
+  <div style="flex: 1; background-color: blue; max-width: 20%;"></div>
+  <div style="flex: 1; background-color: maroon; max-width: 20%;"></div>
+  <div style="flex: 1; background-color: black; max-width: 20%;"></div>
+  <div style="flex: 1; background-color: gold; max-width: 20%;"></div>
+</div>
+  <div id="included-services" style="padding: 20px; font-family: 'Jost', sans-serif;">
+    <h2 style="color: #0033cc;">Included Services</h2>
+    <p>
+        <i class="fas fa-info-circle" style="color: #0056b3; margin-right: 10px;"></i>
+        <strong>Included Services:</strong> Specific services vary by package; refer to the "included features" section on the package page.
+    </p>
+    <p>
+        <i class="fas fa-info-circle" style="color: #0056b3; margin-right: 10px;"></i>
+        <strong>Not Included:</strong> Unless specified otherwise, the following are not included in the advertised package price:
+    </p>
+    <ul style="list-style: none; padding: 0;">
+        <li style="display: flex; align-items: center; padding: 5px 0;">
+            <i class="fas fa-chevron-right" style="color: maroon; margin-right: 10px;"></i> Excess baggage fees
+        </li>
+        <li style="display: flex; align-items: center; padding: 5px 0;">
+            <i class="fas fa-chevron-right" style="color: maroon; margin-right: 10px;"></i> Advance seat reservations
+        </li>
+        <li style="display: flex; align-items: center; padding: 5px 0;">
+            <i class="fas fa-chevron-right" style="color: maroon; margin-right: 10px;"></i> Entry visa fees
+        </li>
+        <li style="display: flex; align-items: center; padding: 5px 0;">
+            <i class="fas fa-chevron-right" style="color: maroon; margin-right: 10px;"></i> Optional extensions and excursions
+        </li>
+        <li style="display: flex; align-items: center; padding: 5px 0;">
+            <i class="fas fa-chevron-right" style="color: maroon; margin-right: 10px;"></i> Personal, baggage, and travel insurance
+        </li>
+        <li style="display: flex; align-items: center; padding: 5px 0;">
+            <i class="fas fa-chevron-right" style="color: maroon; margin-right: 10px;"></i> Gratuities
+        </li>
+        <li style="display: flex; align-items: center; padding: 5px 0;">
+            <i class="fas fa-chevron-right" style="color: maroon; margin-right: 10px;"></i> Beverages
+        </li>
+        <li style="display: flex; align-items: center; padding: 5px 0;">
+            <i class="fas fa-chevron-right" style="color: maroon; margin-right: 10px;"></i> Items not listed in the itinerary or "included features"
+        </li>
+        <li style="display: flex; align-items: center; padding: 5px 0;">
+            <i class="fas fa-chevron-right" style="color: maroon; margin-right: 10px;"></i> Personal expenses
+        </li>
+    </ul>
+    <p>
+        <i class="fas fa-info-circle" style="color: #0056b3; margin-right: 10px;"></i>
+        <strong>Unused Services:</strong> No refunds are provided for unused services after the trip begins, including missed portions of the itinerary.
+    </p>
+</div>
+
+<div id="trip">
+<h2 style="text-align: center; color: #0033cc;">Trip Operation</h2>
+
+   <div style="height: 3px; display: flex; justify-content: center; margin: 10px 0;">
+  <div style="flex: 1; background-color: blue; max-width: 20%;"></div>
+  <div style="flex: 1; background-color: maroon; max-width: 20%;"></div>
+  <div style="flex: 1; background-color: black; max-width: 20%;"></div>
+  <div style="flex: 1; background-color: gold; max-width: 20%;"></div>
+</div>
+  <h3>Itineraries</h3>
+  <div id="itinerary-policy" style="padding: 20px; font-family: 'Jost', sans-serif;">
+    <h2 style="color: #0033cc;">Itinerary Policy</h2>
+    <p>
+        <i class="fas fa-info-circle" style="color: #0056b3; margin-right: 10px;"></i>
+        We make every effort to ensure our tours and packages run smoothly and adhere to the posted itineraries. However, international travel is complex, and we reserve the right to modify itineraries as necessary to maintain comfort and functionality. Please refer to the latest version of your itinerary on our website prior to travel, which we will also send at least 14 days before departure. The planned itinerary represents the types of accommodations, transport, and activities planned, but the actual itinerary—including routes, schedules, amenities, modes of transport, and other items—may be subject to changes or substitutions without prior notice due to ground conditions or recommendations from our destination partners. In such cases, we will strive to ensure the changes result in an equivalent or better experience for our travelers. We are not liable for damages related to these alterations.
+    </p>
+    <p>
+        <i class="fas fa-info-circle" style="color: #0056b3; margin-right: 10px;"></i>
+        In rare circumstances beyond our control (see "Force Majeure" below), it may become necessary to make major changes to itineraries, such as omitting certain destinations or segments (e.g., a cruise) or even canceling a departure. Should this occur, we will notify you as soon as reasonably possible and make every effort to secure refunds from suppliers for unused services, which we will pass on to you. However, we cannot guarantee refunds for all services (especially ticketed flights) or for the full package price. See our Refund policy for details.
+    </p>
+    <h3 style="color: #0033cc;">Force Majeure</h3>
+    <p>
+        <i class="fas fa-info-circle" style="color: #0056b3; margin-right: 10px;"></i>
+        Unexpected circumstances, such as weather events, pandemics, quarantines, border closures, acts of governments or authorities, wars, hostilities, political uprisings, riots, strikes, terrorist activities or threats, criminal acts by third parties, vehicle defects, equipment breakdowns, or Acts of God, may arise and disrupt services. These are considered force majeure events. We are not responsible or liable for any consequences of such events, including death, bodily injury, illness, damages, delays, or other losses. While we will strive to assist travelers during these events, any losses or costs resulting will remain the traveler’s responsibility.
+    </p>
+    <h3 style="color: #0033cc;">Third Party Suppliers</h3>
+    <p>
+        <i class="fas fa-info-circle" style="color: #0056b3; margin-right: 10px;"></i>
+        Nairus Tours and Travels arranges services with airlines, cruise lines, hotels, coach companies, transfer operators, shore excursion operators, local guides, and other independent parties ("Third Party Suppliers"). These suppliers may further engage local operators and sub-contractors. While we carefully select Third Party Suppliers, we do not supervise or control them and cannot be responsible for their actions or omissions.
+    </p>
+    <p>
+        <i class="fas fa-info-circle" style="color: #0056b3; margin-right: 10px;"></i>
+        In the absence of our negligence, we are not responsible for cancellations, delays, diversions, equipment substitutions, baggage loss or damage, injuries, illnesses, deaths, or any claims resulting from acts, omissions, errors, or negligence by Third Party Suppliers. Air carriers, rail, coach, and ship companies are not responsible for acts or events occurring outside their conveyances. We are also not responsible for criminal conduct by third parties.
+    </p>
+    <p>
+        <i class="fas fa-info-circle" style="color: #0056b3; margin-right: 10px;"></i>
+        The international carriage of passengers is governed by international conventions and treaties, which may limit or exclude carrier liability. Where claims involve travel arrangements or stays provided by carriers or hotels, our maximum liability is the amount payable under the applicable international convention, treaty, or regulation (e.g., the Warsaw or Montreal Conventions for air travel).
+    </p>
+</div>
+
+<div id="participation" style="padding: 20px; font-family: 'Jost', sans-serif;">
+  <h2 style="color: #0033cc;text-align:center;">Participation</h2>
+   <div style="height: 3px; display: flex; justify-content: center; margin: 10px 0;">
+  <div style="flex: 1; background-color: blue; max-width: 20%;"></div>
+  <div style="flex: 1; background-color: maroon; max-width: 20%;"></div>
+  <div style="flex: 1; background-color: black; max-width: 20%;"></div>
+  <div style="flex: 1; background-color: gold; max-width: 20%;"></div>
+</div>
+  <h3>Joining a Tour</h3>
+  <div id="travel-guidelines" style="padding: 20px; font-family: 'Jost', sans-serif;">
+  <p>
+    <i class="fas fa-info-circle" style="color: #0056b3; font-size: 18px; margin-right: 10px;"></i>
+    For packages including flights or transfers, ensure you make necessary arrangements to embark on time. If you miss them, contact us immediately. For "Tour Only" packages, you are responsible for reaching the starting point, typically the first hotel. If delayed, contact us for assistance, though extra costs are your responsibility, and no refunds are provided for unused services.
+  </p>
+  <h3 style="margin-top: 20px; color: #0033cc;">Tour Managers</h3>
+  <p>
+    <i class="fas fa-info-circle" style="color: #0056b3; font-size: 18px; margin-right: 10px;"></i>
+    Our professional tour managers ensure safety and smooth operation. Their decisions are final regarding traveler wellbeing. Failure to comply may result in removal from the tour without refund.
+  </p>
+  <h3 style="margin-top: 20px; color: #0033cc;">Group Participation</h3>
+  <p>
+    <i class="fas fa-info-circle" style="color: #0056b3; font-size: 18px; margin-right: 10px;"></i>
+    Group tours involve traveling with others, which can be challenging. We reserve the right to remove travelers causing danger, distress, or disruption. No refunds or future bookings will be granted in such cases.
+  </p>
+  <h3 style="margin-top: 20px; color: #0033cc;">Age Requirements</h3>
+  <p>
+    <i class="fas fa-info-circle" style="color: #0056b3; font-size: 18px; margin-right: 10px;"></i>
+    Travelers must be 18 or older to book and 8 or older to join, unless stated otherwise. Minors must be accompanied by an adult aged 21 or older, who is responsible for their supervision and legal compliance.
+  </p>
+  <h3 style="margin-top: 20px; color: #0033cc;">Travelers with Disabilities or Difficulties</h3>
+  <p>
+    <i class="fas fa-info-circle" style="color: #0056b3; font-size: 18px; margin-right: 10px;"></i>
+    Notify us of special assistance needs during booking. While we strive to accommodate, some disabilities may not be supported due to the nature of our itineraries. Travelers needing personal assistance must bring a qualified companion. Participation requires physical and mental readiness for itinerary demands.
+  </p>
+  <h3 style="margin-top: 20px; color: #0033cc;">Acceptance of Risk</h3>
+  <p>
+    <i class="fas fa-info-circle" style="color: #0056b3; font-size: 18px; margin-right: 10px;"></i>
+    Travel involves inherent risks, especially in remote destinations or adventurous activities. By booking, you accept these risks and agree to follow all safety guidelines. Friendly Planet is not liable for injuries, losses, or claims resulting from inherent travel risks or failure to comply with safety instructions.
+  </p>
+  <h3 style="margin-top: 20px; color: #0033cc;">Emergency Medical Treatment</h3>
+  <p>
+    <i class="fas fa-info-circle" style="color: #0056b3; font-size: 18px; margin-right: 10px;"></i>
+    In a medical emergency where you cannot consent, we may authorize treatment on your behalf if contacting your emergency contact is not feasible. You agree not to hold us liable for such decisions.
+  </p>
+  <h3 style="margin-top: 20px; color: #0033cc;">Baggage & Personal Effects</h3>
+  <p>
+    <i class="fas fa-info-circle" style="color: #0056b3; font-size: 18px; margin-right: 10px;"></i>
+    Tour packages typically allow one checked bag (44 lbs max), one carry-on, and one personal item. Specific limits will be provided before departure. You are responsible for safeguarding personal items; we are not liable for loss or theft.
+  </p>
+  <h3 style="margin-top: 20px; color: #0033cc;">Local Purchases</h3>
+  <p>
+    <i class="fas fa-info-circle" style="color: #0056b3; font-size: 18px; margin-right: 10px;"></i>
+    Any purchases made during the tour are your responsibility. Inspect items thoroughly as returns or exchanges are typically not permitted. We are not responsible for delivery or authenticity of items purchased.
+  </p>
+  <h3 style="margin-top: 20px; color: #0033cc;">Local Laws</h3>
+  <p>
+    <i class="fas fa-info-circle" style="color: #0056b3; font-size: 18px; margin-right: 10px;"></i>
+    Comply with all local laws during travel. Illegal activities may lead to removal from the tour and penalties, for which we are not responsible.
+  </p>
+</div>
+
+
+<div id="passports" style="padding: 20px; font-family: 'Jost', sans-serif;">
+  <h2 style="color: #0033cc;text-align:center;">Passports, Visas & Entry Requirements</h2>
+  <div style="height: 3px; display: flex; justify-content: center; margin: 10px 0;">
+  <div style="flex: 1; background-color: blue; max-width: 20%;"></div>
+  <div style="flex: 1; background-color: maroon; max-width: 20%;"></div>
+  <div style="flex: 1; background-color: black; max-width: 20%;"></div>
+  <div style="flex: 1; background-color: gold; max-width: 20%;"></div>
+</div>
+  <div id="travel-requirements" style="padding: 20px; font-family: 'Jost', sans-serif;">
+  <p>
+    <i class="fas fa-info-circle" style="color: #0056b3; font-size: 18px; margin-right: 10px;"></i>
+    We provide guidance for Kenyan citizens on entry requirements for destinations we offer. Travelers with passports from other countries must verify the passport, visa, and entry requirements relevant to them. As requirements often change without notice, it’s crucial to confirm with the respective embassy or consulate. Ultimately, each traveler is responsible for securing necessary travel documents, meeting all entry requirements, and covering any associated Entry & Exit Fees. We are not liable for interruptions, cancellations, or expenses due to non-compliance.
+  </p>
+  <h3 style="margin-top: 20px; color: #0033cc;">Passports</h3>
+  <p>
+    <i class="fas fa-info-circle" style="color: #0056b3; font-size: 18px; margin-right: 10px;"></i>
+    A valid passport is required for international travel. Kenyan travelers should ensure their passports are valid for at least six months beyond the return date and contain sufficient blank visa pages. Failure to meet these criteria could result in denied entry. Passport details, including exact names and titles, must match those provided during booking to avoid travel disruptions. Corrections made after booking could incur additional costs. For some packages, color copies of passport photo/signature pages must be submitted within 5 days of booking or with final payment.
+  </p>
+  <h3 style="margin-top: 20px; color: #0033cc;">Travel Visas & Other Documents</h3>
+  <p>
+    <i class="fas fa-info-circle" style="color: #0056b3; font-size: 18px; margin-right: 10px;"></i>
+    Many destinations require travel visas. Some may also require proof of immunization or additional documentation for minors traveling without parents or with parents of different surnames. We provide visa instructions for Kenyan citizens upon booking as a courtesy. Travelers with other passports must independently determine their visa requirements.
+  </p>
+  <h3 style="margin-top: 20px; color: #0033cc;">Entry & Exit Fees</h3>
+  <p>
+    <i class="fas fa-info-circle" style="color: #0056b3; font-size: 18px; margin-right: 10px;"></i>
+    Certain countries, airports, or ports charge entry or exit fees payable directly by travelers. These fees are not included in our package prices and may require payment in cash or by credit card, depending on the destination. While we strive to inform you of such fees in advance, omissions or errors may occur, and we cannot be held responsible.
+  </p>
+</div>
+
+</div>
+
+<div id="privacy" style="padding: 20px; font-family: 'Jost', sans-serif;">
+  <h2 style="color: #0033cc;text-align:center;">Your Information & Privacy</h2>
+  <div style="height: 3px; display: flex; justify-content: center; margin: 10px 0;">
+  <div style="flex: 1; background-color: blue; max-width: 20%;"></div>
+  <div style="flex: 1; background-color: maroon; max-width: 20%;"></div>
+  <div style="flex: 1; background-color: black; max-width: 20%;"></div>
+  <div style="flex: 1; background-color: gold; max-width: 20%;"></div>
+</div>
+  <h3>Privacy Policy</h3>
+ <div id="miscellaneous" style="padding: 20px; font-family: 'Jost', sans-serif;">
+  <p>
+    <i class="fas fa-info-circle" style="color: #0056b3; font-size: 18px; margin-right: 10px;"></i>
+    When you book with us or interact through our website (<a href="https://www.nairustours.com/" style="color: #0033cc;">www.nairustours.com</a>), newsletter, catalog requests, or other channels, we collect certain personal information as outlined in our Privacy Policy. By using our services or submitting personal information, you accept our Privacy Policy and agree to its terms.
+  </p>
+  <h3 style="margin-top: 20px; color: #0033cc;">Required Information</h3>
+  <p>
+    <i class="fas fa-info-circle" style="color: #0056b3; font-size: 18px; margin-right: 10px;"></i>
+    To process your booking, we require specific personal details, including full legal names, gender, birthdate, passport information, and contact information for all travelers. The primary booker must also provide their address, phone number, and email. Additionally, we request contact details for all other travelers (excluding minors and family members sharing the same address) to ensure smooth communication in emergencies or last-minute changes. An emergency contact name and details for each traveler must also be provided. It is your responsibility to ensure all submitted information is complete and accurate. We are not liable for any errors, omissions, or related costs arising from incorrect or incomplete information.
+  </p>
+  <h3 style="margin-top: 20px; color: #0033cc;">Images & Marketing</h3>
+  <p>
+    <i class="fas fa-info-circle" style="color: #0056b3; font-size: 18px; margin-right: 10px;"></i>
+    During your travels with us, photos or videos may be taken by us, our team, contractors, or fellow participants, which might feature you. By participating, you grant us and our partners a perpetual, royalty-free, worldwide license to use these images for marketing, promotions, and creating promotional materials in any format, existing or future, without further obligation or compensation to you.
+  </p>
+</div>
+
+
+<div id="miscellaneous" style="padding: 20px; font-family: 'Jost', sans-serif;">
+  <h2 style="color: #0033cc;text-align: center;">Miscellaneous</h2>
+  <div style="height: 3px; display: flex; justify-content: center; margin: 10px 0;">
+  <div style="flex: 1; background-color: blue; max-width: 20%;"></div>
+  <div style="flex: 1; background-color: maroon; max-width: 20%;"></div>
+  <div style="flex: 1; background-color: black; max-width: 20%;"></div>
+  <div style="flex: 1; background-color: gold; max-width: 20%;"></div>
+</div>
+  <p>
+    <i class="fas fa-info-circle" style="color: #0056b3; font-size: 18px; margin-right: 10px;"></i>
+    These Terms form the complete agreement between travelers and Nairus Tours and Travel, with no additional liabilities implied. If any section of these Terms is deemed too broad or unenforceable, it will be adjusted only to the extent necessary to make it valid. The invalidity of one clause does not affect the enforceability of the remaining provisions.
+  </p>
+  <p>
+    <i class="fas fa-info-circle" style="color: #0056b3; font-size: 18px; margin-right: 10px;"></i>
+    These Terms apply to and benefit all parties, including their heirs, legal representatives, successors, and assigns. Should any third party pursue claims for issues you have released us from, you (or your estate) agree to indemnify Nairus Tours and Travel for related costs, including reasonable legal fees.
+  </p>
+  <p>
+    <i class="fas fa-info-circle" style="color: #0056b3; font-size: 18px; margin-right: 10px;"></i>
+    All purchases and agreements with Nairus Tours and Travel are governed by the laws of Kenya. Any disputes will be resolved exclusively within the courts of Kenya.
+  </p>
+  <p>
+    <i class="fas fa-info-circle" style="color: #0056b3; font-size: 18px; margin-right: 10px;"></i>
+    We reserve the right to modify these Terms at any time. Updates will take effect immediately upon posting on our website (<a href="https://www.nairustours.com/terms-condtions/" style="color: #0033cc;">https://www.nairustours.com/terms-conditions/</a>).
+  </p>
+  <p>
+    <i class="fas fa-info-circle" style="color: #0056b3; font-size: 18px; margin-right: 10px;"></i>
+    At our sole discretion, we reserve the right to deny access to our website or the products and services we offer at any time and for any reason.
+  </p>
+</div>
+
+
+
+</section>
+
+    <!-- Link to Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<footer style="background-color: rgb(13, 75, 156); color: white; padding: 30px 10px; font-family: 'Jost', sans-serif;">
+    <!-- Link to Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <div style="display: flex; justify-content: space-between; flex-wrap: wrap; max-width: 1200px; margin: auto;">
+
+       <!-- Get In Touch Section -->
+<div style="flex: 1; min-width: 200px; margin-bottom: 20px;">
+    <h3 style="margin-bottom: 15px;">Get In Touch</h3>
+    <p style="margin: 0; display: flex; align-items: center; gap: 10px;">
+        <span class="icon-hover">
+            <i class="bi bi-geo-alt-fill"></i>
+        </span>
+        Istanbul Shopping Center, First Floor,<br>
+        Suite A05 Captain Mungai Street,<br>
+        Eastleigh, Nairobi
+    </p>
+    <p style="margin: 5px 0; display: flex; align-items: center; gap: 10px;">
+        <span class="icon-hover">
+            <i class="bi bi-envelope-fill"></i>
+        </span>
+        info@nairustours.com
+    </p>
+    <p style="margin: 5px 0; display: flex; align-items: center; gap: 10px;">
+        <span class="icon-hover">
+            <i class="bi bi-telephone-fill"></i>
+        </span>
+        +254 690 002 22 / +254 690 003 33
+    </p>
+
+    <!-- Social Media Icons -->
+    <!-- Social Media Icons -->
+<div class="social-icons" style="display: flex; align-items: center; gap: 10px;">
+    <a href="https://www.facebook.com/NairusTravel" class="icon-circle" 
+       style="display: inline-flex; justify-content: center; align-items: center; width: 40px; height: 40px; border-radius: 50%; background-color: #ffffff; color: #0d4b9c; font-size: 16px; transition: background-color 0.3s, color 0.3s;" 
+       target="_blank">
+        <i class="bi bi-facebook"></i>
+    </a>
+    <a href="https://www.x.com/NairusTourts" class="icon-circle" 
+       style="display: inline-flex; justify-content: center; align-items: center; width: 40px; height: 40px; border-radius: 50%; background-color: #ffffff; color: #0d4b9c; font-size: 16px; transition: background-color 0.3s, color 0.3s;" 
+       target="_blank">
+        <i class="bi bi-twitter"></i>
+    </a>
+    <a href="#" class="icon-circle" 
+       style="display: inline-flex; justify-content: center; align-items: center; width: 40px; height: 40px; border-radius: 50%; background-color: #ffffff; color: #0d4b9c; font-size: 16px; transition: background-color 0.3s, color 0.3s;" 
+       target="_blank">
+        <i class="bi bi-instagram"></i>
+    </a>
+    <a href="#" class="icon-circle" 
+       style="display: inline-flex; justify-content: center; align-items: center; width: 40px; height: 40px; border-radius: 50%; background-color: #ffffff; color: #0d4b9c; font-size: 16px; transition: background-color 0.3s, color 0.3s;" 
+       target="_blank">
+        <i class="bi bi-linkedin"></i>
+    </a>
+</div>
+
+
+</div>
+
+<style>
+  /* General Icon Styling */
+.icon-hover {
+    display: inline-flex; /* Use flexbox for centering */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    width: 40px; /* Slightly larger width for better visual alignment */
+    height: 40px; /* Match the width for perfect circle */
+    border-radius: 50%; /* Full circle */
+    background-color: white; /* Default background */
+    text-decoration: none; /* Remove underline */
+    transition: background-color 0.3s ease, color 0.3s ease; /* Smooth hover effect */
+}
+
+/* Default Icon Styling */
+.icon-hover i {
+    font-size: 18px; /* Adjust icon size */
+    color: rgb(13, 75, 156); /* Default icon color */
+    transition: color 0.3s ease; /* Smooth hover effect */
+}
+
+/* Hover Effect for All Icons */
+.icon-hover:hover {
+    background-color: #37d4d9; /* Change background on hover */
+    color: white; /* Icon color on hover */
+}
+
+</style>
+
+
+        <!-- Company Section -->
+        <div style="flex: 1; min-width: 200px; margin-bottom: 20px;">
+            <h3 style="margin-bottom: 15px;">Resources</h3>
+            <ul style="list-style: none; padding: 0; margin: 0;">
+                <li>
+                    <a href="/who-we-are" style="color: white; text-decoration: none; display: block; padding: 5px; transition: 0.3s;">
+                        <i class="bi bi-chevron-right" style="color: white;"></i> About us 
+                    </a>
+                </li>
+               
+                <li>
+                    <a href="/blog" style="color: white; text-decoration: none; display: block; padding: 5px; transition: 0.3s;">
+                        <i class="bi bi-chevron-right" style="color: white;"></i> News
+                    </a>
+                </li>
+                <li>
+                    <a href="#" style="color: white; text-decoration: none; display: block; padding: 5px; transition: 0.3s;">
+                        <i class="bi bi-chevron-right" style="color: white;"></i> Travel and Immigration Consultancy 
+                    </a>
+                </li>
+                <li>
+                    <a href="/gallery-section" style="color: white; text-decoration: none; display: block; padding: 5px; transition: 0.3s;">
+                        <i class="bi bi-chevron-right" style="color: white;"></i> Moments
+                    </a>
+                </li>
+                 <li>
+                    <a href="#" style="color: white; text-decoration: none; display: block; padding: 5px; transition: 0.3s;">
+                        <i class="bi bi-chevron-right" style="color: white;"></i> Book a Flight
+                    </a>
+                </li>
+                 <li>
+                    <a href="/privacy-policy.html" style="color: white; text-decoration: none; display: block; padding: 5px; transition: 0.3s;">
+                        <i class="bi bi-chevron-right" style="color: white;"></i> Privacy Policy
+                    </a>
+                </li>
+                <li>
+                    <a href="/terms-conditions.html" style="color: white; text-decoration: none; display: block; padding: 5px; transition: 0.3s;">
+                        <i class="bi bi-chevron-right" style="color: white;"></i> Terms and Conditions
+                    </a>
+                </li>
+                <li>
+                    <a href="/faq.html" style="color: white; text-decoration: none; display: block; padding: 5px; transition: 0.3s;">
+                        <i class="bi bi-chevron-right" style="color: white;"></i> FAQ
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Deals & Support Section -->
+        <div style="flex: 1; min-width: 200px; margin-bottom: 20px;">
+            <h3 style="margin-bottom: 15px;">Exclusive Offers</h3>
+            <ul style="list-style: none; padding: 0; margin: 0;">
+                <li>
+                    <a href="#" style="color: white; text-decoration: none; display: block; padding: 5px; transition: 0.3s;">
+                        <i class="bi bi-chevron-right" style="color: white;"></i> Safari Deals (Kenya)
+                    </a>
+                </li>
+                <li>
+                    <a href="/tanzania.html" style="color: white; text-decoration: none; display: block; padding: 5px; transition: 0.3s;">
+                        <i class="bi bi-chevron-right" style="color: white;"></i> Safari Deals (Tanzania)
+                    </a>
+                </li>
+                <li>
+                    <a href="#" style="color: white; text-decoration: none; display: block; padding: 5px; transition: 0.3s;">
+                        <i class="bi bi-chevron-right" style="color: white;"></i> Hotel and Suite Partners
+                    </a>
+                </li>
+                <li>
+                    <a href="/daily-packages.html" style="color: white; text-decoration: none; display: block; padding: 5px; transition: 0.3s;">
+                        <i class="bi bi-chevron-right" style="color: white;"></i> Daily-Packages
+                    </a>
+                </li>
+                 <li>
+                    <a href="/hajj-umrah.html" style="color: white; text-decoration: none; display: block; padding: 5px; transition: 0.3s;">
+                        <i class="bi bi-chevron-right" style="color: white;"></i> Hajj and Umrah Packages
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+       
+       <!-- We Accept Section -->
+<div style="flex: 1; min-width: 200px; margin-bottom: 20px;">
+    <h3 style="margin-bottom: 15px;">We Support</h3>
+     <div>
+                <i class="bi bi-credit-card-fill" style="font-size: 30px; margin-right: 10px;"></i>
+                <i class="bi bi-paypal" style="font-size: 30px; margin-right: 10px;"></i>
+                <i class="bi bi-credit-card-2-front-fill" style="font-size: 30px;"></i>
+                
+</div>
+
+<style>
+    .icon-hover {
+        transition: 0.3s ease; /* Smooth transition */
+    }
+    .icon-hover:hover {
+        color: #37d4d9 !important; /* For icons */
+        filter: brightness(0) saturate(100%) invert(66%) sepia(22%) saturate(749%) hue-rotate(153deg) brightness(91%) contrast(90%);
+        /* Filter for images to match the hover color */
+    }
+</style>
+
+
+        </div>
+    </div>
+    
+    <!-- Back to Top Button -->
+<a href="#" style="position: fixed; bottom: 15px; right: 15px; background-color: maroon; color: #fff; border-radius: 50%; width: 45px; height: 45px; display: flex; justify-content: center; align-items: center; text-decoration: none; font-size: 1.3rem; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); transition: all 0.3s;">
+    <i class="fas fa-chevron-up"></i>
+</a>
+</footer>
+
+<style>
+    a:hover {
+        background-color: #37d4d9;
+        color: white !important;
+        border-radius: 5px;
+    }
+
+    a i {
+        margin-right: 5px;
+    }
+</style>
+
+
+<!-- WhatsApp Icon Button -->
+<div id="whatsapp-icon" 
+     style="position: fixed; bottom: 90px; right: 15px; background-color: #25D366; width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); z-index: 1000; cursor: pointer;">
+  <img src="https://img.icons8.com/ios-filled/50/ffffff/whatsapp.png" alt="WhatsApp Icon" style="width: 25px; height: 25px;">
+</div>
+
+<!-- WhatsApp Card -->
+<div id="whatsapp-card" 
+     style="display: none; position: fixed; bottom: 140px; right: 15px; background-color: #ffffff; color: #000; width: 300px; padding: 15px; border-radius: 8px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); z-index: 1000;">
+  
+  <!-- Close Button -->
+  <div id="close-card" 
+       style="position: absolute; top: 10px; right: 10px; width: 20px; height: 20px; cursor: pointer; color: #000; font-size: 22px; text-align: center; line-height: 20px; border-radius: 50%; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);">
+    &times;
+  </div>
+  
+  <h4 style="margin: 30px 0 10px; font-size: 1rem; font-weight: bold; color:  rgb(13, 75, 156);">Nairus Tour and Travel</h4>
+  <p style="margin: 0; font-size: 0.9rem; line-height: 1.5;">Welcome! Chat with us for personalized travel packages and inquiries. Click the button below to get started.</p>
+  <div style="margin-top: 10px;">
+    <a href="https://wa.me/254720829908" target="_blank" 
+       style="background-color: rgb(13, 75, 156); color: #fff; padding: 8px 15px; border-radius: 5px; text-decoration: none; font-size: 0.9rem;">Start Chat</a>
+  </div>
+</div>
+
+<!-- JavaScript -->
+<script>
+  const whatsappIcon = document.getElementById('whatsapp-icon');
+  const whatsappCard = document.getElementById('whatsapp-card');
+  const closeCard = document.getElementById('close-card');
+
+  // Toggle WhatsApp Card on Icon Click
+  whatsappIcon.addEventListener('click', (event) => {
+    event.preventDefault();
+    whatsappCard.style.display = whatsappCard.style.display === 'none' ? 'block' : 'none';
+  });
+
+  // Close WhatsApp Card on Close Icon Click
+  closeCard.addEventListener('click', (event) => {
+    event.preventDefault();
+    whatsappCard.style.display = 'none';
+  });
+</script>
+
+

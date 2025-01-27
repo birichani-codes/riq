@@ -9,6 +9,69 @@
   <!-- Link to Font Awesome for Social Media Icons -->
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
   <style>
+    /* Responsive Styles */
+    @media (max-width: 768px) {
+      /* Top bar adjustments */
+      .top-bar {
+        flex-wrap: wrap; /* Allow wrapping for inline elements */
+        gap: 10px; /* Add spacing between items */
+      }
+
+      .top-bar > div {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 10px;
+        flex-wrap: wrap; /* Wrap content if needed */
+      }
+
+      /* Navigation bar adjustments */
+      .nav-bar {
+        padding: 10px;
+      }
+
+      .nav-links {
+        flex-wrap: wrap; /* Allow wrapping for navigation links */
+        gap: 5px; /* Adjust gap between links */
+        justify-content: center; /* Center align on smaller screens */
+      }
+
+      .nav-links a {
+        padding: 8px 10px; /* Adjust padding for smaller screens */
+      }
+    }
+
+    @media (max-width: 480px) {
+      /* Adjust top bar for very small screens */
+      .top-bar {
+        gap: 8px; /* Smaller gaps for compact layout */
+        font-size: 12px; /* Reduce font size */
+      }
+
+      .social-icons .icon-circle,
+      .favorite-icon {
+        width: 35px;
+        height: 35px; /* Smaller icons */
+        font-size: 14px;
+      }
+
+      .quote-button {
+        font-size: 12px;
+        padding: 8px 10px; /* Adjust button size */
+      }
+
+      .nav-links {
+        gap: 5px; /* Tighter gaps */
+      }
+
+      .nav-links a {
+        padding: 6px 8px; /* Adjust link padding */
+        font-size: 14px; /* Reduce font size */
+      }
+    }
+  </style>
+
+  <style>
     /* Social Media Icons container */
     .social-icons {
       display: flex;
@@ -170,10 +233,10 @@
       <!-- Navigation Links -->
       <ul class="nav-links" style="list-style: none; padding: 0; margin: 0; display: flex; gap: 10px;">
         <li style="position: relative;">
-          <a href="#" style="text-decoration: none; color: black; padding: 5px;">Home</a>
+          <a href="#" style="text-decoration: none; color: wheat; padding: 5px;">Home</a>
         </li>
         <li style="position: relative;">
-          <a href="#" style="text-decoration: none; color: black; padding: 5px;">Destinations</a>
+          <a href="#" style="text-decoration: none; color: wheat; padding: 5px;">Destinations</a>
           <ul style="display: none; position: absolute; background-color: white; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); padding: 10px; list-style: none; margin: 0; z-index: 10; font-size: 0.9rem; width: 200px;">
             <li style="padding: 5px;"><a href="#" style="text-decoration: none; color: black;">Destination 1</a></li>
             <li style="padding: 5px;"><a href="#" style="text-decoration: none; color: black;">Destination 2</a></li>
@@ -182,7 +245,7 @@
           </ul>
         </li>
         <li style="position: relative;">
-          <a href="#" style="text-decoration: none; color: black; padding: 5px;">Trips</a>
+          <a href="#" style="text-decoration: none; color: wheat; padding: 5px;">Trips</a>
           <ul style="display: none; position: absolute; background-color: white; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); padding: 10px; list-style: none; margin: 0; z-index: 10; font-size: 0.9rem; width: 200px;">
             <li style="padding: 5px;"><a href="#" style="text-decoration: none; color: black;">Trip 1</a></li>
             <li style="padding: 5px;"><a href="#" style="text-decoration: none; color: black;">Trip 2</a></li>
@@ -190,18 +253,10 @@
             <li style="padding: 5px;"><a href="#" style="text-decoration: none; color: black;">Trip 4</a></li>
           </ul>
         </li>
-        <li style="position: relative;">
-          <a href="#" style="text-decoration: none; color: black; padding: 5px;">Travellers</a>
-          <ul style="display: none; position: absolute; background-color: white; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); padding: 10px; list-style: none; margin: 0; z-index: 10; font-size: 0.9rem; width: 200px;">
-            <li style="padding: 5px;"><a href="#" style="text-decoration: none; color: black;">Traveller 1</a></li>
-            <li style="padding: 5px;"><a href="#" style="text-decoration: none; color: black;">Traveller 2</a></li>
-            <li style="padding: 5px;"><a href="#" style="text-decoration: none; color: black;">Traveller 3</a></li>
-            <li style="padding: 5px;"><a href="#" style="text-decoration: none; color: black;">Traveller 4</a></li>
-          </ul>
-        </li>
+        
        
         <li style="position: relative;">
-          <a href="#" style="text-decoration: none; color: black; padding: 5px;">Contact</a>
+          <a href="#" style="text-decoration: none; color: wheat; padding: 5px;">Contact</a>
           <ul style="display: none; position: absolute; background-color: white; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); padding: 10px; list-style: none; margin: 0; z-index: 10; font-size: 0.9rem; width: 200px;">
             <li style="padding: 5px;"><a href="#" style="text-decoration: none; color: black;">Our Contact Details</a></li>
             <li style="padding: 5px;"><a href="#" style="text-decoration: none; color: black;">Bronchures</a></li>
@@ -209,7 +264,7 @@
           </ul>
         </li>
         <li style="position: relative;">
-          <a href="#" style="text-decoration: none; color: black; padding: 5px;">About</a>
+          <a href="#" style="text-decoration: none; color: wheat; padding: 5px;">About</a>
           <ul style="display: none; position: absolute; background-color: white; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); padding: 10px; list-style: none; margin: 0; z-index: 10; font-size: 0.9rem; width: 200px;">
             <li style="padding: 5px;"><a href="/about" style="text-decoration: none; color: black;">Who we are</a></li>
             <li style="padding: 5px;"><a href="#" style="text-decoration: none; color: black;">Join our Team</a></li>
@@ -217,8 +272,10 @@
             <li style="padding: 5px;"><a href="#" style="text-decoration: none; color: black;">Our Vision</a></li>
           </ul>
         </li>
-        <li><a href="/guides" style="text-decoration: none; color: black; padding: 5px;">Guides</a></li>
-        <li><a href="/login" style="text-decoration: none; color: black; padding: 5px;">Login</a></li>
+        <li><a href="/experiences" style="text-decoration: none; color: wheat; padding: 5px;">Experiences</a></li>
+
+        <li><a href="/guides" style="text-decoration: none; color: wheat; padding: 5px;">Guides</a></li>
+        <li><a href="/login" style="text-decoration: none; color: wheat; padding: 5px;">Login</a></li>
       </ul>
 
       <script>
@@ -1194,7 +1251,7 @@
     </div>
 
     <div class="footer-bottom">
-        © 2025 Riq Adventures. All rights reserved. <a href="#">Terms and Conditions</a> · <a href="#">Privacy Policy</a> · <a href="#">Manage Cookies</a> · <a href="#">API</a>
+        © 2025 Riq Adventures. All rights reserved. <a href="/terms">Terms and Conditions</a> · <a href="#">Privacy Policy</a> · <a href="#">Manage Cookies</a> · <a href="#">API</a>
     </div>
 </footer>
 

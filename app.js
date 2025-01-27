@@ -2,7 +2,7 @@ const express = require('express');
 const path = require('path');
 
 const app = express();
-const PORT = 3000;
+const PORT = 3001;
 
 // Serve static files from the "public" directory
 app.use(express.static(path.join(__dirname, 'public')));
@@ -11,9 +11,16 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
+app.get('/terms', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'terms-conditions.html'));
+});
 
 app.get('/about', (req, res) => {
   res.sendFile(path.join(__dirname, 'public', 'about.html'));
+});
+
+app.get('/experiences', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'experiences.html'));
 });
 app.get('/guides', (req, res) => {
     res.sendFile(path.join(__dirname, 'public', 'guides.html'));

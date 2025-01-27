@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Favicon Link -->
+  <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+  <!-- Bootstrap CSS -->
+  <link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+
+  <style>
+    /* General styles */
+    body {
+      font-family: jost, sans-serif;
+      margin: 0;
+      padding: 0;
+      transition: padding-top 0.3s ease-in-out; /* Smooth transition for content */
+    }
+
+    .top-bar {
+      background-color: rgb(13, 75, 156);
+      color: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 20px;
+      font-family: 'Jost', sans-serif;
+      font-weight: 600;
+      font-size: 20px;
+      color: rgb(13, 75, 156);
+      height: 80px;
+    }
+
+    .social-icons {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .social-icons .icon-circle {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background-color: #ffffff;
+      color: #0d4b9c;
+      font-size: 16px;
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    .social-icons .icon-circle:hover {
+      background-color: #37d4d9;
+      color: white;
+    }
+
+    .contact-info {
+      display: flex;
+      gap: 20px;
+    }
+
+    .contact-link {
+      display: flex;
+      align-items: center;
+      color: #ffffff;
+      font-size: 16px;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+
+    .contact-link i {
+      margin-right: 5px;
+    }
+
+    .contact-link:hover {
+      color: #37d4d9;
+    }
+    /* Navbar */
+.navbar {
+    position: sticky;
+    top: 0; /* Stick to the top of the viewport */
+    z-index: 10;
+   
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+ 
+  }
+.navbar img {
+  height: 60px; /* Logo size */
+  width:60px;
+}
+
+.nav-links {
+  display: flex; /* Horizontal layout for nav links */
+  list-style: none; /* Removes default bullet points */
+  gap: 20px; /* Space between nav links */
+}
+
+.nav-links li {
+  position: relative; /* Allows positioning dropdown menus */
+}
+
+.nav-links a {
+ text-decoration: none;
+  color: inherit;
+  font-weight: bold;
+  display: block; /* Ensure the background covers the entire area */
+  padding: 10px 15px; /* Adjust padding for a better hover effect */
+  border-radius: 5px; /* Optional: Adds a slight rounded effect */
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+.nav-links a:hover {
+   background-color: rgb(13, 75, 156); /* Blue background on hover */
+  color: white; /*  /* Hover color effect */
+}
+
+.dropdown {
+  display: none; /* Initially hides dropdown menus */
+  position: absolute; /* Positions dropdown relative to parent */
+  top: 100%; /* Positions dropdown below parent */
+  left: 0; /* Aligns dropdown to left */
+  background-color: rgb(13, 75, 156);; /* Background color of dropdown */
+  list-style: none; /* Removes default bullet points */
+  padding: 10px; /* Inner spacing for dropdown */
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+.nav-links li:hover .dropdown {
+  display: block; /* Shows dropdown on hover */
+}
+
+.dropdown a {
+  display: block; /* Block layout for easy clicking */
+  padding: 5px 10px; /* Inner spacing for dropdown items */
+  color: #0d4b9c; /* Primary color for dropdown items */
+}
+
+.dropdown a:hover {
+  color: #37d4d9; /* Hover color effect for dropdown items */
+}
+
+    
+  </style>
+</head>
+<body>
+  <!-- Top Bar -->
+  <div class="top-bar">
+    <div class="social-icons">
+      <a href="https://www.facebook.com/NairusTravel" class="icon-circle" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+      <a href="#" class="icon-circle" title="Twitter"><i class="fab fa-twitter"></i></a>
+      <a href="#" class="icon-circle" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+      <a href="#" class="icon-circle" title="YouTube"><i class="fab fa-youtube"></i></a>
+    </div>
+
+    <a href="https://www.nairustours.com/my-bookings" 
+   style="
+     display: inline-flex;
+     align-items: center;
+     text-decoration: none;
+     background-color: #01b8ff; /* Light blue background */
+     color: white; /* White text color */
+     padding: 10px 20px; /* Padding for the button */
+     border-radius: 5px; /* Rounded corners */
+     font-size: 1rem; /* Adjust font size */
+     font-weight: bold; /* Bold text */
+     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+     transition: all 0.3s ease; /* Smooth hover effect */
+   " 
+   onmouseover="this.style.backgroundColor='#017bbf'; this.style.transform='scale(1.05)';"
+   onmouseout="this.style.backgroundColor='#01b8ff'; this.style.transform='scale(1)';">
+   <i class="fas fa-book" style="margin-right: 8px; font-size: 1.2rem;"></i> My Booking
+</a>
+
+  </div>
+
+ <!-- Navbar -->
+<nav class="navbar" style="display: flex; align-items: center; justify-content: space-between; padding: 10px 40px; background-color: white; border-bottom: 2px solid #ddd;">
+    <!-- Logo -->
+    <div class="logo" style="flex: 0 0 auto; margin-right: 70px;"> <!-- Increased space between logo and "Home" -->
+        <a href="/">
+            <img src="images/logo-latest.jpg" alt="Nairus Logo" style="height: 55px; width: 55px;">
+        </a>
+    </div>
+
+    <!-- Hamburger Button (Initially hidden on larger screens) -->
+    <button id="hamburger" style="display: none; background: none; border: none; font-size: 30px;">☰</button>
+
+    <!-- Navigation Links -->
+    <ul id="nav-links" class="nav-links" style="display: flex; justify-content: flex-end; align-items: center; list-style: none; margin: 0; padding: 0; font-family: Jost, sans-serif; flex: 1; font-size: 16px;">
+        <!-- Regular Links -->
+        <li style="margin: 0 2px;">
+            <a href="/" style="color: black; text-decoration: none; padding: 5px 10px;">Home</a>
+        </li>
+        <li style="margin: 0 0px;">
+            <a href="/who-we-are" style="color: black; text-decoration: none; padding: 5px 10px;">Who We Are</a>
+        </li>
+        <li style="margin: 0 0px;">
+            <a href="/hajj-umrah" style="color: black; text-decoration: none; padding: 5px 10px;">Hajj & Umrah</a>
+        </li>
+
+        <!-- Dropdown Menu -->
+        <li style="position: relative; margin: 0 0px;">
+            <a href="#" style="color: black; text-decoration: none; padding: 5px 10px;">Safaris Packages 
+                <i class="fas fa-caret-down" style="margin-left: 5px; font-size: 16px;"></i>
+            </a>
+            <ul class="dropdown" style="display: none; position: absolute; top: 100%; left: 0; background-color: rgb(13, 75, 156); list-style: none; margin: 0; padding: 0; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
+                <li><a href="/kenya" style="display: block; padding: 10px 15px; color: white; text-decoration: none;">Kenya</a></li>
+                <li><a href="/tanzania" style="display: block; padding: 10px 15px; color: white; text-decoration: none;">Tanzania</a></li>
+            </ul>
+        </li>
+
+        <li style="margin: 0 0px;">
+            <a href="/daily-packages" style="color: black; text-decoration: none; padding: 5px 10px;">Daily Packages</a>
+        </li>
+        <li style="margin: 0 0px;">
+            <a href="/gallery-section" style="color: black; text-decoration: none; padding: 5px 10px;">Gallery</a>
+        </li>
+
+        <!-- Contact Us Button -->
+        <li style="margin: 0 0px;">
+            <a href="/contact-us" 
+               style="color: white; background-color: rgb(13, 75, 156); padding: 8px 15px; text-decoration: none; font-size: 16px; border-radius: 5px; transition: background-color 0.3s ease;" 
+               onmouseover="this.style.backgroundColor='#37d4d9';" 
+               onmouseout="this.style.backgroundColor='rgb(13, 75, 156)';">
+                Contact Us
+            </a>
+        </li>
+    </ul>
+</nav>
+
+<script>
+    // Dropdown hover logic
+    const safariMenu = document.querySelector('li > a[href="#"]');
+    const dropdown = document.querySelector('.dropdown');
+
+    // Show dropdown on hover
+    safariMenu.addEventListener('mouseenter', () => {
+        dropdown.style.display = 'block';
+    });
+
+    safariMenu.addEventListener('mouseleave', () => {
+        setTimeout(() => {
+            if (!dropdown.matches(':hover')) dropdown.style.display = 'none';
+        }, 200);
+    });
+
+    dropdown.addEventListener('mouseenter', () => {
+        dropdown.style.display = 'block';
+    });
+
+    dropdown.addEventListener('mouseleave', () => {
+        dropdown.style.display = 'none';
+    });
+
+    // Hamburger menu for mobile
+    document.getElementById("hamburger").onclick = function() {
+        const navLinks = document.getElementById("nav-links");
+        // Toggle the display of navigation links
+        if (navLinks.style.display === "flex") {
+            navLinks.style.display = "none";
+        } else {
+            navLinks.style.display = "flex";
+        }
+        navLinks.style.flexDirection = "column";
+        navLinks.style.position = "absolute";
+        navLinks.style.top = "60px";
+        navLinks.style.right = "0";
+        navLinks.style.backgroundColor = "white";
+        navLinks.style.padding = "10px 0";
+        navLinks.style.width = "100%";
+    };
+
+    // Responsive behavior
+    window.addEventListener('resize', function() {
+        const navLinks = document.getElementById("nav-links");
+        if (window.innerWidth <= 768) {
+            document.getElementById("hamburger").style.display = "block";
+            navLinks.style.display = "none"; // Hide nav links initially on mobile
+        } else {
+            document.getElementById("hamburger").style.display = "none";
+            navLinks.style.display = "flex"; // Show nav links on larger screens
+        }
+    });
+
+    window.dispatchEvent(new Event('resize'));
+</script>
+
+</body>
+</html>
+
+
+<section id="faq-section" style="padding: 30px 20px; background-color: #fff; font-family: 'Jost', sans-serif;">
+  <div style="margin: 0 auto; width: 92%; padding: 0 4%;">
+    <h2 style="color: #0033cc; font-size: 2em; padding: 20px;">Frequently Asked Questions (FAQs)</h2>
+    <p>Welcome to the Nairus Tours & Travels FAQ section! Here you’ll find answers to common questions about our tours, Hajj & Umrah packages, and other services.</p>
+
+    <div id="faq-container"></div>
+  </div>
+</section>
+
+<script>
+  async function fetchFAQs() {
+    try {
+      const response = await fetch('/public/data/faq.json');
+      const faqs = await response.json();
+      const faqContainer = document.getElementById('faq-container');
+
+      faqs.forEach((faq) => {
+        const faqItem = document.createElement('div');
+        faqItem.style.margin = '10px 0';
+        faqItem.style.paddingBottom = '20px';
+
+        faqItem.innerHTML = `
+          <h3 style="font-size: 1.5em; font-weight: bold; color: #0033cc; margin-bottom: 10px;">${faq.question}</h3>
+          <p style="font-size: 1.1em;">${faq.answer}</p>
+          <div style="height: 5px; display: flex; justify-content: center; margin: 20px 0;">
+            <div style="flex: 1; background-color: blue; max-width: 15%;"></div>
+            <div style="flex: 1; background-color: maroon; max-width: 15%;"></div>
+            <div style="flex: 1; background-color: black; max-width: 15%;"></div>
+            <div style="flex: 1; background-color: gold; max-width: 15%;"></div>
+          </div>
+        `;
+
+        faqContainer.appendChild(faqItem);
+      });
+    } catch (error) {
+      console.error('Error fetching FAQs:', error);
+    }
+  }
+
+  fetchFAQs();
+</script>
+
+<!-- Link to Import Jost Font -->
+<link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600&display=swap" rel="stylesheet">
+
+
+    <!-- Link to Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<footer style="background-color: rgb(13, 75, 156); color: white; padding: 30px 10px; font-family: 'Jost', sans-serif;">
+    <!-- Link to Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <div style="display: flex; justify-content: space-between; flex-wrap: wrap; max-width: 1200px; margin: auto;">
+
+       <!-- Get In Touch Section -->
+<div style="flex: 1; min-width: 200px; margin-bottom: 20px;">
+    <h3 style="margin-bottom: 15px;">Get In Touch</h3>
+    <p style="margin: 0; display: flex; align-items: center; gap: 10px;">
+        <span class="icon-hover">
+            <i class="bi bi-geo-alt-fill"></i>
+        </span>
+        Istanbul Shopping Center, First Floor,<br>
+        Suite A05 Captain Mungai Street,<br>
+        Eastleigh, Nairobi
+    </p>
+    <p style="margin: 5px 0; display: flex; align-items: center; gap: 10px;">
+        <span class="icon-hover">
+            <i class="bi bi-envelope-fill"></i>
+        </span>
+        info@nairustours.com
+    </p>
+    <p style="margin: 5px 0; display: flex; align-items: center; gap: 10px;">
+        <span class="icon-hover">
+            <i class="bi bi-telephone-fill"></i>
+        </span>
+        +254 690 002 22 / +254 690 003 33
+    </p>
+
+    <!-- Social Media Icons -->
+    <!-- Social Media Icons -->
+<div class="social-icons" style="display: flex; align-items: center; gap: 10px;">
+    <a href="https://www.facebook.com/NairusTravel" class="icon-circle" 
+       style="display: inline-flex; justify-content: center; align-items: center; width: 40px; height: 40px; border-radius: 50%; background-color: #ffffff; color: #0d4b9c; font-size: 16px; transition: background-color 0.3s, color 0.3s;" 
+       target="_blank">
+        <i class="bi bi-facebook"></i>
+    </a>
+    <a href="https://www.x.com/NairusTourts" class="icon-circle" 
+       style="display: inline-flex; justify-content: center; align-items: center; width: 40px; height: 40px; border-radius: 50%; background-color: #ffffff; color: #0d4b9c; font-size: 16px; transition: background-color 0.3s, color 0.3s;" 
+       target="_blank">
+        <i class="bi bi-twitter"></i>
+    </a>
+    <a href="#" class="icon-circle" 
+       style="display: inline-flex; justify-content: center; align-items: center; width: 40px; height: 40px; border-radius: 50%; background-color: #ffffff; color: #0d4b9c; font-size: 16px; transition: background-color 0.3s, color 0.3s;" 
+       target="_blank">
+        <i class="bi bi-instagram"></i>
+    </a>
+    <a href="#" class="icon-circle" 
+       style="display: inline-flex; justify-content: center; align-items: center; width: 40px; height: 40px; border-radius: 50%; background-color: #ffffff; color: #0d4b9c; font-size: 16px; transition: background-color 0.3s, color 0.3s;" 
+       target="_blank">
+        <i class="bi bi-linkedin"></i>
+    </a>
+</div>
+
+
+</div>
+
+<style>
+  /* General Icon Styling */
+.icon-hover {
+    display: inline-flex; /* Use flexbox for centering */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    width: 40px; /* Slightly larger width for better visual alignment */
+    height: 40px; /* Match the width for perfect circle */
+    border-radius: 50%; /* Full circle */
+    background-color: white; /* Default background */
+    text-decoration: none; /* Remove underline */
+    transition: background-color 0.3s ease, color 0.3s ease; /* Smooth hover effect */
+}
+
+/* Default Icon Styling */
+.icon-hover i {
+    font-size: 18px; /* Adjust icon size */
+    color: rgb(13, 75, 156); /* Default icon color */
+    transition: color 0.3s ease; /* Smooth hover effect */
+}
+
+/* Hover Effect for All Icons */
+.icon-hover:hover {
+    background-color: #37d4d9; /* Change background on hover */
+    color: white; /* Icon color on hover */
+}
+
+</style>
+
+
+        <!-- Company Section -->
+        <div style="flex: 1; min-width: 200px; margin-bottom: 20px;">
+            <h3 style="margin-bottom: 15px;">Resources</h3>
+            <ul style="list-style: none; padding: 0; margin: 0;">
+                <li>
+                    <a href="/who-we-are" style="color: white; text-decoration: none; display: block; padding: 5px; transition: 0.3s;">
+                        <i class="bi bi-chevron-right" style="color: white;"></i> About us 
+                    </a>
+                </li>
+               
+                <li>
+                    <a href="/blog" style="color: white; text-decoration: none; display: block; padding: 5px; transition: 0.3s;">
+                        <i class="bi bi-chevron-right" style="color: white;"></i> News
+                    </a>
+                </li>
+                <li>
+                    <a href="#" style="color: white; text-decoration: none; display: block; padding: 5px; transition: 0.3s;">
+                        <i class="bi bi-chevron-right" style="color: white;"></i> Travel and Immigration Consultancy 
+                    </a>
+                </li>
+                <li>
+                    <a href="/gallery-section" style="color: white; text-decoration: none; display: block; padding: 5px; transition: 0.3s;">
+                        <i class="bi bi-chevron-right" style="color: white;"></i> Moments
+                    </a>
+                </li>
+                 <li>
+                    <a href="#" style="color: white; text-decoration: none; display: block; padding: 5px; transition: 0.3s;">
+                        <i class="bi bi-chevron-right" style="color: white;"></i> Book a Flight
+                    </a>
+                </li>
+                 <li>
+                    <a href="/privacy-policy.html" style="color: white; text-decoration: none; display: block; padding: 5px; transition: 0.3s;">
+                        <i class="bi bi-chevron-right" style="color: white;"></i> Privacy Policy
+                    </a>
+                </li>
+                <li>
+                    <a href="/terms-conditions.html" style="color: white; text-decoration: none; display: block; padding: 5px; transition: 0.3s;">
+                        <i class="bi bi-chevron-right" style="color: white;"></i> Terms and Conditions
+                    </a>
+                </li>
+                <li>
+                    <a href="/faq.html" style="color: white; text-decoration: none; display: block; padding: 5px; transition: 0.3s;">
+                        <i class="bi bi-chevron-right" style="color: white;"></i> FAQ
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Deals & Support Section -->
+        <div style="flex: 1; min-width: 200px; margin-bottom: 20px;">
+            <h3 style="margin-bottom: 15px;">Exclusive Offers</h3>
+            <ul style="list-style: none; padding: 0; margin: 0;">
+                <li>
+                    <a href="#" style="color: white; text-decoration: none; display: block; padding: 5px; transition: 0.3s;">
+                        <i class="bi bi-chevron-right" style="color: white;"></i> Safari Deals (Kenya)
+                    </a>
+                </li>
+                <li>
+                    <a href="/tanzania.html" style="color: white; text-decoration: none; display: block; padding: 5px; transition: 0.3s;">
+                        <i class="bi bi-chevron-right" style="color: white;"></i> Safari Deals (Tanzania)
+                    </a>
+                </li>
+                <li>
+                    <a href="#" style="color: white; text-decoration: none; display: block; padding: 5px; transition: 0.3s;">
+                        <i class="bi bi-chevron-right" style="color: white;"></i> Hotel and Suite Partners
+                    </a>
+                </li>
+                <li>
+                    <a href="/daily-packages.html" style="color: white; text-decoration: none; display: block; padding: 5px; transition: 0.3s;">
+                        <i class="bi bi-chevron-right" style="color: white;"></i> Daily-Packages
+                    </a>
+                </li>
+                 <li>
+                    <a href="/hajj-umrah.html" style="color: white; text-decoration: none; display: block; padding: 5px; transition: 0.3s;">
+                        <i class="bi bi-chevron-right" style="color: white;"></i> Hajj and Umrah Packages
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+       
+       <!-- We Accept Section -->
+<div style="flex: 1; min-width: 200px; margin-bottom: 20px;">
+    <h3 style="margin-bottom: 15px;">We Support</h3>
+     <div>
+                <i class="bi bi-credit-card-fill" style="font-size: 30px; margin-right: 10px;"></i>
+                <i class="bi bi-paypal" style="font-size: 30px; margin-right: 10px;"></i>
+                <i class="bi bi-credit-card-2-front-fill" style="font-size: 30px;"></i>
+                
+</div>
+
+<style>
+    .icon-hover {
+        transition: 0.3s ease; /* Smooth transition */
+    }
+    .icon-hover:hover {
+        color: #37d4d9 !important; /* For icons */
+        filter: brightness(0) saturate(100%) invert(66%) sepia(22%) saturate(749%) hue-rotate(153deg) brightness(91%) contrast(90%);
+        /* Filter for images to match the hover color */
+    }
+</style>
+
+
+        </div>
+    </div>
+    
+    <!-- Back to Top Button -->
+<a href="#" style="position: fixed; bottom: 15px; right: 15px; background-color: maroon; color: #fff; border-radius: 50%; width: 45px; height: 45px; display: flex; justify-content: center; align-items: center; text-decoration: none; font-size: 1.3rem; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); transition: all 0.3s;">
+    <i class="fas fa-chevron-up"></i>
+</a>
+</footer>
+
+<style>
+    a:hover {
+        background-color: #37d4d9;
+        color: white !important;
+        border-radius: 5px;
+    }
+
+    a i {
+        margin-right: 5px;
+    }
+</style>
+
+
+<!-- WhatsApp Icon Button -->
+<div id="whatsapp-icon" 
+     style="position: fixed; bottom: 90px; right: 15px; background-color: #25D366; width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); z-index: 1000; cursor: pointer;">
+  <img src="https://img.icons8.com/ios-filled/50/ffffff/whatsapp.png" alt="WhatsApp Icon" style="width: 25px; height: 25px;">
+</div>
+
+<!-- WhatsApp Card -->
+<div id="whatsapp-card" 
+     style="display: none; position: fixed; bottom: 140px; right: 15px; background-color: #ffffff; color: #000; width: 300px; padding: 15px; border-radius: 8px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); z-index: 1000;">
+  
+  <!-- Close Button -->
+  <div id="close-card" 
+       style="position: absolute; top: 10px; right: 10px; width: 20px; height: 20px; cursor: pointer; color: #000; font-size: 22px; text-align: center; line-height: 20px; border-radius: 50%; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);">
+    &times;
+  </div>
+  
+  <h4 style="margin: 30px 0 10px; font-size: 1rem; font-weight: bold; color:  rgb(13, 75, 156);">Nairus Tour and Travel</h4>
+  <p style="margin: 0; font-size: 0.9rem; line-height: 1.5;">Welcome! Chat with us for personalized travel packages and inquiries. Click the button below to get started.</p>
+  <div style="margin-top: 10px;">
+    <a href="https://wa.me/254720829908" target="_blank" 
+       style="background-color: rgb(13, 75, 156); color: #fff; padding: 8px 15px; border-radius: 5px; text-decoration: none; font-size: 0.9rem;">Start Chat</a>
+  </div>
+</div>
+
+<!-- JavaScript -->
+<script>
+  const whatsappIcon = document.getElementById('whatsapp-icon');
+  const whatsappCard = document.getElementById('whatsapp-card');
+  const closeCard = document.getElementById('close-card');
+
+  // Toggle WhatsApp Card on Icon Click
+  whatsappIcon.addEventListener('click', (event) => {
+    event.preventDefault();
+    whatsappCard.style.display = whatsappCard.style.display === 'none' ? 'block' : 'none';
+  });
+
+  // Close WhatsApp Card on Close Icon Click
+  closeCard.addEventListener('click', (event) => {
+    event.preventDefault();
+    whatsappCard.style.display = 'none';
+  });
+</script>
+

@@ -219,86 +219,80 @@
     </div>
   </div>
 
-  <!-- Existing Riq Navigation Section -->
-  <nav class="nav-bar">
-    <div style="display: flex; justify-content: space-between; align-items: center;">
+ <!-- Existing Riq Navigation Section -->
+<nav class="nav-bar">
+  <div style="display: flex; justify-content: space-between; align-items: center;">
 
-      <!-- Logo Section -->
-      <div>
-        <a href="#" style="font-size: 24px; font-weight: bold; text-decoration: none; color: white;">
-          Riq to Link <span style="color: orange;">Tours</span>
-        </a>
-      </div>
-
-      <!-- Navigation Links -->
-      <ul class="nav-links" style="list-style: none; padding: 0; margin: 0; display: flex; gap: 10px;">
-        <li style="position: relative;">
-          <a href="#" style="text-decoration: none; color: wheat; padding: 5px;">Home</a>
-        </li>
-        <li style="position: relative;">
-          <a href="#" style="text-decoration: none; color: wheat; padding: 5px;">Destinations</a>
-          <ul style="display: none; position: absolute; background-color: white; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); padding: 10px; list-style: none; margin: 0; z-index: 10; font-size: 0.9rem; width: 200px;">
-            <li style="padding: 5px;"><a href="#" style="text-decoration: none; color: black;">Destination 1</a></li>
-            <li style="padding: 5px;"><a href="#" style="text-decoration: none; color: black;">Destination 2</a></li>
-            <li style="padding: 5px;"><a href="#" style="text-decoration: none; color: black;">Destination 3</a></li>
-            <li style="padding: 5px;"><a href="#" style="text-decoration: none; color: black;">Destination 4</a></li>
-          </ul>
-        </li>
-        <li style="position: relative;">
-          <a href="#" style="text-decoration: none; color: wheat; padding: 5px;">Trips</a>
-          <ul style="display: none; position: absolute; background-color: white; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); padding: 10px; list-style: none; margin: 0; z-index: 10; font-size: 0.9rem; width: 200px;">
-            <li style="padding: 5px;"><a href="#" style="text-decoration: none; color: black;">Trip 1</a></li>
-            <li style="padding: 5px;"><a href="#" style="text-decoration: none; color: black;">Trip 2</a></li>
-            <li style="padding: 5px;"><a href="#" style="text-decoration: none; color: black;">Trip 3</a></li>
-            <li style="padding: 5px;"><a href="#" style="text-decoration: none; color: black;">Trip 4</a></li>
-          </ul>
-        </li>
-        
-       
-        <li style="position: relative;">
-          <a href="#" style="text-decoration: none; color: wheat; padding: 5px;">Contact</a>
-          <ul style="display: none; position: absolute; background-color: white; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); padding: 10px; list-style: none; margin: 0; z-index: 10; font-size: 0.9rem; width: 200px;">
-            <li style="padding: 5px;"><a href="#" style="text-decoration: none; color: black;">Our Contact Details</a></li>
-            <li style="padding: 5px;"><a href="#" style="text-decoration: none; color: black;">Bronchures</a></li>
-            <li style="padding: 5px;"><a href="#" style="text-decoration: none; color: black;">FAQ</a></li>
-          </ul>
-        </li>
-        <li style="position: relative;">
-          <a href="#" style="text-decoration: none; color: wheat; padding: 5px;">About</a>
-          <ul style="display: none; position: absolute; background-color: white; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); padding: 10px; list-style: none; margin: 0; z-index: 10; font-size: 0.9rem; width: 200px;">
-            <li style="padding: 5px;"><a href="/about" style="text-decoration: none; color: black;">Who we are</a></li>
-            <li style="padding: 5px;"><a href="#" style="text-decoration: none; color: black;">Join our Team</a></li>
-            <li style="padding: 5px;"><a href="#" style="text-decoration: none; color: black;">Our History</a></li>
-            <li style="padding: 5px;"><a href="#" style="text-decoration: none; color: black;">Our Vision</a></li>
-          </ul>
-        </li>
-        <li><a href="/experiences" style="text-decoration: none; color: wheat; padding: 5px;">Experiences</a></li>
-
-        <li><a href="/guides" style="text-decoration: none; color: wheat; padding: 5px;">Guides</a></li>
-        <li><a href="/login" style="text-decoration: none; color: wheat; padding: 5px;">Login</a></li>
-      </ul>
-
-      <script>
-        const navLinks = document.querySelectorAll(".nav-links > li");
-
-        navLinks.forEach((link) => {
-          const dropdown = link.querySelector("ul");
-          if (dropdown) {
-            link.addEventListener("mouseenter", () => {
-              dropdown.style.display = "block";
-            });
-
-            link.addEventListener("mouseleave", () => {
-              dropdown.style.display = "none";
-            });
-          }  
-        });
-      </script>
-      
-      
-      
+    <!-- Logo Section -->
+    <div>
+      <a href="/" style="font-size: 24px; font-weight: bold; text-decoration: none; color: white;">
+        Riq to Link <span style="color: orange;">Tours</span>
+      </a>
     </div>
-  </nav>
+
+    <!-- Navigation Links -->
+    <ul class="nav-links" style="list-style: none; padding: 0; margin: 0; display: flex; gap: 10px;">
+      <li>
+        <a href="/" style="text-decoration: none; color: wheat; padding: 5px;">Home</a>
+      </li>
+      <li style="position: relative;">
+        <a href="#" style="text-decoration: none; color: wheat; padding: 5px;">
+          Destinations <i class="fa fa-caret-down"></i>
+        </a>
+        <ul style="display: none; position: absolute; background-color: white; box-shadow: 0 0px 1px rgba(0, 0, 0, 0.2); padding: 10px; list-style: none; margin: 0; z-index: 10; font-size: 0.9rem; width: 100px;">
+          <li style="padding: 5px;"><a href="#" style="text-decoration: none; color: black;">Kenya</a></li>
+          <li style="padding: 5px;"><a href="#" style="text-decoration: none; color: black;">Tanzania</a></li>
+          <li style="padding: 5px;"><a href="#" style="text-decoration: none; color: black;">Qatar</a></li>
+        </ul>
+      </li>
+      
+      <li>
+        <a href="/about" style="text-decoration: none; color: wheat; padding: 5px;">Who We Are</a>
+      </li>
+      <li>
+        <a href="/experiences" style="text-decoration: none; color: wheat; padding: 5px;">Experiences</a>
+      </li>
+      <li>
+        <a href="/guides" style="text-decoration: none; color: wheat; padding: 5px;">Guides</a>
+      </li>
+      <li>
+        <a href="#" style="text-decoration: none; color: wheat; padding: 5px;">
+          <i class="fa fa-phone" style="font-size: 20px;"></i>
+        </a>
+      </li>
+      <li>
+        <a href="/login" style="text-decoration: none; color: wheat; padding: 5px;">
+          <i class="fa fa-user-circle" style="font-size: 20px;"></i>
+        </a>
+      </li>
+    </ul>
+
+    <script>
+      const navLinks = document.querySelectorAll(".nav-links > li");
+
+      navLinks.forEach((link) => {
+        const dropdown = link.querySelector("ul");
+        if (dropdown) {
+          link.addEventListener("mouseenter", () => {
+            dropdown.style.display = "block";
+          });
+
+          link.addEventListener("mouseleave", () => {
+            dropdown.style.display = "none";
+          });
+        }
+      });
+    </script>
+  </div>
+</nav>
+
+<!-- Font Awesome Script -->
+<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
+  
+  <!-- Font Awesome Script -->
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  
 
   <section style="position: relative; background-image: url('images/suswa.jpg'); background-size: cover; background-position: center; height: 600px; color: white;">
 

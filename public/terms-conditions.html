@@ -145,42 +145,57 @@
   </style>
 </head>
 <body>
-  <!-- Top Bar -->
-  <div class="top-bar">
-    <div class="social-icons">
-      <a href="https://www.facebook.com/NairusTravel" class="icon-circle" title="Facebook"><i class="fab fa-facebook-f"></i></a>
-      <a href="#" class="icon-circle" title="Twitter"><i class="fab fa-twitter"></i></a>
-      <a href="#" class="icon-circle" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
-      <a href="#" class="icon-circle" title="YouTube"><i class="fab fa-youtube"></i></a>
+    <!-- Top Bar Section -->
+<div class="top-bar" style="display: flex; justify-content: space-between; align-items: center; background-color: #f8f9fa; padding: 10px 20px; font-family: Arial, sans-serif; font-size: 14px;">
+  
+    <!-- Left Section: Flag and Dropdown -->
+    <div style="display: flex; align-items: center; gap: 15px;">
+      <div style="display: flex; align-items: center;">
+        <img src="https://flagcdn.com/w40/ke.png" alt="Kenya Flag" style="width: 20px; height: auto;">
+        <span style="margin-left: 5px;">KE</span>
+        <span style="margin-left: 10px; cursor: pointer;">▼</span>
+      </div>
+      
+      <!-- Favorite Icon with Circle -->
+      <a href="#" class="favorite-icon" style="text-decoration: none; font-size: 16px; color: red; border: 1px solid red; border-radius: 50%; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center; text-align: center;">❤</a>
+      
+      <!-- Social Media Icons -->
+      <div class="social-icons" style="display: flex; gap: 10px;">
+        <a href="https://facebook.com" target="_blank" class="icon-circle" style="text-decoration: none; color: #1877f2; font-size: 16px;">
+          <i class="fab fa-facebook-f"></i>
+        </a>
+        <a href="https://x.com" target="_blank" class="icon-circle" style="text-decoration: none; color: black; font-size: 16px;">
+          <i class="fab fa-x"></i>
+        </a>
+        <a href="https://instagram.com" target="_blank" class="icon-circle" style="text-decoration: none; color: #e4405f; font-size: 16px;">
+          <i class="fab fa-instagram"></i>
+        </a>
+        <a href="https://linkedin.com" target="_blank" class="icon-circle" style="text-decoration: none; color: #0077b5; font-size: 16px;">
+          <i class="fab fa-linkedin-in"></i>
+        </a>
+      </div>
     </div>
-
-    <a href="https://www.nairustours.com/my-bookings" 
-   style="
-     display: inline-flex;
-     align-items: center;
-     text-decoration: none;
-     background-color: #01b8ff; /* Light blue background */
-     color: white; /* White text color */
-     padding: 10px 20px; /* Padding for the button */
-     border-radius: 5px; /* Rounded corners */
-     font-size: 1rem; /* Adjust font size */
-     font-weight: bold; /* Bold text */
-     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-     transition: all 0.3s ease; /* Smooth hover effect */
-   " 
-   onmouseover="this.style.backgroundColor='#017bbf'; this.style.transform='scale(1.05)';"
-   onmouseout="this.style.backgroundColor='#01b8ff'; this.style.transform='scale(1)';">
-   <i class="fas fa-book" style="margin-right: 8px; font-size: 1.2rem;"></i> My Booking
-</a>
-
+    
+    <!-- Center Section: Contact Info -->
+    <div style="display: flex; align-items: center;">
+      <span style="color: #333;">Call us today from 10am</span>
+      <a href="tel:+254707268547" style="text-decoration: none; color: #007bff; margin-left: 5px; font-weight: bold;">+254 707 268 547</a>
+    </div>
+    
+    <!-- Right Section: Request a Quote -->
+    <div>
+      <a href="/quote" class="quote-button" style="background-color: #007bff; color: white; padding: 8px 15px; border-radius: 5px; text-decoration: none; font-weight: bold;">REQUEST A QUOTE</a>
+    </div>
+  
   </div>
+  
 
  <!-- Navbar -->
 <nav class="navbar" style="display: flex; align-items: center; justify-content: space-between; padding: 10px 40px; background-color: white; border-bottom: 2px solid #ddd;">
     <!-- Logo -->
     <div class="logo" style="flex: 0 0 auto; margin-right: 70px;"> <!-- Increased space between logo and "Home" -->
         <a href="/">
-            <img src="images/logo-latest.jpg" alt="Nairus Logo" style="height: 55px; width: 55px;">
+            <img src="images/logo-latest.jpg" alt=" Logo" style="height: 55px; width: 55px;">
         </a>
     </div>
 
@@ -197,7 +212,7 @@
             <a href="/who-we-are" style="color: black; text-decoration: none; padding: 5px 10px;">Who We Are</a>
         </li>
         <li style="margin: 0 0px;">
-            <a href="/hajj-umrah" style="color: black; text-decoration: none; padding: 5px 10px;">Hajj & Umrah</a>
+            <a href="/Destinations" style="color: black; text-decoration: none; padding: 5px 10px;">Destinations</a>
         </li>
 
         <!-- Dropdown Menu -->
@@ -212,10 +227,10 @@
         </li>
 
         <li style="margin: 0 0px;">
-            <a href="/daily-packages" style="color: black; text-decoration: none; padding: 5px 10px;">Daily Packages</a>
+            <a href="/guides" style="color: black; text-decoration: none; padding: 5px 10px;">Guides</a>
         </li>
         <li style="margin: 0 0px;">
-            <a href="/gallery-section" style="color: black; text-decoration: none; padding: 5px 10px;">Gallery</a>
+            <a href="/gallery-section" style="color: black; text-decoration: none; padding: 5px 10px;">Experiences</a>
         </li>
 
         <!-- Contact Us Button -->
@@ -289,6 +304,7 @@
 
 </body>
 </html>
+
 
 
 

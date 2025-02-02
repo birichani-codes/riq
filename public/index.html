@@ -219,72 +219,85 @@
     </div>
   </div>
 
- <!-- Existing Riq Navigation Section -->
-<nav class="nav-bar">
+ <!-- Updated Riq Responsive Navigation -->
+<nav style="background: #222; padding: 10px 20px; color: white; position: relative;">
   <div style="display: flex; justify-content: space-between; align-items: center;">
 
-    <!-- Logo Section -->
+    <!-- Logo -->
     <div>
       <a href="/" style="font-size: 24px; font-weight: bold; text-decoration: none; color: white;">
         Riq to Link <span style="color: orange;">Tours</span>
       </a>
     </div>
 
+    <!-- Hamburger Menu -->
+    <div class="menu-toggle" onclick="toggleMenu()" style="display: none; font-size: 24px; cursor: pointer;">
+      <i class="fa fa-bars"></i>
+    </div>
+
     <!-- Navigation Links -->
-    <ul class="nav-links" style="list-style: none; padding: 0; margin: 0; display: flex; gap: 10px;">
-      <li>
-        <a href="/" style="text-decoration: none; color: wheat; padding: 5px;">Home</a>
-      </li>
-      <li style="position: relative;">
-        <a href="#" style="text-decoration: none; color: wheat; padding: 5px;">
-          Destinations <i class="fa fa-caret-down"></i>
-        </a>
-        <ul style="display: none; position: absolute; background-color: white; box-shadow: 0 0px 1px rgba(0, 0, 0, 0.2); padding: 10px; list-style: none; margin: 0; z-index: 10; font-size: 0.9rem; width: 100px;">
-          <li style="padding: 5px;"><a href="#" style="text-decoration: none; color: black;">Kenya</a></li>
-          <li style="padding: 5px;"><a href="#" style="text-decoration: none; color: black;">Tanzania</a></li>
-          <li style="padding: 5px;"><a href="#" style="text-decoration: none; color: black;">Qatar</a></li>
+    <ul class="nav-links" style="list-style: none; display: flex; gap: 15px; margin: 0; padding: 0;">
+      <li style="padding: 10px;"><a href="/" style="text-decoration: none; color: wheat;">Home</a></li>
+      <li class="dropdown-container" style="position: relative; padding: 10px;">
+        <a href="#" style="text-decoration: none; color: wheat;">Destinations <i class="fa fa-caret-down"></i></a>
+        <ul class="dropdown" style="display: none; position: absolute; background: white; box-shadow: 0 4px 8px rgba(0,0,0,0.15); padding: 10px; list-style: none; margin: 0; z-index: 10; width: 140px; border-radius: 8px; top: 40px; left: 0;">
+          <li style="padding: 8px 12px; border-bottom: 1px solid #ddd;"><a href="/kenya" style="text-decoration: none; color: black;">🇰🇪 Kenya</a></li>
+          <li style="padding: 8px 12px; border-bottom: 1px solid #ddd;"><a href="/tanzania" style="text-decoration: none; color: black;">🇹🇿 Tanzania</a></li>
+          <li style="padding: 8px 12px; border-bottom: 1px solid #ddd;"><a href="/qatar" style="text-decoration: none; color: black;">🇶🇦 Qatar</a></li>
+          <li style="padding: 8px 12px; border-bottom: 1px solid #ddd;"><a href="/dubai" style="text-decoration: none; color: black;">🇦🇪 Dubai</a></li>
+          <li style="padding: 8px 12px;"><a href="/egypt" style="text-decoration: none; color: black;">🇪🇬 Egypt</a></li>
         </ul>
       </li>
-      
-      <li>
-        <a href="/about" style="text-decoration: none; color: wheat; padding: 5px;">Who We Are</a>
-      </li>
-      <li>
-        <a href="/experiences" style="text-decoration: none; color: wheat; padding: 5px;">Experiences</a>
-      </li>
-      <li>
-        <a href="/guides" style="text-decoration: none; color: wheat; padding: 5px;">Guides</a>
-      </li>
-      <li>
-        <a href="#" style="text-decoration: none; color: wheat; padding: 5px;">
-          <i class="fa fa-phone" style="font-size: 20px;"></i>
-        </a>
-      </li>
-      <li>
-        <a href="/login" style="text-decoration: none; color: wheat; padding: 5px;">
-          <i class="fa fa-user-circle" style="font-size: 20px;"></i>
-        </a>
-      </li>
+      <li style="padding: 10px;"><a href="/about" style="text-decoration: none; color: wheat;">Who We Are</a></li>
+      <li style="padding: 10px;"><a href="/experiences" style="text-decoration: none; color: wheat;">Experiences</a></li>
+      <li style="padding: 10px;"><a href="/guides" style="text-decoration: none; color: wheat;">Guides</a></li>
+      <li style="padding: 10px;"><a href="#" style="text-decoration: none; color: wheat;"><i class="fa fa-phone" style="font-size: 20px;"></i></a></li>
+      <li style="padding: 10px;"><a href="/login" style="text-decoration: none; color: wheat;"><i class="fa fa-user-circle" style="font-size: 20px;"></i></a></li>
     </ul>
-
-    <script>
-      const navLinks = document.querySelectorAll(".nav-links > li");
-
-      navLinks.forEach((link) => {
-        const dropdown = link.querySelector("ul");
-        if (dropdown) {
-          link.addEventListener("mouseenter", () => {
-            dropdown.style.display = "block";
-          });
-
-          link.addEventListener("mouseleave", () => {
-            dropdown.style.display = "none";
-          });
-        }
-      });
-    </script>
   </div>
 </nav>
+
+<script>
+  function toggleMenu() {
+    const navLinks = document.querySelector(".nav-links");
+    if (navLinks.style.display === "flex") {
+      navLinks.style.display = "none";
+    } else {
+      navLinks.style.display = "flex";
+      navLinks.style.flexDirection = "column";
+      navLinks.style.position = "absolute";
+      navLinks.style.top = "60px";
+      navLinks.style.left = "0";
+      navLinks.style.background = "#222";
+      navLinks.style.width = "100%";
+      navLinks.style.padding = "15px";
+    }
+  }
+
+  document.querySelectorAll(".dropdown-container").forEach((item) => {
+    item.addEventListener("click", function (event) {
+      event.stopPropagation();
+      let dropdown = this.querySelector(".dropdown");
+      dropdown.style.display = dropdown.style.display === "block" ? "none" : "block";
+    });
+  });
+
+  window.addEventListener("resize", function () {
+    if (window.innerWidth > 768) {
+      document.querySelector(".nav-links").style.display = "flex";
+    } else {
+      document.querySelector(".nav-links").style.display = "none";
+    }
+  });
+
+  document.addEventListener("click", function (event) {
+    document.querySelectorAll(".dropdown").forEach((dropdown) => {
+      dropdown.style.display = "none";
+    });
+  });
+</script>
+
+
 
 <!-- Font Awesome Script -->
 <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>

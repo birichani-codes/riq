@@ -218,10 +218,9 @@
       <a href="/quote" class="quote-button">REQUEST A QUOTE</a>
     </div>
   </div>
-
- <!-- Updated Riq Responsive Navigation -->
+<!-- Updated Riq Responsive Navigation -->
 <nav style="background: #222; padding: 10px 20px; color: white; position: relative;">
-  <div style="display: flex; justify-content: space-between; align-items: center;">
+  <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap;">
 
     <!-- Logo -->
     <div>
@@ -230,13 +229,13 @@
       </a>
     </div>
 
-    <!-- Hamburger Menu -->
-    <div class="menu-toggle" onclick="toggleMenu()" style="display: none; font-size: 24px; cursor: pointer;">
+    <!-- Hamburger Menu (Visible only on small screens) -->
+    <div class="menu-toggle" onclick="toggleMenu()" style="font-size: 24px; cursor: pointer; display: none;">
       <i class="fa fa-bars"></i>
     </div>
 
-    <!-- Navigation Links -->
-    <ul class="nav-links" style="list-style: none; display: flex; gap: 15px; margin: 0; padding: 0;">
+    <!-- Navigation Links (Visible by default on large screens) -->
+    <ul class="nav-links" style="list-style: none; display: flex; gap: 15px; margin: 0; padding: 0; flex-wrap: wrap;">
       <li style="padding: 10px;"><a href="/" style="text-decoration: none; color: wheat;">Home</a></li>
       <li class="dropdown-container" style="position: relative; padding: 10px;">
         <a href="#" style="text-decoration: none; color: wheat;">Destinations <i class="fa fa-caret-down"></i></a>
@@ -285,8 +284,10 @@
   window.addEventListener("resize", function () {
     if (window.innerWidth > 768) {
       document.querySelector(".nav-links").style.display = "flex";
+      document.querySelector(".menu-toggle").style.display = "none"; // Hide hamburger on larger screens
     } else {
       document.querySelector(".nav-links").style.display = "none";
+      document.querySelector(".menu-toggle").style.display = "block"; // Show hamburger on smaller screens
     }
   });
 

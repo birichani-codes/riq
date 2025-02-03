@@ -1,111 +1,113 @@
 {
-    "packages": [
+  "packages": [
       {
-        "title": "Land of the Northern Lights",
-        "location": {
-          "start": "Reykjavik",
-          "end": "Reykjavik"
-        },
-        "mapId": "map1",
-        "promoLabels": [
-          "Best Seller",
-          "Save 30%"
-        ],
-        "details": {
-          "duration": "5 days",
-          "tourType": "Tours",
-          "groupSize": "40"
-        },
-        "price": {
-          "original": "£1,045 pp",
-          "discounted": "£732 pp",
-          "discount": "30%"
-        }
+          "title": "Land of the Northern Lights",
+          "location": {
+              "start": "Reykjavik",
+              "end": "Reykjavik"
+          },
+          "mapId": "map1",
+          "image": "images/t1.jpg",
+          "promoLabels": [
+              "Best Seller",
+              "Save 30%"
+          ],
+          "details": {
+              "duration": "5 days",
+              "tourType": "Tours",
+              "groupSize": "40"
+          },
+          "price": {
+              "original": "KES 167,200 pp",
+              "discounted": "KES 117,120 pp",
+              "discount": "30%"
+          }
       },
       {
-        "title": "Enchanting Italy",
-        "location": {
-          "start": "Rome",
-          "end": "Rome"
-        },
-        "image": "images/nairobi.jpg",
-        "promoLabels": [
-          "Exclusive Offer"
-        ],
-        "details": {
-          "duration": "10 days",
-          "tourType": "Tours",
-          "groupSize": "40"
-        },
-        "price": {
-          "original": "£5,599",
-          "discounted": "£2,799",
-          "discount": "50%"
-        }
+          "title": "Enchanting Italy",
+          "location": {
+              "start": "Rome",
+              "end": "Rome"
+          },
+          "image": "images/t3.jpg",
+          "promoLabels": [
+              "Exclusive Offer"
+          ],
+          "details": {
+              "duration": "10 days",
+              "tourType": "Tours",
+              "groupSize": "40"
+          },
+          "price": {
+              "original": "KES 895,840",
+              "discounted": "KES 447,840",
+              "discount": "50%"
+          }
       },
       {
-        "title": "Magical Maldives",
-        "location": {
-          "start": "Male",
-          "end": "Male"
-        },
-        "mapId": "map3",
-        "promoLabels": [
-          "Limited Time Offer"
-        ],
-        "details": {
-          "duration": "7 days",
-          "tourType": "Beach",
-          "groupSize": "30"
-        },
-        "price": {
-          "original": "£1,899 pp",
-          "discounted": "£1,299 pp",
-          "discount": "30%"
-        }
+          "title": "Magical Maldives",
+          "location": {
+              "start": "Male",
+              "end": "Male"
+          },
+          "mapId": "map3",
+          "image": "images/suswa.jpg",
+          "promoLabels": [
+              "Limited Time Offer"
+          ],
+          "details": {
+              "duration": "7 days",
+              "tourType": "Beach",
+              "groupSize": "30"
+          },
+          "price": {
+              "original": "KES 303,840 pp",
+              "discounted": "KES 207,840 pp",
+              "discount": "30%"
+          }
       },
       {
-        "title": "Mystical Morocco",
-        "location": {
-          "start": "Marrakech",
-          "end": "Marrakech"
-        },
-        "mapId": "map4",
-        "promoLabels": [
-          "New Arrival"
-        ],
-        "details": {
-          "duration": "8 days",
-          "tourType": "Cultural",
-          "groupSize": "35"
-        },
-        "price": {
-          "original": "£1,599 pp",
-          "discounted": "£1,199 pp",
-          "discount": "25%"
-        }
+          "title": "Mystical Morocco",
+          "location": {
+              "start": "Marrakech",
+              "end": "Marrakech"
+          },
+          "mapId": "map4",
+          "image": "images/t3.jpg",
+          "promoLabels": [
+              "New Arrival"
+          ],
+          "details": {
+              "duration": "8 days",
+              "tourType": "Cultural",
+              "groupSize": "35"
+          },
+          "price": {
+              "original": "KES 255,840 pp",
+              "discounted": "KES 191,840 pp",
+              "discount": "25%"
+          }
       },
       {
-        "title": "Safari Adventure",
-        "location": {
-          "start": "Nairobi",
-          "end": "Nairobi"
-        },
-        "image": "images/safari.jpg",
-        "promoLabels": [
-          "Flash Sale"
-        ],
-        "details": {
-          "duration": "12 days",
-          "tourType": "Safari",
-          "groupSize": "20"
-        },
-        "price": {
-          "original": "£3,500",
-          "discounted": "£2,499",
-          "discount": "40%"
-        }
+          "title": "Safari Adventure",
+          "location": {
+              "start": "Nairobi",
+              "end": "Nairobi"
+          },
+          "image": "images/t2.jpg",
+          "promoLabels": [
+              "Flash Sale"
+          ],
+          "details": {
+              "duration": "12 days",
+              "tourType": "Safari",
+              "groupSize": "20"
+          },
+          "price": {
+              "original": "KES 560,000",
+              "discounted": "KES 399,840",
+              "discount": "40%"
+          }
       }
-    ]
-  }
-  
+  ]
+}

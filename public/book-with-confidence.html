@@ -1,0 +1,758 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Riq Navigation</title>
+  <!-- Link to Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500;700&display=swap" rel="stylesheet">
+  <!-- Link to Font Awesome for Social Media Icons -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+  <style>
+    /* Responsive Styles */
+    @media (max-width: 768px) {
+      /* Top bar adjustments */
+      .top-bar {
+        flex-wrap: wrap; /* Allow wrapping for inline elements */
+        gap: 10px; /* Add spacing between items */
+      }
+
+      .top-bar > div {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 10px;
+        flex-wrap: wrap; /* Wrap content if needed */
+      }
+
+      /* Navigation bar adjustments */
+      .nav-bar {
+        padding: 10px;
+      }
+
+      .nav-links {
+        flex-wrap: wrap; /* Allow wrapping for navigation links */
+        gap: 5px; /* Adjust gap between links */
+        justify-content: center; /* Center align on smaller screens */
+      }
+
+      .nav-links a {
+        padding: 8px 10px; /* Adjust padding for smaller screens */
+      }
+    }
+
+    @media (max-width: 480px) {
+      /* Adjust top bar for very small screens */
+      .top-bar {
+        gap: 8px; /* Smaller gaps for compact layout */
+        font-size: 12px; /* Reduce font size */
+      }
+
+      .social-icons .icon-circle,
+      .favorite-icon {
+        width: 35px;
+        height: 35px; /* Smaller icons */
+        font-size: 14px;
+      }
+
+      .quote-button {
+        font-size: 12px;
+        padding: 8px 10px; /* Adjust button size */
+      }
+
+      .nav-links {
+        gap: 5px; /* Tighter gaps */
+      }
+
+      .nav-links a {
+        padding: 6px 8px; /* Adjust link padding */
+        font-size: 14px; /* Reduce font size */
+      }
+    }
+  </style>
+
+  <style>
+    /* Social Media Icons container */
+    .social-icons {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    /* Circle effect for social media icons */
+    .social-icons .icon-circle {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background-color: #ffffff;
+      color: #0d4b9c; /* Default color for the icon */
+      font-size: 18px;
+      transition: background-color 0.3s, color 0.3s;
+      text-decoration: none; /* Remove underline from the icon */
+    }
+
+    /* Hover effect */
+    .social-icons .icon-circle:hover {
+      background-color: #37d4d9; /* Hover color for the circle */
+      color: white; /* Icon color on hover */
+    }
+
+    /* Circle effect for the heart (favorite) icon */
+    .favorite-icon {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background-color: #ffffff;
+      color: #0d4b9c;
+      font-size: 18px;
+      transition: background-color 0.3s, color 0.3s;
+      margin-right: 10px; /* Same spacing as social icons */
+      text-decoration: none; /* Remove underline from the heart icon */
+    }
+
+    .favorite-icon:hover {
+      background-color: #37d4d9; /* Hover color for the circle */
+      color: white; /* Icon color on hover */
+    }
+
+    /* Style for the 'Request a Quote' button */
+    .quote-button {
+      background-color: #007bff;
+      color: white;
+      padding: 10px 15px;
+      text-decoration: none;
+      border-radius: 10px; /* Rounded corners */
+      font-weight: bold;
+    }
+
+    /* Styling for navigation links */
+    .nav-links {
+      display: flex; /* Horizontal layout for nav links */
+      list-style: none; /* Removes default bullet points */
+      gap: 10px; /* Space between nav links */
+    }
+
+    .nav-links li {
+      position: relative; /* Allows positioning dropdown menus */
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: inherit;
+      font-weight: bold;
+      display: block; /* Ensure the background covers the entire area */
+      padding: 10px 10px; /* Adjust padding for a better hover effect */
+      border-radius: 5px; /* Optional: Adds a slight rounded effect */
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    .nav-links a:hover {
+      background-color: rgb(13, 75, 156); /* Blue background on hover */
+      color: white; /* Hover color effect */
+    }
+
+    /* Styling for the top bar and navigation bar */
+    .top-bar {
+      background-color: #f8f9fa;
+      padding: 10px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 14px;
+      border-bottom: 1px solid #ddd;
+    }
+
+    .nav-bar {
+      background-color: #002b5b;
+      color: white;
+      padding: 15px 20px;
+    }
+  </style>
+</head>
+<body style="margin: 0; font-family: 'Jost', sans-serif;">
+
+  <!-- Top Bar Section -->
+  <div class="top-bar">
+    <!-- Left Section: Flag and Dropdown -->
+    <div style="display: flex; align-items: center; gap: 15px;">
+      <div>
+        <img src="https://flagcdn.com/w40/ke.png" alt="Kenya Flag" style="width: 20px; height: auto;">
+        <span style="margin-left: 5px;">KE</span>
+        <span style="margin-left: 10px;">▼</span>
+      </div>
+      
+      <!-- Favorite Icon with Circle -->
+      <a href="#" class="favorite-icon">❤</a>
+      
+      <!-- Social Media Icons -->
+      <div class="social-icons">
+        <a href="https://facebook.com" target="_blank" class="icon-circle">
+          <i class="fab fa-facebook-f"></i>
+        </a>
+        <a href="https://x.com" target="_blank" class="icon-circle">
+          <i class="fab fa-x"></i> <!-- X logo for Twitter -->
+        </a>
+        <a href="https://instagram.com" target="_blank" class="icon-circle">
+          <i class="fab fa-instagram"></i>
+        </a>
+        <a href="https://linkedin.com" target="_blank" class="icon-circle">
+          <i class="fab fa-linkedin-in"></i>
+        </a>
+      </div>
+    </div>
+    
+    <!-- Center Section: Contact Info -->
+    <div>
+      <span>Call us today from 10am</span>
+      <a href="tel:+254707268547" style="text-decoration: none; color: #007bff; margin-left: 5px; font-weight: bold;">+254 707 268 547</a>
+    </div>
+    
+    <!-- Right Section: Request a Quote -->
+    <div>
+      <a href="/quote" class="quote-button">REQUEST A QUOTE</a>
+    </div>
+  </div>
+
+ <!-- Updated Riq Responsive Navigation -->
+<nav style="background: #222; padding: 10px 20px; color: white; position: relative;">
+  <div style="display: flex; justify-content: space-between; align-items: center;">
+
+    <!-- Logo -->
+    <div>
+      <a href="/" style="font-size: 24px; font-weight: bold; text-decoration: none; color: white;">
+        Riq to Link <span style="color: orange;">Tours</span>
+      </a>
+    </div>
+
+    <!-- Hamburger Menu -->
+    <div class="menu-toggle" onclick="toggleMenu()" style="display: none; font-size: 24px; cursor: pointer;">
+      <i class="fa fa-bars"></i>
+    </div>
+
+   <!-- Navigation Links -->
+<ul class="nav-links" style="list-style: none; display: flex; gap: 15px; margin: 0; padding: 0; font-family: 'Jost', sans-serif;">
+  <li style="padding: 10px;"><a href="/" style="text-decoration: none; color: wheat;">Home</a></li>
+  
+  <li class="dropdown-container" style="position: relative; padding: 10px;">
+    <a href="#" style="text-decoration: none; color: wheat;">Destinations <i class="fa fa-caret-down"></i></a>
+    <ul class="dropdown" style="display: none; position: absolute; background: white; box-shadow: 0 4px 8px rgba(0,0,0,0.15); padding: 10px; list-style: none; margin: 0; z-index: 10; width: 140px; border-radius: 8px; top: 40px; left: 0;">
+      <li style="padding: 8px 12px; border-bottom: 1px solid #ddd;"><a href="/kenya" style="text-decoration: none; color: black;">🇰🇪 Kenya</a></li>
+      <li style="padding: 8px 12px; border-bottom: 1px solid #ddd;"><a href="/tanzania" style="text-decoration: none; color: black;">🇹🇿 Tanzania</a></li>
+      <li style="padding: 8px 12px; border-bottom: 1px solid #ddd;"><a href="/qatar" style="text-decoration: none; color: black;">🇶🇦 Qatar</a></li>
+      <li style="padding: 8px 12px; border-bottom: 1px solid #ddd;"><a href="/dubai" style="text-decoration: none; color: black;">🇦🇪 Dubai</a></li>
+      <li style="padding: 8px 12px;"><a href="/egypt" style="text-decoration: none; color: black;">🇪🇬 Egypt</a></li>
+    </ul>
+  </li>
+
+  <!-- Travel Info Dropdown -->
+  <li class="dropdown-container" style="position: relative; padding: 10px;">
+    <a href="#" style="text-decoration: none; color: wheat;">Travel Info <i class="fa fa-caret-down"></i></a>
+    <ul class="dropdown" style="display: none; position: absolute; background: white; box-shadow: 0 4px 8px rgba(0,0,0,0.15); padding: 10px; list-style: none; margin: 0; z-index: 10; width: 200px; border-radius: 8px; top: 40px; left: 0;">
+      <li style="padding: 8px 12px; border-bottom: 1px solid #ddd;"><a href="/book-with-confidence" style="text-decoration: none; color: black;">Book With Confidence</a></li>
+      <li style="padding: 8px 12px; border-bottom: 1px solid #ddd;"><a href="/why-book-with-us" style="text-decoration: none; color: black;">Why Book With Us</a></li>
+      <li style="padding: 8px 12px; border-bottom: 1px solid #ddd;"><a href="/booking-terms" style="text-decoration: none; color: black;">Booking Terms</a></li>
+      <li style="padding: 8px 12px; border-bottom: 1px solid #ddd;"><a href="/sustainability-policy" style="text-decoration: none; color: black;">Sustainability Policy</a></li>
+      <li style="padding: 8px 12px;"><a href="/about-us" style="text-decoration: none; color: black;">About Us</a></li>
+    </ul>
+  </li>
+
+  <li style="padding: 10px;"><a href="/about" style="text-decoration: none; color: wheat;">Who We Are</a></li>
+  <li style="padding: 10px;"><a href="/experiences" style="text-decoration: none; color: wheat;">Experiences</a></li>
+  <li style="padding: 10px;"><a href="/guides" style="text-decoration: none; color: wheat;">Guides</a></li>
+  <li style="padding: 10px;"><a href="#" style="text-decoration: none; color: wheat;"><i class="fa fa-phone" style="font-size: 20px;"></i></a></li>
+  <li style="padding: 10px;"><a href="/login" style="text-decoration: none; color: wheat;"><i class="fa fa-user-circle" style="font-size: 20px;"></i></a></li>
+</ul>
+
+<script>
+  document.querySelectorAll('.dropdown-container').forEach(item => {
+    item.addEventListener('mouseenter', () => {
+      item.querySelector('.dropdown').style.display = 'block';
+    });
+    item.addEventListener('mouseleave', () => {
+      item.querySelector('.dropdown').style.display = 'none';
+    });
+  });
+</script>
+
+  </div>
+</nav>
+
+<script>
+  function toggleMenu() {
+    const navLinks = document.querySelector(".nav-links");
+    if (navLinks.style.display === "flex") {
+      navLinks.style.display = "none";
+    } else {
+      navLinks.style.display = "flex";
+      navLinks.style.flexDirection = "column";
+      navLinks.style.position = "absolute";
+      navLinks.style.top = "60px";
+      navLinks.style.left = "0";
+      navLinks.style.background = "#222";
+      navLinks.style.width = "100%";
+      navLinks.style.padding = "15px";
+    }
+  }
+
+  document.querySelectorAll(".dropdown-container").forEach((item) => {
+    item.addEventListener("click", function (event) {
+      event.stopPropagation();
+      let dropdown = this.querySelector(".dropdown");
+      dropdown.style.display = dropdown.style.display === "block" ? "none" : "block";
+    });
+  });
+
+  window.addEventListener("resize", function () {
+    if (window.innerWidth > 768) {
+      document.querySelector(".nav-links").style.display = "flex";
+    } else {
+      document.querySelector(".nav-links").style.display = "none";
+    }
+  });
+
+  document.addEventListener("click", function (event) {
+    document.querySelectorAll(".dropdown").forEach((dropdown) => {
+      dropdown.style.display = "none";
+    });
+  });
+</script>
+
+
+
+<!-- Book with Confidence Section -->
+<section style="margin: 0; font-family: Arial, sans-serif; line-height: 1.6; color: #333;">
+
+    <!-- Hero Section -->
+    <div class="hero" style="position: relative; width: 100%; height: 400px; background-image: url('images/t1.jpg'); background-size: cover; background-position: center; text-align: center; color: white; display: flex; flex-direction: column; justify-content: center; align-items: center; padding: 20px;">
+        <h1 style="font-size: 36px; font-weight: bold; margin: 0;">BOOK AND TRAVEL WITH CONFIDENCE</h1>
+        <p style="max-width: 800px; font-size: 16px; margin-top: 10px;">
+            Expect flexibility and care when booking with Nordic Visitor. You can now secure a tour with as little as a 10% deposit. 
+            And you can protect your payments with our optional Cancellation Protection. This way you can start planning knowing you're in good hands.
+        </p>
+    </div>
+
+    <!-- Navigation Links -->
+    <div class="nav-links" style="display: flex; justify-content: center; background: white; padding: 10px; gap: 15px; flex-wrap: wrap; border-bottom: 1px solid #ddd;">
+        <a href="#" style="text-decoration: none; color: black; font-size: 14px;"><i class="fas fa-shield-alt"></i> CANCELLATION PROTECTION</a>
+        <a href="#" style="text-decoration: none; color: black; font-size: 14px;"><i class="fas fa-hand-holding-usd"></i> 10% DEPOSIT</a>
+        <a href="#" style="text-decoration: none; color: black; font-size: 14px;"><i class="fas fa-star"></i> REVIEWS</a>
+        <a href="#" style="text-decoration: none; color: black; font-size: 14px;"><i class="fas fa-certificate"></i> CERTIFICATIONS</a>
+        <a href="#" style="text-decoration: none; color: black; font-size: 14px;"><i class="fas fa-question-circle"></i> FAQ</a>
+        <a href="#" style="text-decoration: none; color: black; font-size: 14px;"><i class="fas fa-info-circle"></i> WHY US</a>
+        <a href="#" style="text-decoration: none; color: black; font-size: 14px;"><i class="fas fa-globe"></i> INFORMATION HUB</a>
+        <a href="#" class="contact-button" style="background: #e74c3c; color: white; padding: 5px 15px; border-radius: 5px; text-decoration: none; font-size: 14px;">
+            <i class="fas fa-envelope"></i> CONTACT US
+        </a>
+    </div>
+
+    <!-- Content Section -->
+    <div class="content" style="display: flex; justify-content: center; align-items: flex-start; padding: 50px 20px; max-width: 1100px; margin: auto; gap: 40px; flex-wrap: wrap;">
+        
+        <!-- Left Column -->
+        <div style="flex: 1; min-width: 300px;">
+            <h2 style="color: #003366; font-size: 24px;">
+                <i class="fas fa-plane-departure" style="color: #003366;"></i> HAVE A SEAMLESS TRAVEL EXPERIENCE
+            </h2>
+            <p>
+                Your wellbeing, safety, and happiness are important to us. And we want you to have the utmost confidence when traveling with Nordic Visitor, from the booking process to your return home.
+            </p>
+            <p>
+                That’s why we created our optional Cancellation Protection. Book with just a 10% deposit and you’ll receive it free of charge, allowing you to protect your payments, should you need to postpone or cancel your package.
+            </p>
+            <p>
+                Below you’ll also find out more about what services we offer to ensure your peace of mind during your booking process and travels. This includes a 24/7 helpline, detailed travel documents, and more.
+            </p>
+        </div>
+
+        <!-- Right Column -->
+        <div style="flex: 1; min-width: 300px;">
+            <h3 style="color: #006699;">
+                <i class="fas fa-check-circle" style="color: #006699;"></i> WHY BOOK WITH US
+            </h3>
+            <ul style="list-style: none; padding: 0;">
+                <li style="margin-bottom: 10px;">
+                    <i class="fas fa-user-check" style="color: green;"></i> Your own local consultant to plan your trip & answer your questions
+                </li>
+                <li style="margin-bottom: 10px;">
+                    <i class="fas fa-phone-alt" style="color: green;"></i> 24/7 support helpline during tour
+                </li>
+                <li style="margin-bottom: 10px;">
+                    <i class="fas fa-shield-alt" style="color: green;"></i> Safety-vetted and quality-checked local services
+                </li>
+                <li style="margin-bottom: 10px;">
+                    <i class="fas fa-users" style="color: green;"></i> Professional service from local experts
+                </li>
+                <li style="margin-bottom: 10px;">
+                    <i class="fas fa-cogs" style="color: green;"></i> Flexible & customizable tour options
+                </li>
+            </ul>
+        </div>
+
+    </div>
+
+    <!-- Responsive Design -->
+    <style>
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 28px !important;
+            }
+            .hero p {
+                font-size: 14px !important;
+                padding: 0 10px;
+            }
+            .nav-links {
+                flex-direction: column;
+                text-align: center;
+                padding: 10px 0;
+            }
+            .content {
+                flex-direction: column;
+                padding: 30px 10px;
+            }
+            .content div {
+                text-align: center;
+            }
+            .contact-button {
+                display: block;
+                text-align: center;
+                margin: 10px auto;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero {
+                height: 300px !important;
+            }
+            .hero h1 {
+                font-size: 24px !important;
+            }
+            .hero p {
+                font-size: 12px !important;
+            }
+        }
+    </style>
+
+</section>
+
+<!-- Font Awesome CDN -->
+<script src="https://kit.fontawesome.com/YOUR_FONT_AWESOME_KIT.js" crossorigin="anonymous"></script>
+<section class="cards-container" style="display: flex; flex-direction: column; align-items: center; max-width: 900px; margin: 50px auto; gap: 20px;">
+    <!-- Card 1: Protect Your Payments -->
+    <div class="card" style="display: flex; background: white; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15); border-radius: 8px; overflow: hidden; max-width: 100%; width: 100%;">
+        <img src="images/t3.jpg" alt="Protect Your Payments" style="width: 40%; object-fit: cover;">
+        <div class="card-content" style="padding: 20px; flex: 1;">
+            <h3 style="color: #003366; font-size: 18px; margin-bottom: 10px;">PROTECT YOUR PAYMENTS</h3>
+            <p style="font-size: 14px; color: #555; line-height: 1.5;">
+                Secure a tour with a 20% deposit and receive Nordic Visitor’s Cancellation Protection for free. 
+                This protects your payments should you need to postpone or cancel your package.
+            </p>
+            <p style="font-size: 14px; color: #555; line-height: 1.5;">
+                You’ll receive a combination of refund and travel credit to be used in future. T&Cs apply. Not available on all tours.
+            </p>
+            <a href="#" class="btn" style="display: inline-block; margin-top: 10px; padding: 8px 15px; background: #2c8bba; color: white; text-decoration: none; border-radius: 5px; font-size: 14px; transition: 0.3s;">VIEW FULL TERMS</a>
+        </div>
+    </div>
+
+    <!-- Card 2: Affordable Deposits -->
+    <div class="card" style="display: flex; background: white; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15); border-radius: 8px; overflow: hidden; max-width: 100%; width: 100%;">
+        <img src="images/t2.jpg" alt="Affordable Deposits" style="width: 40%; object-fit: cover;">
+        <div class="card-content" style="padding: 20px; flex: 1;">
+            <h3 style="color: #003366; font-size: 18px; margin-bottom: 10px;">AFFORDABLE DEPOSITS</h3>
+            <p style="font-size: 14px; color: #555; line-height: 1.5;">
+                Give yourself something to look forward to without breaking the bank. Now, you can opt for an affordable deposit of just 10% 
+                to secure your Nordic Visitor booking for most of our destinations and packages.
+            </p>
+            <p style="font-size: 14px; color: #555; line-height: 1.5;">
+                A few packages have a minimum 50% deposit. See T&Cs for more details.
+            </p>
+            <a href="#" class="btn" style="display: inline-block; margin-top: 10px; padding: 8px 15px; background: #2c8bba; color: white; text-decoration: none; border-radius: 5px; font-size: 14px; transition: 0.3s;">VIEW FULL TERMS</a>
+        </div>
+    </div>
+
+    <!-- Card 3: Securing Your Tour Price -->
+    <div class="card" style="display: flex; background: white; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15); border-radius: 8px; overflow: hidden; max-width: 100%; width: 100%;">
+        <img src="images/t1.jpg" alt="Securing Your Tour Price" style="width: 40%; object-fit: cover;">
+        <div class="card-content" style="padding: 20px; flex: 1;">
+            <h3 style="color: #003366; font-size: 18px; margin-bottom: 10px;">SECURING YOUR TOUR PRICE</h3>
+            <p style="font-size: 14px; color: #555; line-height: 1.5;">
+                Our tours are billed in ISK, GBP, or EUR, and we have the option to secure your tour price at the time of booking. 
+                That way, you avoid currency fluctuations affecting your travel costs.
+            </p>
+            <a href="#" class="btn" style="display: inline-block; margin-top: 10px; padding: 8px 15px; background: #2c8bba; color: white; text-decoration: none; border-radius: 5px; font-size: 14px; transition: 0.3s;">VIEW FULL TERMS</a>
+        </div>
+    </div>
+</section>
+<section style="text-align: center; font-family: Arial, sans-serif; padding: 20px; max-width: 90%; margin: auto;">
+    <h2 style="font-size: 22px; font-weight: bold;">FREQUENTLY ASKED QUESTIONS ABOUT BOOKING AND TRAVELLING WITH NORDIC VISITOR</h2>
+    <p style="font-size: 16px; color: #555;">To help you Book With Confidence, we’ve answered commonly asked questions about booking and travelling with Nordic Visitor.</p>
+    <p style="font-size: 16px; color: #555;">If you have questions about international travel and destinations, see our <a href="#" style="color: red; text-decoration: none;">Travel Updates</a>.</p>
+
+    <div style="max-width: 700px; width: 100%; margin: auto; text-align: left;">
+        <div class="faq-item" style="border-bottom: 1px solid #ccc; margin-bottom: 10px;">
+            <button class="faq-question" style="width: 100%; background: none; border: none; text-align: left; font-size: 16px; font-weight: bold; padding: 10px; cursor: pointer; display: flex; justify-content: space-between; align-items: center;">
+                1. HOW DOES YOUR CANCELLATION PROTECTION WORK? <span class="arrow" style="transition: transform 0.3s ease;">▼</span>
+            </button>
+            <div class="faq-answer" style="display: none; padding: 10px; font-size: 14px; color: #333;">
+                Details about cancellation protection...
+            </div>
+        </div>
+
+        <div class="faq-item" style="border-bottom: 1px solid #ccc; margin-bottom: 10px;">
+            <button class="faq-question" style="width: 100%; background: none; border: none; text-align: left; font-size: 16px; font-weight: bold; padding: 10px; cursor: pointer; display: flex; justify-content: space-between; align-items: center;">
+                2. WHAT HAPPENS IF I’M UNABLE TO TRAVEL? <span class="arrow" style="transition: transform 0.3s ease;">▼</span>
+            </button>
+            <div class="faq-answer" style="display: none; padding: 10px; font-size: 14px; color: #333;">
+                Information on travel inability...
+            </div>
+        </div>
+
+        <div class="faq-item" style="border-bottom: 1px solid #ccc; margin-bottom: 10px;">
+            <button class="faq-question" style="width: 100%; background: none; border: none; text-align: left; font-size: 16px; font-weight: bold; padding: 10px; cursor: pointer; display: flex; justify-content: space-between; align-items: center;">
+                3. HOW DOES NORDIC VISITOR DECIDE IF IT’S SAFE TO VISIT A DESTINATION? <span class="arrow" style="transition: transform 0.3s ease;">▼</span>
+            </button>
+            <div class="faq-answer" style="display: none; padding: 10px; font-size: 14px; color: #333;">
+                Details on destination safety assessment...
+            </div>
+        </div>
+
+        <div class="faq-item" style="border-bottom: 1px solid #ccc; margin-bottom: 10px;">
+            <button class="faq-question" style="width: 100%; background: none; border: none; text-align: left; font-size: 16px; font-weight: bold; padding: 10px; cursor: pointer; display: flex; justify-content: space-between; align-items: center;">
+                4. WHAT ARE YOU DOING TO ENSURE HIGH STANDARDS OF HEALTH AND SAFETY ON YOUR TOURS? <span class="arrow" style="transition: transform 0.3s ease;">▼</span>
+            </button>
+            <div class="faq-answer" style="display: none; padding: 10px; font-size: 14px; color: #333;">
+                Health and safety measures...
+            </div>
+        </div>
+
+        <div class="faq-item" style="border-bottom: 1px solid #ccc; margin-bottom: 10px;">
+            <button class="faq-question" style="width: 100%; background: none; border: none; text-align: left; font-size: 16px; font-weight: bold; padding: 10px; cursor: pointer; display: flex; justify-content: space-between; align-items: center;">
+                5. WHAT PROCEDURES ARE IN PLACE IF I BECOME UNWELL DURING MY TOUR OR REQUIRE YOUR ASSISTANCE? <span class="arrow" style="transition: transform 0.3s ease;">▼</span>
+            </button>
+            <div class="faq-answer" style="display: none; padding: 10px; font-size: 14px; color: #333;">
+                Emergency procedures...
+            </div>
+        </div>
+
+        <div class="faq-item" style="border-bottom: 1px solid #ccc; margin-bottom: 10px;">
+            <button class="faq-question" style="width: 100%; background: none; border: none; text-align: left; font-size: 16px; font-weight: bold; padding: 10px; cursor: pointer; display: flex; justify-content: space-between; align-items: center;">
+                6. SHOULD I CONSIDER PERSONAL TRAVEL INSURANCE FOR MY TRIP? <span class="arrow" style="transition: transform 0.3s ease;">▼</span>
+            </button>
+            <div class="faq-answer" style="display: none; padding: 10px; font-size: 14px; color: #333;">
+                Information on travel insurance...
+            </div>
+        </div>
+
+        <div class="faq-item" style="border-bottom: 1px solid #ccc; margin-bottom: 10px;">
+            <button class="faq-question" style="width: 100%; background: none; border: none; text-align: left; font-size: 16px; font-weight: bold; padding: 10px; cursor: pointer; display: flex; justify-content: space-between; align-items: center;">
+                7. CAN I BOOK PACKAGES IN 2025 OR BEYOND? <span class="arrow" style="transition: transform 0.3s ease;">▼</span>
+            </button>
+            <div class="faq-answer" style="display: none; padding: 10px; font-size: 14px; color: #333;">
+                Future booking details...
+            </div>
+        </div>
+    </div>
+</section>
+
+<script>
+    document.querySelectorAll('.faq-question').forEach(button => {
+        button.addEventListener('click', function () {
+            const faqItem = this.parentElement;
+            const answer = faqItem.querySelector('.faq-answer');
+            const arrow = faqItem.querySelector('.arrow');
+
+            if (answer.style.display === 'block') {
+                answer.style.display = 'none';
+                arrow.style.transform = 'rotate(0deg)';
+            } else {
+                document.querySelectorAll('.faq-answer').forEach(item => item.style.display = 'none');
+                document.querySelectorAll('.arrow').forEach(item => item.style.transform = 'rotate(0deg)');
+                answer.style.display = 'block';
+                arrow.style.transform = 'rotate(180deg)';
+            }
+        });
+    });
+</script>
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Footer</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Jost', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        footer {
+            background-color: #f9f9f9;
+            padding: 40px 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .footer-container {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            max-width: 1200px;
+            width: 100%;
+        }
+
+        .footer-section {
+            margin: 20px;
+            flex: 1 1 200px;
+        }
+
+        .footer-section h4 {
+            font-size: 18px;
+            margin-bottom: 15px;
+        }
+
+        .footer-section ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-section ul li a {
+            text-decoration: none;
+            color: #333;
+            transition: color 0.3s;
+        }
+
+        .footer-section ul li a:hover {
+            color: #0073e6;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 15px;
+        }
+
+        .social-icons a {
+            text-decoration: none;
+            font-size: 20px;
+            color: #6a0dad;
+        }
+
+        .footer-bottom {
+            margin-top: 20px;
+            text-align: center;
+            font-size: 14px;
+            color: #666;
+        }
+
+        .language-location {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .dropdown {
+            padding: 5px;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+
+<footer>
+    <div class="footer-container">
+        <div class="footer-section">
+            <h4>Riq Adventures</h4>
+            <ul>
+                <li><a href="#">About us</a></li>
+                <li><a href="#">Values</a></li>
+                <li><a href="#">Tours</a></li>
+                <li><a href="#">Careers</a></li>
+                <li><a href="#">Media centre</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-section">
+            <h4>Support</h4>
+            <ul>
+                <li><a href="#">Contact us</a></li>
+                <li><a href="#">FAQs</a></li>
+                <li><a href="#">Riq Adventures Travel resources</a></li>
+                <li><a href="#">Pre-departure info</a></li>
+                <li><a href="#">Safety updates</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-section">
+            <h4>Community</h4>
+            <ul>
+                <li><a href="#">Blog</a></li>
+                <li><a href="#">Newsletter</a></li>
+                <li><a href="#">The Great Adventurers Club</a></li>
+                <li><a href="#">Affiliate program</a></li>
+                <li><a href="#">Brochures</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-section">
+            <h4>Travel Agents</h4>
+            <ul>
+                <li><a href="#">Agent login</a></li>
+                <li><a href="#">Agent registration</a></li>
+                <li><a href="#">Find an agent</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-section">
+            <h4>Riq Nation</h4>
+            <div class="social-icons">
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-pinterest"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-television"></i></a>
+                <a href="#"><i class="fas fa-link"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <div class="language-location">
+        <select class="dropdown">
+            <option>English</option>
+            <option>Spanish</option>
+            <option>French</option>
+        </select>
+        <select class="dropdown">
+            <option>Kenya</option>
+            <option>USA</option>
+            <option>India</option>
+        </select>
+    </div>
+
+    <div class="footer-bottom">
+        © 2025 Riq Adventures. All rights reserved. <a href="/terms">Terms and Conditions</a> · <a href="#">Privacy Policy</a> · <a href="#">Manage Cookies</a> · <a href="#">API</a>
+    </div>
+</footer>
+
+</body>
+</html>

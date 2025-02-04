@@ -28,9 +28,8 @@ app.get('/guides', (req, res) => {
   app.get('/quote', (req, res) => {
     res.sendFile(path.join(__dirname, 'public', 'quote.html'));
   });
-
-  app.get('/kenya', (req, res) => {
-    res.sendFile(path.join(__dirname, 'public', 'kenya.html'));
+  app.get('/book-with-confidence', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public', 'book-with-confidence.html'));
   });
 
 

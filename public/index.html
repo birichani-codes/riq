@@ -409,23 +409,23 @@
       <div class="destinations-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; margin-bottom: 2rem;">
         <div class="destination-card" style="background: #fff; border-radius: 8px; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); overflow: hidden; transition: transform 0.3s ease;">
           <img src="images/t1.jpg" alt="Africa tours" class="destination-image" style="width: 100%; height: 200px; object-fit: cover;">
-          <h3 class="destination-title" style="font-size: 1.5rem; margin: 1rem; color: #222; transition: background-color 0.3s ease, color 0.3s ease;">Africa tours</h3>
+          <h3 class="destination-title" style="font-size: 1.5rem; margin: 1rem; color: #222; transition: background-color 0.3s ease, color 0.3s ease;">Kenya tours</h3>
           <p class="destination-description" style="margin: 0 1rem 1.5rem; color: #666;">Explore the vibrant cultures, stunning landscapes, and incredible wildlife of Africa.</p>
         </div>
         <div class="destination-card" style="background: #fff; border-radius: 8px; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); overflow: hidden; transition: transform 0.3s ease;">
           <img src="images/t2.jpg" alt="Kenya tours" class="destination-image" style="width: 100%; height: 200px; object-fit: cover;">
-          <h3 class="destination-title" style="font-size: 1.5rem; margin: 1rem; color: #222; transition: background-color 0.3s ease, color 0.3s ease;">Kenya tours</h3>
+          <h3 class="destination-title" style="font-size: 1.5rem; margin: 1rem; color: #222; transition: background-color 0.3s ease, color 0.3s ease;">Uganda tours</h3>
           <p class="destination-description" style="margin: 0 1rem 1.5rem; color: #666;">Experience the majestic safaris, breathtaking scenery, and unique culture of Kenya.</p>
         </div>
         <div class="destination-card" style="background: #fff; border-radius: 8px; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); overflow: hidden; transition: transform 0.3s ease;">
           <img src="images/t3.jpg" alt="Asia tours" class="destination-image" style="width: 100%; height: 200px; object-fit: cover;">
-          <h3 class="destination-title" style="font-size: 1.5rem; margin: 1rem; color: #222; transition: background-color 0.3s ease, color 0.3s ease;">Asia tours</h3>
+          <h3 class="destination-title" style="font-size: 1.5rem; margin: 1rem; color: #222; transition: background-color 0.3s ease, color 0.3s ease;">Tanzania tours</h3>
           <p class="destination-description" style="margin: 0 1rem 1.5rem; color: #666;">Discover the beauty, history, and modern vibrancy of Asia.</p>
         </div>
         <div class="destination-card" style="background: #fff; border-radius: 8px; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); overflow: hidden; transition: transform 0.3s ease;">
           <img src="images/t1.jpg" alt="Europe tours" class="destination-image" style="width: 100%; height: 200px; object-fit: cover;">
-          <h3 class="destination-title" style="font-size: 1.5rem; margin: 1rem; color: #222; transition: background-color 0.3s ease, color 0.3s ease;">Europe tours</h3>
-          <p class="destination-description" style="margin: 0 1rem 1.5rem; color: #666;">Explore the rich culture, art, and cuisine across Europe.</p>
+          <h3 class="destination-title" style="font-size: 1.5rem; margin: 1rem; color: #222; transition: background-color 0.3s ease, color 0.3s ease;">Rwanda tours</h3>
+          <p class="destination-description" style="margin: 0 1rem 1.5rem; color: #666;">Explore the rich culture, art, and cuisine across Rwanda .</p>
         </div>
       </div>
       
@@ -468,10 +468,6 @@
       });
     });
   </script>
-  
-  
-  
- 
   <!DOCTYPE html>
   <html lang="en">
   <head>
@@ -486,22 +482,34 @@
         height: 200px;
       }
   
+      /* Cards container with reduced spacing */
       .cards-container {
         display: flex;
-        gap: 20px;
+        flex-wrap: wrap;
+        gap: 2px !important; /* Reduced gap between cards */
         justify-content: center;
         align-items: flex-start;
-        padding: 20px;
+        padding: 5px !important; /* Adjusted padding */
       }
   
+      /* Card styling */
       .card {
-        width: 300px;
+        width: 450px;
         background: white;
         border-radius: 10px;
         overflow: hidden;
         box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
       }
   
+      /* Responsive layout for smaller screens */
+      @media (max-width: 768px) {
+        .cards-container {
+          flex-direction: column;
+          align-items: center;
+        }
+      }
+  
+      /* Location labels */
       .location-label {
         position: absolute;
         background-color: rgba(0, 0, 0, 0.7);
@@ -522,12 +530,11 @@
         right: 10px;
       }
   
-      .save-label {
+      /* Promotional labels */
+      .save-label, .best-seller-label {
         position: absolute;
         bottom: 10px;
         left: 10px;
-        background-color: #dc3545;
-        color: white;
         padding: 5px 10px;
         font-size: 12px;
         border-radius: 5px;
@@ -535,115 +542,85 @@
         z-index: 1000;
       }
   
+      .save-label {
+        background-color: #dc3545;
+        color: white;
+      }
+  
       .best-seller-label {
-        position: absolute;
         bottom: 30px;
-        left: 10px;
         background-color: #ffc107;
         color: white;
-        padding: 5px 10px;
-        font-size: 12px;
-        border-radius: 5px;
-        font-weight: bold;
-        z-index: 1000;
       }
     </style>
   </head>
   <body style="margin: 0; font-family: Arial, sans-serif; background-color: #f4f4f4; display: flex; justify-content: center; align-items: center; min-height: 100vh;">
   
     <div class="cards-container">
-      <!-- Card 1 -->
-      <div class="card">
-        <div style="position: relative;">
-          <span class="location-label start-label">Start: Reykjavik</span>
-          <span class="location-label end-label">End: Reykjavik</span>
-          <div id="map1" class="map-container"></div>
-          <span class="promo-label best-seller-label">Best Seller</span>
-          <span class="save-label">Save 30%</span>
-        </div>
-        <div style="padding: 20px;">
-          <h3 style="font-size: 18px; font-weight: bold; color: #333; margin-bottom: 15px;">Land of the Northern Lights</h3>
-          <ul style="list-style: none; padding: 0; margin: 0; font-size: 14px; color: #666;">
-            <li style="margin-bottom: 5px;"><strong>Duration:</strong> 5 days</li>
-            <li style="margin-bottom: 5px;"><strong>Tour Type:</strong> Tours</li>
-            <li style="margin-bottom: 5px;"><strong>Starts:</strong> Reykjavik</li>
-            <li style="margin-bottom: 5px;"><strong>Ends:</strong> Reykjavik</li>
-            <li style="margin-bottom: 5px;"><strong>Max Group Size:</strong> 40</li>
-          </ul>
-          <div style="margin-top: 20px; display: flex; justify-content: space-between; align-items: center;">
-            <span style="text-decoration: line-through; color: #999;">£1,045 pp</span>
-            <span style="color: #dc3545; font-weight: bold;">£732 pp</span>
-          </div>
-        </div>
-      </div>
+      <!-- Card Template -->
+      <script>
+        const cardsData = [
+          { id: "map1", title: "Land of the Northern Lights", duration: "5 days", tourType: "Tours", priceOld: "£1,045 pp", priceNew: "£732 pp" },
+          { id: "map2", title: "Iceland Explorer", duration: "7 days", tourType: "Adventure", priceOld: "£1,200 pp", priceNew: "£850 pp" },
+          { id: "map3", title: "Aurora Borealis", duration: "6 days", tourType: "Luxury", priceOld: "£1,500 pp", priceNew: "£1,100 pp" },
+          { id: "map4", title: "Glacier Expeditions", duration: "4 days", tourType: "Expeditions", priceOld: "£900 pp", priceNew: "£700 pp" }
+        ];
+      </script>
   
-      <!-- Card 2 -->
-      <div class="card">
-        <div style="position: relative;">
-          <span class="location-label start-label">Start: Reykjavik</span>
-          <span class="location-label end-label">End: Reykjavik</span>
-          <div id="map2" class="map-container"></div>
-          <span class="promo-label best-seller-label">Best Seller</span>
-          <span class="save-label">Save 30%</span>
-        </div>
-        <div style="padding: 20px;">
-          <h3 style="font-size: 18px; font-weight: bold; color: #333; margin-bottom: 15px;">Land of the Northern Lights</h3>
-          <ul style="list-style: none; padding: 0; margin: 0; font-size: 14px; color: #666;">
-            <li style="margin-bottom: 5px;"><strong>Duration:</strong> 5 days</li>
-            <li style="margin-bottom: 5px;"><strong>Tour Type:</strong> Tours</li>
-            <li style="margin-bottom: 5px;"><strong>Starts:</strong> Reykjavik</li>
-            <li style="margin-bottom: 5px;"><strong>Ends:</strong> Reykjavik</li>
-            <li style="margin-bottom: 5px;"><strong>Max Group Size:</strong> 40</li>
-          </ul>
-          <div style="margin-top: 20px; display: flex; justify-content: space-between; align-items: center;">
-            <span style="text-decoration: line-through; color: #999;">£1,045 pp</span>
-            <span style="color: #dc3545; font-weight: bold;">£732 pp</span>
-          </div>
-        </div>
-      </div>
+      <!-- JavaScript to generate cards dynamically -->
+      <script>
+        document.addEventListener("DOMContentLoaded", function() {
+          const container = document.querySelector(".cards-container");
   
-      <!-- Card 3 -->
-      <div class="card">
-        <div style="position: relative;">
-          <span class="location-label start-label">Start: Reykjavik</span>
-          <span class="location-label end-label">End: Reykjavik</span>
-          <div id="map3" class="map-container"></div>
-          <span class="promo-label best-seller-label">Best Seller</span>
-          <span class="save-label">Save 30%</span>
-        </div>
-        <div style="padding: 20px;">
-          <h3 style="font-size: 18px; font-weight: bold; color: #333; margin-bottom: 15px;">Land of the Northern Lights</h3>
-          <ul style="list-style: none; padding: 0; margin: 0; font-size: 14px; color: #666;">
-            <li style="margin-bottom: 5px;"><strong>Duration:</strong> 5 days</li>
-            <li style="margin-bottom: 5px;"><strong>Tour Type:</strong> Tours</li>
-            <li style="margin-bottom: 5px;"><strong>Starts:</strong> Reykjavik</li>
-            <li style="margin-bottom: 5px;"><strong>Ends:</strong> Reykjavik</li>
-            <li style="margin-bottom: 5px;"><strong>Max Group Size:</strong> 40</li>
-          </ul>
-          <div style="margin-top: 20px; display: flex; justify-content: space-between; align-items: center;">
-            <span style="text-decoration: line-through; color: #999;">£1,045 pp</span>
-            <span style="color: #dc3545; font-weight: bold;">£732 pp</span>
-          </div>
-        </div>
-      </div>
+          cardsData.forEach(card => {
+            const cardElement = document.createElement("div");
+            cardElement.classList.add("card");
+            cardElement.innerHTML = `
+              <div style="position: relative;">
+                <span class="location-label start-label">Start: Reykjavik</span>
+                <span class="location-label end-label">End: Reykjavik</span>
+                <div id="${card.id}" class="map-container"></div>
+                <span class="best-seller-label">Best Seller</span>
+                <span class="save-label">Save 30%</span>
+              </div>
+              <div style="padding: 10px;">
+                <h3 style="font-size: 18px; font-weight: bold; color: #333; margin-bottom: 10px;">${card.title}</h3>
+                <ul style="list-style: none; padding: 0; margin: 0; font-size: 14px; color: #666;">
+                  <li style="margin-bottom: 5px;"><strong>Duration:</strong> ${card.duration}</li>
+                  <li style="margin-bottom: 5px;"><strong>Tour Type:</strong> ${card.tourType}</li>
+                  <li style="margin-bottom: 5px;"><strong>Starts:</strong> Reykjavik</li>
+                  <li style="margin-bottom: 5px;"><strong>Ends:</strong> Reykjavik</li>
+                  <li style="margin-bottom: 5px;"><strong>Max Group Size:</strong> 40</li>
+                </ul>
+                <div style="margin-top: 15px; display: flex; justify-content: space-between; align-items: center;">
+                  <span style="text-decoration: line-through; color: #999;">${card.priceOld}</span>
+                  <span style="color: #dc3545; font-weight: bold;">${card.priceNew}</span>
+                </div>
+              </div>
+            `;
+            container.appendChild(cardElement);
+          });
+  
+          // Initialize maps for all cards
+          cardsData.forEach(card => initializeMap(card.id));
+        });
+      </script>
     </div>
   
     <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
     <script>
-      const initializeMap = (mapId) => {
+      function initializeMap(mapId) {
         const map = L.map(mapId).setView([64.1355, -21.8954], 10);
         L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(map);
         L.marker([64.1355, -21.8954]).addTo(map).bindPopup('Start: Reykjavik').openPopup();
-      };
-  
-      // Initialize each map with unique IDs
-      initializeMap('map1');
-      initializeMap('map2');
-      initializeMap('map3');
+      }
     </script>
   
   </body>
   </html>
+  
+  
+  
 
   <!DOCTYPE html>
 <html lang="en">

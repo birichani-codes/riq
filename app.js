@@ -37,6 +37,10 @@ app.get('/contact', (req, res) => {
   res.sendFile(path.join(__dirname, 'public', 'contact.html'));
 });
 
+app.get('/login', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'login.html'));
+});
+
 app.get('/tours', (req, res) => {
   res.sendFile(path.join(__dirname, 'public', 'tours.html'));
 });

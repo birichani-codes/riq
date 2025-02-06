@@ -177,47 +177,71 @@
 </head>
 <body style="margin: 0; font-family: 'Jost', sans-serif;">
 
-  <!-- Top Bar Section -->
-  <div class="top-bar">
-    <!-- Left Section: Flag and Dropdown -->
-    <div style="display: flex; align-items: center; gap: 15px;">
-      <div>
-        <img src="https://flagcdn.com/w40/ke.png" alt="Kenya Flag" style="width: 20px; height: auto;">
-        <span style="margin-left: 5px;">KE</span>
-        <span style="margin-left: 10px;">▼</span>
-      </div>
-      
-      <!-- Favorite Icon with Circle -->
-      <a href="#" class="favorite-icon">❤</a>
-      
-      <!-- Social Media Icons -->
-      <div class="social-icons">
-        <a href="https://facebook.com" target="_blank" class="icon-circle">
-          <i class="fab fa-facebook-f"></i>
-        </a>
-        <a href="https://x.com" target="_blank" class="icon-circle">
-          <i class="fab fa-x"></i> <!-- X logo for Twitter -->
-        </a>
-        <a href="https://instagram.com" target="_blank" class="icon-circle">
-          <i class="fab fa-instagram"></i>
-        </a>
-        <a href="https://linkedin.com" target="_blank" class="icon-circle">
-          <i class="fab fa-linkedin-in"></i>
-        </a>
-      </div>
-    </div>
-    
-    <!-- Center Section: Contact Info -->
+ <!-- Top Bar Section -->
+<div class="top-bar" style="display: flex; justify-content: space-between; padding: 10px 20px; align-items: center;">
+  <!-- Left Section: Flag and Dropdown -->
+  <div style="display: flex; align-items: center; gap: 15px;">
     <div>
-      <span>Call us today from 10am</span>
-      <a href="tel:+254707268547" style="text-decoration: none; color: #007bff; margin-left: 5px; font-weight: bold;">+254 707 268 547</a>
+      <img src="https://flagcdn.com/w40/ke.png" alt="Kenya Flag" style="width: 20px; height: auto;">
+      <span style="margin-left: 5px;">KE</span>
+      <span style="margin-left: 10px;">▼</span>
     </div>
-    
-    <!-- Right Section: Request a Quote -->
-    <div>
-      <a href="/quote" class="quote-button">REQUEST A QUOTE</a>
+
+    <!-- Favorite Icon with Circle -->
+    <a href="#" class="favorite-icon" style="font-size: 20px; color: #ff0000;">❤</a>
+
+    <!-- Social Media Icons -->
+    <div class="social-icons" style="display: flex; gap: 10px;">
+      <a href="https://facebook.com" target="_blank" style="display: flex; justify-content: center; align-items: center; width: 30px; height: 30px; border-radius: 50%; background-color: #f0f0f0; color: #333;">
+        <i class="fab fa-facebook-f"></i>
+      </a>
+      <a href="https://x.com" target="_blank" style="display: flex; justify-content: center; align-items: center; width: 30px; height: 30px; border-radius: 50%; background-color: #f0f0f0; color: #333;">
+        <i class="fab fa-x"></i>
+      </a>
+      <a href="https://instagram.com" target="_blank" style="display: flex; justify-content: center; align-items: center; width: 30px; height: 30px; border-radius: 50%; background-color: #f0f0f0; color: #333;">
+        <i class="fab fa-instagram"></i>
+      </a>
+      <a href="https://linkedin.com" target="_blank" style="display: flex; justify-content: center; align-items: center; width: 30px; height: 30px; border-radius: 50%; background-color: #f0f0f0; color: #333;">
+        <i class="fab fa-linkedin-in"></i>
+      </a>
     </div>
   </div>
+
+  <!-- Center Section: Contact Info -->
+  <div style="display: flex; align-items: center; justify-content: center;">
+    <span>Call us today from 10am</span>
+    <a href="tel:+254707268547" style="text-decoration: none; color: #007bff; margin-left: 5px; font-weight: bold;">+254 707 268 547</a>
+  </div>
+
+  <!-- Right Section: Request a Quote -->
+  <div style="display: flex; justify-content: flex-end;">
+    <a href="/quote" class="quote-button" style="padding: 8px 16px; background-color: #007bff; color: white; text-decoration: none; border-radius: 5px; font-weight: bold;">REQUEST A QUOTE</a>
+  </div>
+</div>
+
+<!-- Media Queries for responsiveness (handled with inline styles) -->
+<script>
+  window.addEventListener('resize', function() {
+    const topBar = document.querySelector('.top-bar');
+    const contactInfo = document.querySelector('.contact-info');
+    const quoteButton = document.querySelector('.quote-button');
+    
+    if (window.innerWidth <= 768) {
+      topBar.style.flexDirection = 'column';
+      topBar.style.textAlign = 'center';
+      contactInfo.style.margin = '10px 0';
+      quoteButton.style.width = '100%';
+      quoteButton.style.textAlign = 'center';
+    } else {
+      topBar.style.flexDirection = 'row';
+      topBar.style.textAlign = 'left';
+      contactInfo.style.margin = '0';
+      quoteButton.style.width = 'auto';
+      quoteButton.style.textAlign = 'right';
+    }
+  });
+</script>
+
 
  <!-- Updated Riq Responsive Navigation -->
 <nav style="background: #222; padding: 10px 20px; color: white; position: relative;">

@@ -242,7 +242,7 @@
   });
 </script>
 
-<!-- Updated Riq Responsive Navigation -->
+<!-- Updated Responsive Navigation -->
 <nav style="background: #222; padding: 10px 20px; color: white; position: relative;">
   <div style="display: flex; justify-content: space-between; align-items: center;">
 
@@ -253,7 +253,7 @@
       </a>
     </div>
 
-    <!-- Hamburger Menu -->
+    <!-- Hamburger Menu (Only visible on small screens) -->
     <div class="menu-toggle" onclick="toggleMenu()" style="display: none; font-size: 24px; cursor: pointer;">
       <i class="fa fa-bars"></i>
     </div>
@@ -377,20 +377,10 @@
 
   function toggleMenu() {
     const navLinks = document.querySelector(".nav-links");
-    if (navLinks.style.display === "flex") {
-      navLinks.style.display = "none";
-    } else {
-      navLinks.style.display = "flex";
-      navLinks.style.flexDirection = "column";
-      navLinks.style.position = "absolute";
-      navLinks.style.top = "0";
-      navLinks.style.left = "0";
-      navLinks.style.backgroundColor = "#222";
-      navLinks.style.width = "100%";
-      navLinks.style.padding = "10px";
-    }
+    navLinks.style.display = (navLinks.style.display === "block" ? "none" : "block");
   }
 
+  // Add event listener to hide the menu when clicked outside
   document.body.addEventListener("click", function (e) {
     if (!document.querySelector(".menu-toggle").contains(e.target)) {
       document.querySelector(".nav-links").style.display = "none";

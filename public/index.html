@@ -405,100 +405,86 @@
   <!-- Font Awesome Script -->
   <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
   
-  <section style="position: relative; background-image: url('images/suswa.jpg'); background-size: cover; background-position: center; height: 600px; color: white;">
+  
+  <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hero Section - RiqToLink</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-    <!-- Hero Content -->
-    <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); text-align: center; width: 100%; max-width: 800px;">
-      <h1 style="font-size: 5vw; font-weight: 700; text-shadow: 2px 2px 5px rgba(0,0,0,0.5); margin: 0;color: #D70654;">Escorted group tours & private trips</h1>
-      <p style="font-size: 2vw; margin: 10px 0 30px;">Discover the best destinations and unforgettable experiences</p>
-      
-      <!-- Search Form -->
-      <div style="display: flex; justify-content: center; gap: 10px; flex-wrap: wrap; position: relative;">
-        
-        <!-- Where Field -->
-        <div style="position: relative; flex: 1; display: flex; flex-direction: column; min-width: 200px;">
-          <div id="whereField" style="background: white; padding: 10px 15px; border-radius: 50px; display: flex; align-items: center; gap: 10px; box-shadow: 0px 2px 5px rgba(0,0,0,0.2); cursor: pointer; transition: all 0.3s ease;" onclick="toggleDropdown()">
-            <label for="where" style="font-size: 14px; color: #888; flex: 1;">Where?</label>
-            <input type="text" id="where" placeholder="Take me to..." style="border: none; outline: none; font-size: 14px; flex: 2; cursor: pointer;" readonly>
-          </div>
-          <!-- Dropdown -->
-          <div id="dropdown" style="display: none; position: absolute; top: 100%; left: 0; right: 0; background: white; border-radius: 10px; box-shadow: 0px 2px 5px rgba(0,0,0,0.2); z-index: 1000; margin-top: 10px;">
-            <ul style="list-style: none; padding: 0; margin: 0; font-size: 14px; color: #333;">
-              <li style="padding: 10px; cursor: pointer; border-bottom: 1px solid #eee;">Egypt</li>
-              <li style="padding: 10px; cursor: pointer; border-bottom: 1px solid #eee;">Morocco</li>
-              <li style="padding: 10px; cursor: pointer; border-bottom: 1px solid #eee;">Iceland</li>
-              <li style="padding: 10px; cursor: pointer; border-bottom: 1px solid #eee;">Vietnam</li>
-              <li style="padding: 10px; cursor: pointer;">Turkey</li>
-            </ul>
-          </div>
+        .hero {
+            position: relative;
+            width: 100%;
+            height: 600px;
+            background: url('images/h3.jpg') no-repeat center center/cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+        }
+
+        .hero::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.4); /* Dark overlay effect */
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            font-weight: bold;
+        }
+
+        .hero h2 {
+            font-size: 1.5rem;
+            margin-top: 10px;
+        }
+
+        .hero button {
+            margin-top: 15px;
+            padding: 10px 20px;
+            font-size: 1rem;
+            color: #0a1e4d;
+            background: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        .hero button:hover {
+            background: #ddd;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="hero">
+        <div class="hero-content">
+            <h1>Escorted group tours & private trips</h1>
+            <h2>RiqToLink</h2>
+            <button>Plan Your Adventure</button>
         </div>
-  
-        <!-- Other Fields -->
-        <div style="background: white; padding: 10px 15px; border-radius: 50px; display: flex; align-items: center; gap: 10px; box-shadow: 0px 2px 5px rgba(0,0,0,0.2); flex: 1; min-width: 200px;">
-          <label for="date" style="font-size: 14px; color: #888;">When?</label>
-          <input type="text" id="date" placeholder="Choose a date" style="border: none; outline: none; font-size: 14px; width: 100%;">
-        </div>
-        <div style="background: white; padding: 10px 15px; border-radius: 50px; display: flex; align-items: center; gap: 10px; box-shadow: 0px 2px 5px rgba(0,0,0,0.2); flex: 1; min-width: 200px;">
-          <label for="passengers" style="font-size: 14px; color: #888;">Passengers</label>
-          <input type="text" id="passengers" placeholder="2 Adults, 0 Child" style="border: none; outline: none; font-size: 14px; width: 100%;">
-        </div>
-        <button style="background-color: #ff6600; color: white; border: none; padding: 10px 20px; border-radius: 50px; font-size: 16px; cursor: pointer; box-shadow: 0px 2px 5px rgba(0,0,0,0.2);">
-          Search
-        </button>
-      </div>
     </div>
-  </section>
-  
-  <script>
-    function toggleDropdown() {
-      const dropdown = document.getElementById("dropdown");
-      const whereField = document.getElementById("whereField");
-  
-      // Toggle dropdown visibility
-      dropdown.style.display = dropdown.style.display === "none" || dropdown.style.display === "" ? "block" : "none";
-  
-      // Add active styles
-      if (dropdown.style.display === "block") {
-        whereField.style.border = "2px solid #007BFF"; // Blue border
-        whereField.style.borderRadius = "10px"; // Adjusted border radius
-      } else {
-        whereField.style.border = "none"; // Reset border
-        whereField.style.borderRadius = "50px"; // Reset border radius
-      }
-    }
-  
-    // Close dropdown if clicked outside
-    document.addEventListener("click", function(event) {
-      const dropdown = document.getElementById("dropdown");
-      const whereField = document.getElementById("whereField");
-      const whereInput = document.getElementById("where");
-  
-      if (!whereInput.contains(event.target) && dropdown.style.display === "block") {
-        dropdown.style.display = "none";
-  
-        // Reset styles
-        whereField.style.border = "none";
-        whereField.style.borderRadius = "50px";
-      }
-    });
-  </script>
-  
-  <style>
-    @media (max-width: 768px) {
-      h1 {
-        font-size: 6vw;
-      }
-  
-      p {
-        font-size: 3vw;
-      }
-  
-      .search-form > div {
-        min-width: 100%;
-        margin-bottom: 10px;
-      }
-    }
-  </style>
+
+</body>
+</html>
+
   
   <section class="popular-destinations" style="padding: 2rem; background-color: #f9f9f9; font-family: 'Jost', sans-serif;">
     <div class="container" style="max-width: 1200px; margin: 0 auto; padding: 0 1rem;">

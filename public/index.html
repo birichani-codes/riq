@@ -242,7 +242,7 @@
   });
 </script>
 
-<!-- Updated Responsive Navigation -->
+<!-- Updated Riq Responsive Navigation -->
 <nav style="background: #222; padding: 10px 20px; color: white; position: relative;">
   <div style="display: flex; justify-content: space-between; align-items: center;">
 
@@ -253,143 +253,64 @@
       </a>
     </div>
 
-    <!-- Hamburger Menu (Only visible on small screens) -->
+    <!-- Hamburger Menu -->
     <div class="menu-toggle" onclick="toggleMenu()" style="display: none; font-size: 24px; cursor: pointer;">
       <i class="fa fa-bars"></i>
     </div>
 
     <!-- Navigation Links -->
-    <ul class="nav-links" style="list-style: none; display: flex; gap: 15px; margin: 0; padding: 0; font-family: 'Jost', sans-serif;">
-      <li style="padding: 10px;">
-        <a href="/" style="text-decoration: none; color: wheat;">Home</a>
-      </li>
-
-      <!-- Tours Dropdown -->
-      <li class="dropdown-container" style="position: relative; padding: 10px;">
-        <a href="#" style="text-decoration: none; color: wheat;">Tours <i class="fa fa-caret-down"></i></a>
-        <ul class="dropdown" style="display: none; position: absolute; background: white; box-shadow: 0 4px 8px rgba(0,0,0,0.15); padding: 10px; list-style: none; margin: 0; z-index: 10; width: 250px; border-radius: 8px; top: 40px; left: 0;">
-          <!-- Season Category -->
-          <li style="padding: 10px 12px; font-weight: bold; color: #333; background-color: #f4f4f4; border-bottom: 1px solid #ddd; text-transform: uppercase; font-size: 12px;">Season</li>
-          <li style="padding: 8px 12px; border-bottom: 1px solid #ddd;">
-            <a href="/summer-tours" style="text-decoration: none; color: black;">Summer Tours</a>
-          </li>
-          <li style="padding: 8px 12px; border-bottom: 1px solid #ddd;">
-            <a href="/winter-tours" style="text-decoration: none; color: black;">Winter Tours</a>
-          </li>
-
-          <!-- Tour Types Category -->
-          <li style="padding: 10px 12px; font-weight: bold; color: #333; background-color: #f4f4f4; border-bottom: 1px solid #ddd; text-transform: uppercase; font-size: 12px;">Tour Types</li>
-          <li style="padding: 8px 12px; border-bottom: 1px solid #ddd;">
-            <a href="/self-drive-tours" style="text-decoration: none; color: black;">Self Drive</a>
-          </li>
-          <li style="padding: 8px 12px; border-bottom: 1px solid #ddd;">
-            <a href="/privately-guided-tours" style="text-decoration: none; color: black;">Privately Guided Tours</a>
-          </li>
-          <li style="padding: 8px 12px; border-bottom: 1px solid #ddd;">
-            <a href="/guided-small-tours" style="text-decoration: none; color: black;">Guided Small Tours</a>
-          </li>
-
-          <!-- Popular Tours Category -->
-          <li style="padding: 10px 12px; font-weight: bold; color: #333; background-color: #f4f4f4; border-bottom: 1px solid #ddd; text-transform: uppercase; font-size: 12px;">Popular Tours</li>
-          <li style="padding: 8px 12px; border-bottom: 1px solid #ddd;">
-            <a href="/all-travel-styles" style="text-decoration: none; color: black;">All Travel Styles</a>
-          </li>
-          <li style="padding: 8px 12px; border-bottom: 1px solid #ddd;">
-            <a href="/show-all-tours" style="text-decoration: none; color: black;">Show All Tours</a>
-          </li>
-          <li style="padding: 8px 12px; border-bottom: 1px solid #ddd;">
-            <a href="/best-sellers" style="text-decoration: none; color: black;">Best Sellers</a>
-          </li>
-          <li style="padding: 8px 12px;">
-            <a href="/special-offers" style="text-decoration: none; color: black;">Special Offers</a>
-          </li>
-        </ul>
-      </li>
-
-      <!-- Destinations Dropdown -->
-      <li class="dropdown-container" style="position: relative; padding: 10px;">
-        <a href="#" style="text-decoration: none; color: wheat;">Destinations <i class="fa fa-caret-down"></i></a>
-        <ul class="dropdown" style="display: none; position: absolute; background: white; box-shadow: 0 4px 8px rgba(0,0,0,0.15); padding: 10px; list-style: none; margin: 0; z-index: 10; width: 140px; border-radius: 8px; top: 40px; left: 0;">
-          <li style="padding: 8px 12px; border-bottom: 1px solid #ddd;"><a href="/kenya" style="text-decoration: none; color: black;">🇰🇪 Kenya</a></li>
-          <li style="padding: 8px 12px; border-bottom: 1px solid #ddd;"><a href="/tanzania" style="text-decoration: none; color: black;">🇹🇿 Tanzania</a></li>
-          <li style="padding: 8px 12px; border-bottom: 1px solid #ddd;"><a href="/qatar" style="text-decoration: none; color: black;">🇶🇦 Qatar</a></li>
-          <li style="padding: 8px 12px; border-bottom: 1px solid #ddd;"><a href="/dubai" style="text-decoration: none; color: black;">🇦🇪 Dubai</a></li>
-          <li style="padding: 8px 12px;"><a href="/egypt" style="text-decoration: none; color: black;">🇪🇬 Egypt</a></li>
-        </ul>
-      </li>
-
-      <!-- Travel Info Dropdown -->
-      <li class="dropdown-container" style="position: relative; padding: 10px;">
-        <a href="#" style="text-decoration: none; color: wheat;">Travel Info <i class="fa fa-caret-down"></i></a>
-        <ul class="dropdown" style="display: none; position: absolute; background: white; box-shadow: 0 4px 8px rgba(0,0,0,0.15); padding: 10px; list-style: none; margin: 0; z-index: 10; width: 200px; border-radius: 8px; top: 40px; left: 0;">
-          <li style="padding: 8px 12px; border-bottom: 1px solid #ddd;">
-            <a href="/book-with-confidence" style="text-decoration: none; color: black;">Book With Confidence</a>
-          </li>
-          <li style="padding: 8px 12px; border-bottom: 1px solid #ddd;">
-            <a href="/why-book-with-us" style="text-decoration: none; color: black;">Why Book With Us</a>
-          </li>
-          <li style="padding: 8px 12px; border-bottom: 1px solid #ddd;">
-            <a href="/booking-terms" style="text-decoration: none; color: black;">Booking Terms</a>
-          </li>
-          <li style="padding: 8px 12px; border-bottom: 1px solid #ddd;">
-            <a href="/sustainability-policy" style="text-decoration: none; color: black;">Sustainability Policy</a>
-          </li>
-          <li style="padding: 8px 12px;">
-            <a href="/about-us" style="text-decoration: none; color: black;">About Us</a>
-          </li>
-        </ul>
-      </li>
-
-      <!-- Additional Links -->
-      <li style="padding: 10px;">
-        <a href="/about" style="text-decoration: none; color: wheat;">Who We Are</a>
-      </li>
-      <li style="padding: 10px;">
-        <a href="/experiences" style="text-decoration: none; color: wheat;">Experiences</a>
-      </li>
-      <li style="padding: 10px;">
-        <a href="/guides" style="text-decoration: none; color: wheat;">Guides</a>
-      </li>
-      <li style="padding: 10px;">
-        <a href="/contact" style="text-decoration: none; color: wheat;">
-          <i class="fa fa-phone" style="font-size: 20px;"></i>
-        </a>
-      </li>
-      <li style="padding: 10px;">
-        <a href="/login" style="text-decoration: none; color: wheat;">
-          <i class="fa fa-user-circle" style="font-size: 20px;"></i>
-        </a>
-      </li>
+    <ul class="nav-links" style="list-style: none; display: flex; gap: 15px; margin: 0; padding: 0; font-family: 'Gotham', sans-serif; font-size: 12px; font-weight: 700; color: rgb(255, 255, 255); line-height: 19px;">
+      <!-- Navigation items go here -->
+      <li><a href="#" style="color: white; text-decoration: none;">Home</a></li>
+      <li><a href="#" style="color: white; text-decoration: none;">About</a></li>
+      <li><a href="#" style="color: white; text-decoration: none;">Services</a></li>
+      <li><a href="#" style="color: white; text-decoration: none;">Contact</a></li>
     </ul>
 
   </div>
 </nav>
 
 <script>
-  document.querySelectorAll('.dropdown-container').forEach(item => {
-    item.addEventListener('mouseenter', () => {
-      item.querySelector('.dropdown').style.display = 'block';
-    });
-    item.addEventListener('mouseleave', () => {
-      item.querySelector('.dropdown').style.display = 'none';
-    });
-  });
-
   function toggleMenu() {
     const navLinks = document.querySelector(".nav-links");
-    navLinks.style.display = (navLinks.style.display === "block" ? "none" : "block");
+    if (navLinks.style.display === "flex") {
+      navLinks.style.display = "none";
+    } else {
+      navLinks.style.display = "flex";
+      navLinks.style.flexDirection = "column";
+      navLinks.style.position = "absolute";
+      navLinks.style.top = "60px";
+      navLinks.style.left = "0";
+      navLinks.style.background = "#222";
+      navLinks.style.width = "100%";
+      navLinks.style.padding = "15px";
+    }
   }
 
-  // Add event listener to hide the menu when clicked outside
-  document.body.addEventListener("click", function (e) {
-    if (!document.querySelector(".menu-toggle").contains(e.target)) {
-      document.querySelector(".nav-links").style.display = "none";
+  window.addEventListener("resize", function () {
+    if (window.innerWidth > 768) {
+      document.querySelector(".nav-links").style.display = "flex";
+      document.querySelector(".menu-toggle").style.display = "none"; // Hide hamburger icon on larger screens
+    } else {
+      document.querySelector(".nav-links").style.display = "none"; // Hide nav links on mobile by default
+      document.querySelector(".menu-toggle").style.display = "block"; // Show hamburger icon on mobile
     }
   });
+
+  // Add the following CSS
+  const style = document.createElement('style');
+  style.innerHTML = `
+    @media (max-width: 768px) {
+      .menu-toggle {
+        display: block !important; /* Make sure it's visible on smaller screens */
+      }
+      .nav-links {
+        display: none; /* Hide navigation links by default */
+      }
+    }
+  `;
+  document.head.appendChild(style);
 </script>
-
-
-
 
 <!-- Font Awesome Script -->
 <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>

@@ -40,8 +40,8 @@ app.get('/contact', (req, res) => {
 app.get('/login', (req, res) => {
   res.sendFile(path.join(__dirname, 'public', 'login.html'));
 });
-app.get('/tours', (req, res) => {
-  res.sendFile(path.join(__dirname, 'public', 'tours.html'));
+app.get('/Natural-Wonders-of-Iceland', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'Natural-Wonders-of-Iceland.html'));
 });
 app.get('/guided-small-tours', (req, res) => {
   res.sendFile(path.join(__dirname, 'public', 'guided-small-tours.html'));

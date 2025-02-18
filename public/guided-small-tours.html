@@ -549,9 +549,8 @@
         <h1 style="font-size: 36px; color: #333; margin-bottom: 10px;">TANZANIA</h1>
         <p style="font-size: 18px; color: #666; margin-bottom: 40px;">Embark on an unforgettable adventure exploring the Serengeti and Mount Kilimanjaro</p>
         
-        <div style="display: flex; gap: 20px; justify-content: space-between; flex-wrap: wrap;">
-            <!-- Tour Packages -->
-            <div style="width: 30%; background: white; padding: 20px; border-radius: 8px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); margin-bottom: 20px;">
+        <div style="display: flex; flex-wrap: wrap; gap: 20px; justify-content: space-between;">
+            <div style="width: 100%; max-width: 400px; background: white; padding: 20px; border-radius: 8px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
                 <h2 style="font-size: 20px; margin-bottom: 10px;">WHY GO ON A TANZANIAN SAFARI ADVENTURE</h2>
                 <ul style="padding-left: 20px;">
                     <li style="margin-bottom: 8px;">Discover the Serengeti, home to the Great Migration</li>
@@ -560,9 +559,10 @@
                     <li style="margin-bottom: 8px;">Choose from customizable tour packages</li>
                 </ul>
             </div>
-            <div style="width: 65%; display: flex; gap: 20px; flex-wrap: wrap; justify-content: space-between;">
-                <!-- Tour Cards -->
-                <div style="background: white; border-radius: 8px; overflow: hidden; width: 30%; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); margin-bottom: 20px;">
+
+            <div style="width: 100%; max-width: 400px; display: flex; gap: 20px; flex-wrap: wrap; justify-content: space-between;">
+                <!-- Tour Card 1 -->
+                <div style="background: white; border-radius: 8px; overflow: hidden; width: 100%; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
                     <img src="images/add1.jpg" alt="Tour Image" style="width: 100%; height: 180px; object-fit: cover;">
                     <div style="padding: 15px;">
                         <span style="background: #ff6347; color: white; display: inline-block; padding: 5px 10px; border-radius: 20px; font-size: 12px; font-weight: bold;">SAFARI TOUR</span>
@@ -572,10 +572,11 @@
                         <h3 style="margin: 10px 0;">SERENGETI & NGORONGORO CRATER TOUR</h3>
                         <p style="font-size: 20px; font-weight: bold; color: #333; margin: 10px 0;">220,000 KES</p>
                         <a href="#" style="display: block; color: red; text-decoration: none; font-weight: bold;">VIEW MAP <i class="fas fa-map-marker-alt"></i></a>
-                        <a href="#" style="display: block; color: green; text-decoration: none; font-weight: bold; margin-top: 10px;">BOOK NOW</a>
                     </div>
                 </div>
-                <div style="background: white; border-radius: 8px; overflow: hidden; width: 30%; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); margin-bottom: 20px;">
+                
+                <!-- Tour Card 2 -->
+                <div style="background: white; border-radius: 8px; overflow: hidden; width: 100%; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
                     <img src="images/add2.jpg" alt="Tour Image" style="width: 100%; height: 180px; object-fit: cover;">
                     <div style="padding: 15px;">
                         <span style="background: #ff6347; color: white; display: inline-block; padding: 5px 10px; border-radius: 20px; font-size: 12px; font-weight: bold;">SAFARI TOUR</span>
@@ -585,10 +586,11 @@
                         <h3 style="margin: 10px 0;">KILIMANJARO & TARANGIRE ESCAPADE</h3>
                         <p style="font-size: 20px; font-weight: bold; color: #333; margin: 10px 0;">200,000 KES</p>
                         <a href="#" style="display: block; color: red; text-decoration: none; font-weight: bold;">VIEW MAP <i class="fas fa-map-marker-alt"></i></a>
-                        <a href="#" style="display: block; color: green; text-decoration: none; font-weight: bold; margin-top: 10px;">BOOK NOW</a>
                     </div>
                 </div>
-                <div style="background: white; border-radius: 8px; overflow: hidden; width: 30%; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); margin-bottom: 20px;">
+
+                <!-- Tour Card 3 -->
+                <div style="background: white; border-radius: 8px; overflow: hidden; width: 100%; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
                     <img src="images/add3.jpg" alt="Tour Image" style="width: 100%; height: 180px; object-fit: cover;">
                     <div style="padding: 15px;">
                         <span style="background: #ff6347; color: white; display: inline-block; padding: 5px 10px; border-radius: 20px; font-size: 12px; font-weight: bold;">SAFARI TOUR</span>
@@ -598,7 +600,6 @@
                         <h3 style="margin: 10px 0;">SERENGETI & NGORONGORO EXPLORE</h3>
                         <p style="font-size: 20px; font-weight: bold; color: #333; margin: 10px 0;">180,000 KES</p>
                         <a href="#" style="display: block; color: red; text-decoration: none; font-weight: bold;">VIEW MAP <i class="fas fa-map-marker-alt"></i></a>
-                        <a href="#" style="display: block; color: green; text-decoration: none; font-weight: bold; margin-top: 10px;">BOOK NOW</a>
                     </div>
                 </div>
             </div>
@@ -606,35 +607,20 @@
     </div>
 </section>
 
-<!-- Responsive CSS -->
 <style>
-    /* Mobile Styles */
-    @media (max-width: 768px) {
+    /* Media Queries for Responsiveness */
+    @media screen and (max-width: 768px) {
+        .tour-cards {
+            flex-direction: column;
+            align-items: center;
+        }
         .tour-card {
             width: 100% !important;
+            margin-bottom: 20px;
         }
-        .tour-description {
-            font-size: 14px !important;
-        }
-        .tour-title {
-            font-size: 16px !important;
-        }
-        .tour-price {
-            font-size: 18px !important;
-        }
-    }
-
-    /* Tablet Styles */
-    @media (max-width: 1024px) {
-        .tour-card {
-            width: 45% !important;
-        }
-    }
-
-    /* Larger Devices */
-    @media (min-width: 1025px) {
-        .tour-card {
-            width: 30% !important;
+        .why-go {
+            width: 100% !important;
+            margin-bottom: 20px;
         }
     }
 </style>

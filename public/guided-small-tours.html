@@ -1,6 +1,439 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Riq Navigation</title>
+  <!-- Link to Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500;700&display=swap" rel="stylesheet">
+  <!-- Link to Font Awesome for Social Media Icons -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+  <style>
+    /* Responsive Styles */
+    @media (max-width: 768px) {
+      /* Top bar adjustments */
+      .top-bar {
+        flex-wrap: wrap; /* Allow wrapping for inline elements */
+        gap: 10px; /* Add spacing between items */
+      }
+
+      .top-bar > div {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 10px;
+        flex-wrap: wrap; /* Wrap content if needed */
+      }
+
+      /* Navigation bar adjustments */
+      .nav-bar {
+        padding: 10px;
+      }
+
+      .nav-links {
+        flex-wrap: wrap; /* Allow wrapping for navigation links */
+        gap: 5px; /* Adjust gap between links */
+        justify-content: center; /* Center align on smaller screens */
+      }
+
+      .nav-links a {
+        padding: 8px 10px; /* Adjust padding for smaller screens */
+      }
+    }
+
+    @media (max-width: 480px) {
+      /* Adjust top bar for very small screens */
+      .top-bar {
+        gap: 8px; /* Smaller gaps for compact layout */
+        font-size: 12px; /* Reduce font size */
+      }
+
+      .social-icons .icon-circle,
+      .favorite-icon {
+        width: 35px;
+        height: 35px; /* Smaller icons */
+        font-size: 14px;
+      }
+
+      .quote-button {
+        font-size: 12px;
+        padding: 8px 10px; /* Adjust button size */
+      }
+
+      .nav-links {
+        gap: 5px; /* Tighter gaps */
+      }
+
+      .nav-links a {
+        padding: 6px 8px; /* Adjust link padding */
+        font-size: 14px; /* Reduce font size */
+      }
+    }
+  </style>
+
+  <style>
+    /* Social Media Icons container */
+    .social-icons {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    /* Circle effect for social media icons */
+    .social-icons .icon-circle {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background-color: #ffffff;
+      color: #0d4b9c; /* Default color for the icon */
+      font-size: 18px;
+      transition: background-color 0.3s, color 0.3s;
+      text-decoration: none; /* Remove underline from the icon */
+    }
+
+    /* Hover effect */
+    .social-icons .icon-circle:hover {
+      background-color: #37d4d9; /* Hover color for the circle */
+      color: white; /* Icon color on hover */
+    }
+
+    /* Circle effect for the heart (favorite) icon */
+    .favorite-icon {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background-color: #ffffff;
+      color: #0d4b9c;
+      font-size: 18px;
+      transition: background-color 0.3s, color 0.3s;
+      margin-right: 10px; /* Same spacing as social icons */
+      text-decoration: none; /* Remove underline from the heart icon */
+    }
+
+    .favorite-icon:hover {
+      background-color: #37d4d9; /* Hover color for the circle */
+      color: white; /* Icon color on hover */
+    }
+
+    /* Style for the 'Request a Quote' button */
+    .quote-button {
+      background-color: #007bff;
+      color: white;
+      padding: 10px 15px;
+      text-decoration: none;
+      border-radius: 10px; /* Rounded corners */
+      font-weight: bold;
+    }
+
+    /* Styling for navigation links */
+    .nav-links {
+      display: flex; /* Horizontal layout for nav links */
+      list-style: none; /* Removes default bullet points */
+      gap: 10px; /* Space between nav links */
+    }
+
+    .nav-links li {
+      position: relative; /* Allows positioning dropdown menus */
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: inherit;
+      font-weight: bold;
+      display: block; /* Ensure the background covers the entire area */
+      padding: 10px 10px; /* Adjust padding for a better hover effect */
+      border-radius: 5px; /* Optional: Adds a slight rounded effect */
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    .nav-links a:hover {
+      background-color: rgb(13, 75, 156); /* Blue background on hover */
+      color: white; /* Hover color effect */
+    }
+
+    /* Styling for the top bar and navigation bar */
+    .top-bar {
+      background-color: #f8f9fa;
+      padding: 10px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 14px;
+      border-bottom: 1px solid #ddd;
+    }
+
+    .nav-bar {
+      background-color: #002b5b;
+      color: white;
+      padding: 15px 20px;
+    }
+  </style>
+</head>
+<body style="margin: 0; font-family: 'Jost', sans-serif;">
+
+ <!-- Top Bar Section -->
+<div class="top-bar" style="display: flex; justify-content: space-between; padding: 10px 20px; align-items: center;">
+  <!-- Left Section: Flag and Dropdown -->
+  <div style="display: flex; align-items: center; gap: 15px;">
+    <div>
+      <img src="https://flagcdn.com/w40/ke.png" alt="Kenya Flag" style="width: 20px; height: auto;">
+      <span style="margin-left: 5px;">KE</span>
+      <span style="margin-left: 10px;">▼</span>
+    </div>
+
+    <!-- Favorite Icon with Circle -->
+    <a href="#" class="favorite-icon" style="font-size: 20px; color: #ff0000;">❤</a>
+
+    <!-- Social Media Icons -->
+    <div class="social-icons" style="display: flex; gap: 10px;">
+      <a href="https://facebook.com" target="_blank" style="display: flex; justify-content: center; align-items: center; width: 30px; height: 30px; border-radius: 50%; background-color: #f0f0f0; color: #333;">
+        <i class="fab fa-facebook-f"></i>
+      </a>
+      <a href="https://x.com" target="_blank" style="display: flex; justify-content: center; align-items: center; width: 30px; height: 30px; border-radius: 50%; background-color: #f0f0f0; color: #333;">
+        <i class="fab fa-x"></i>
+      </a>
+      <a href="https://instagram.com" target="_blank" style="display: flex; justify-content: center; align-items: center; width: 30px; height: 30px; border-radius: 50%; background-color: #f0f0f0; color: #333;">
+        <i class="fab fa-instagram"></i>
+      </a>
+      <a href="https://linkedin.com" target="_blank" style="display: flex; justify-content: center; align-items: center; width: 30px; height: 30px; border-radius: 50%; background-color: #f0f0f0; color: #333;">
+        <i class="fab fa-linkedin-in"></i>
+      </a>
+    </div>
+  </div>
+
+  <!-- Center Section: Contact Info -->
+  <div style="display: flex; align-items: center; justify-content: center;">
+    <span>Call us today from 10am</span>
+    <a href="tel:+254707268547" style="text-decoration: none; color: #007bff; margin-left: 5px; font-weight: bold;">+254 707 268 547</a>
+  </div>
+
+  <!-- Right Section: Request a Quote -->
+  <div style="display: flex; justify-content: flex-end;">
+    <a href="/quote" class="quote-button" style="padding: 8px 16px; background-color: #007bff; color: white; text-decoration: none; border-radius: 5px; font-weight: bold;">REQUEST A QUOTE</a>
+  </div>
+</div>
+
+<!-- Media Queries for responsiveness (handled with inline styles) -->
+<script>
+  window.addEventListener('resize', function() {
+    const topBar = document.querySelector('.top-bar');
+    const contactInfo = document.querySelector('.contact-info');
+    const quoteButton = document.querySelector('.quote-button');
+    
+    if (window.innerWidth <= 768) {
+      topBar.style.flexDirection = 'column';
+      topBar.style.textAlign = 'center';
+      contactInfo.style.margin = '10px 0';
+      quoteButton.style.width = '100%';
+      quoteButton.style.textAlign = 'center';
+    } else {
+      topBar.style.flexDirection = 'row';
+      topBar.style.textAlign = 'left';
+      contactInfo.style.margin = '0';
+      quoteButton.style.width = 'auto';
+      quoteButton.style.textAlign = 'right';
+    }
+  });
+</script>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Riq2LINK</title>
+  
+  <!-- Bootstrap CSS without integrity -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  
+  <!-- Font Awesome for icons -->
+  <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+  
+  <!-- Custom CSS for styling the hamburger icon -->
+  <style>
+    .navbar-toggler-icon {
+      background-color: #003366; /* Deep Blue color */
+    }
+    .nav-link {
+      text-decoration: none;
+      color: wheat;
+    }
+  </style>
+</head>
+<body>
+
+<!-- Riq2LINK Navigation -->
+<nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #222; padding: 10px 20px;">
+  <div class="container-fluid" style="display: flex; justify-content: space-between; align-items: center;">
+    
+    <!-- Logo -->
+    <a class="navbar-brand" href="/" style="font-size: 24px; font-weight: bold; color: white;">
+      Riq2LINK
+    </a>
+    
+    <!-- Hamburger Menu -->
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation" style="border-color: transparent;">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    
+    <!-- Navigation Links -->
+    <div class="collapse navbar-collapse" id="navbarNav" style="flex-grow: 1; justify-content: flex-end;">
+      <ul class="navbar-nav" style="list-style: none; display: flex; gap: 15px; margin: 0; padding: 0;">
+        <!-- Default Links -->
+        <li style="padding: 10px;">
+          <a href="/" style="text-decoration: none; color: wheat;">Home</a>
+        </li>
+
+        <!-- Tours Dropdown -->
+        <li class="dropdown-container" style="position: relative; padding: 10px;">
+          <a href="#" class="dropdown-toggle" style="text-decoration: none; color: wheat;">Tours <i class="fa fa-caret-down"></i></a>
+          <ul class="dropdown" style="display: none; position: absolute; background: white; box-shadow: 0 4px 8px rgba(0,0,0,0.15); padding: 10px; list-style: none; margin: 0; z-index: 10; width: 250px; border-radius: 8px; top: 40px; left: 0;">
+            <!-- Season Category -->
+            <li style="padding: 10px 12px; font-weight: bold; color: #333; background-color: #f4f4f4; border-bottom: 1px solid #ddd; text-transform: uppercase; font-size: 12px;">Season</li>
+            <li style="padding: 8px 12px; border-bottom: 1px solid #ddd;">
+              <a href="/summer-tours" style="text-decoration: none; color: black;">Summer Tours</a>
+            </li>
+            <li style="padding: 8px 12px; border-bottom: 1px solid #ddd;">
+              <a href="/winter-tours" style="text-decoration: none; color: black;">Winter Tours</a>
+            </li>
+
+            <!-- Tour Types Category -->
+            <li style="padding: 10px 12px; font-weight: bold; color: #333; background-color: #f4f4f4; border-bottom: 1px solid #ddd; text-transform: uppercase; font-size: 12px;">Tour Types</li>
+            <li style="padding: 8px 12px; border-bottom: 1px solid #ddd;">
+              <a href="/self-drive-tours" style="text-decoration: none; color: black;">Self Drive</a>
+            </li>
+            <li style="padding: 8px 12px; border-bottom: 1px solid #ddd;">
+              <a href="/privately-guided-tours" style="text-decoration: none; color: black;">Privately Guided Tours</a>
+            </li>
+            <li style="padding: 8px 12px; border-bottom: 1px solid #ddd;">
+              <a href="/guided-small-tours" style="text-decoration: none; color: black;">Guided Small Tours</a>
+            </li>
+
+            <!-- Popular Tours Category -->
+            <li style="padding: 10px 12px; font-weight: bold; color: #333; background-color: #f4f4f4; border-bottom: 1px solid #ddd; text-transform: uppercase; font-size: 12px;">Popular Tours</li>
+            <li style="padding: 8px 12px; border-bottom: 1px solid #ddd;">
+              <a href="/all-travel-styles" style="text-decoration: none; color: black;">All Travel Styles</a>
+            </li>
+            <li style="padding: 8px 12px; border-bottom: 1px solid #ddd;">
+              <a href="/show-all-tours" style="text-decoration: none; color: black;">Show All Tours</a>
+            </li>
+            <li style="padding: 8px 12px; border-bottom: 1px solid #ddd;">
+              <a href="/best-sellers" style="text-decoration: none; color: black;">Best Sellers</a>
+            </li>
+            <li style="padding: 8px 12px;">
+              <a href="/special-offers" style="text-decoration: none; color: black;">Special Offers</a>
+            </li>
+          </ul>
+        </li>
+
+        <!-- Destinations Dropdown -->
+        <li class="dropdown-container" style="position: relative; padding: 10px;">
+          <a href="#" class="dropdown-toggle" style="text-decoration: none; color: wheat;">Destinations <i class="fa fa-caret-down"></i></a>
+          <ul class="dropdown" style="display: none; position: absolute; background: white; box-shadow: 0 4px 8px rgba(0,0,0,0.15); padding: 10px; list-style: none; margin: 0; z-index: 10; width: 140px; border-radius: 8px; top: 40px; left: 0;">
+            <li style="padding: 8px 12px; border-bottom: 1px solid #ddd;"><a href="/kenya" style="text-decoration: none; color: black;">🇰🇪 Kenya</a></li>
+            <li style="padding: 8px 12px; border-bottom: 1px solid #ddd;"><a href="/tanzania" style="text-decoration: none; color: black;">🇹🇿 Tanzania</a></li>
+            <li style="padding: 8px 12px; border-bottom: 1px solid #ddd;"><a href="/qatar" style="text-decoration: none; color: black;">🇶🇦 Qatar</a></li>
+            <li style="padding: 8px 12px; border-bottom: 1px solid #ddd;"><a href="/dubai" style="text-decoration: none; color: black;">🇦🇪 Dubai</a></li>
+            <li style="padding: 8px 12px;"><a href="/egypt" style="text-decoration: none; color: black;">🇪🇬 Egypt</a></li>
+          </ul>
+        </li>
+
+        <!-- Travel Info Dropdown -->
+        <li class="dropdown-container" style="position: relative; padding: 10px;">
+          <a href="#" class="dropdown-toggle" style="text-decoration: none; color: wheat;">Travel Info <i class="fa fa-caret-down"></i></a>
+          <ul class="dropdown" style="display: none; position: absolute; background: white; box-shadow: 0 4px 8px rgba(0,0,0,0.15); padding: 10px; list-style: none; margin: 0; z-index: 10; width: 200px; border-radius: 8px; top: 40px; left: 0;">
+            <li style="padding: 8px 12px; border-bottom: 1px solid #ddd;">
+              <a href="/book-with-confidence" style="text-decoration: none; color: black;">Book With Confidence</a>
+            </li>
+            <li style="padding: 8px 12px; border-bottom: 1px solid #ddd;">
+              <a href="/why-book-with-us" style="text-decoration: none; color: black;">Why Book With Us</a>
+            </li>
+            <li style="padding: 8px 12px; border-bottom: 1px solid #ddd;">
+              <a href="/booking-terms" style="text-decoration: none; color: black;">Booking Terms</a>
+            </li>
+            <li style="padding: 8px 12px; border-bottom: 1px solid #ddd;">
+              <a href="/sustainability-policy" style="text-decoration: none; color: black;">Sustainability Policy</a>
+            </li>
+            <li style="padding: 8px 12px;">
+              <a href="/about-us" style="text-decoration: none; color: black;">About Us</a>
+            </li>
+          </ul>
+        </li>
+
+        <!-- Additional Links -->
+        <li style="padding: 10px;">
+          <a href="/about" style="text-decoration: none; color: wheat;">Who We Are</a>
+        </li>
+        <li style="padding: 10px;">
+          <a href="/experiences" style="text-decoration: none; color: wheat;">Experiences</a>
+        </li>
+        <li style="padding: 10px;">
+          <a href="/guides" style="text-decoration: none; color: wheat;">Guides</a>
+        </li>
+        <li style="padding: 10px;">
+          <a href="/contact" style="text-decoration: none; color: wheat;">
+            <i class="fa fa-phone" style="font-size: 20px;"></i>
+          </a>
+        </li>
+        <li style="padding: 10px;">
+          <a href="/login" style="text-decoration: none; color: wheat;">
+            <i class="fa fa-user-circle" style="font-size: 20px;"></i>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- JavaScript for Dropdowns -->
+<script>
+  // Get all dropdown containers
+  const dropdowns = document.querySelectorAll('.dropdown-container');
+
+  // Add event listeners for mouse hover
+  dropdowns.forEach(dropdown => {
+    const dropdownMenu = dropdown.querySelector('.dropdown');
+
+    // Show dropdown on hover
+    dropdown.addEventListener('mouseenter', () => {
+      dropdownMenu.style.display = 'block';
+    });
+
+    // Hide dropdown when mouse leaves
+    dropdown.addEventListener('mouseleave', () => {
+      dropdownMenu.style.display = 'none';
+    });
+  });
+
+  // Optional: Toggle dropdown visibility when clicked
+  document.querySelectorAll('.dropdown-toggle').forEach(toggle => {
+    toggle.addEventListener('click', (event) => {
+      event.preventDefault();
+      const dropdownMenu = toggle.nextElementSibling;
+      const isVisible = dropdownMenu.style.display === 'block';
+      dropdownMenu.style.display = isVisible ? 'none' : 'block';
+    });
+  });
+</script>
+
+
+  <!-- Bootstrap JS and Popper.js without integrity -->
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
+</body>
+</html>
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Iceland Tours</title>
@@ -12,81 +445,310 @@
         <p>Discover breathtaking natural beauty on a guided tour in Northern Europe...</p>
     </header>
     
-    <section style="display: flex; justify-content: space-around; padding: 20px;">
-        <div style="text-align: center; max-width: 200px;">
-            <i class="fas fa-shield-alt" style="font-size: 24px;"></i>
-            <h3>Book With Confidence</h3>
-            <p>Plan your travels with peace of mind</p>
+   <!-- Include Google Fonts -->
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;700&display=swap">
+
+<!-- Include Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<section style="display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; padding: 20px; font-family: 'Jost', sans-serif;">
+    <div style="text-align: center; max-width: 250px; flex: 1 1 200px;">
+        <i class="fas fa-shield-alt" style="font-size: 30px; color: #007BFF;"></i>
+        <h3 style="font-weight: 500;">Book With Confidence</h3>
+        <p style="font-weight: 300;">Plan your travels with peace of mind</p>
+    </div>
+    <div style="text-align: center; max-width: 250px; flex: 1 1 200px;">
+        <i class="fas fa-user-check" style="font-size: 30px; color: #007BFF;"></i>
+        <h3 style="font-weight: 500;">Trusted Local Travel Experts</h3>
+        <p style="font-weight: 300;">Professional service from trusted local experts</p>
+    </div>
+    <div style="text-align: center; max-width: 250px; flex: 1 1 200px;">
+        <i class="fas fa-star" style="font-size: 30px; color: #007BFF;"></i>
+        <h3 style="font-weight: 500;">Great Reviews</h3>
+        <p style="font-weight: 300;">We are proud of our service quality and great reviews</p>
+    </div>
+    <div style="text-align: center; max-width: 250px; flex: 1 1 200px;">
+        <i class="fas fa-balance-scale" style="font-size: 30px; color: #007BFF;"></i>
+        <h3 style="font-weight: 500;">Value for Money</h3>
+        <p style="font-weight: 300;">Exceptional quality for your money</p>
+    </div>
+</section>
+
+<section style="font-family: 'Jost', sans-serif; margin: 0; padding: 0; background: #f5f5f5;">
+    <nav style="display: flex; justify-content: center; background: #ddd; padding: 15px;">
+        <a href="#kenya" style="margin: 0 15px; text-decoration: none; color: black; font-weight: 600;">KENYA</a>
+        <a href="#tanzania" style="margin: 0 15px; text-decoration: none; color: black; font-weight: 600;">TANZANIA</a>
+        <a href="#uganda" style="margin: 0 15px; text-decoration: none; color: black; font-weight: 600;">UGANDA</a>
+        <a href="#qatar" style="margin: 0 15px; text-decoration: none; color: black; font-weight: 600;">QATAR</a>
+    </nav>
+
+    <!-- Kenya Section -->
+    <section style="font-family: 'Jost', sans-serif; background-color: #f4f4f4; padding: 20px 0;">
+        <div style="width: 90%; max-width: 1200px; margin: auto; text-align: center;">
+            <!-- Country Name and Tagline for Kenya -->
+            <h1 style="font-size: 36px; color: #333; margin-bottom: 10px;">KENYA</h1>
+            <p style="font-size: 18px; color: #666; margin-bottom: 40px;">Explore the heart of East Africa with stunning safaris and breathtaking landscapes</p>
+            
+            <div style="display: flex; gap: 20px; justify-content: space-between;">
+                <div style="width: 30%; background: white; padding: 20px; border-radius: 8px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
+                    <h2 style="font-size: 20px; margin-bottom: 10px;">WHY GO ON A KENYAN SAFARI ADVENTURE</h2>
+                    <ul style="padding-left: 20px;">
+                        <li style="margin-bottom: 8px;">Experience the famous Maasai Mara National Reserve</li>
+                        <li style="margin-bottom: 8px;">Explore Amboseli National Park with stunning views of Mount Kilimanjaro</li>
+                        <li style="margin-bottom: 8px;">Visit the stunning Lake Nakuru for a glimpse of flamingos</li>
+                        <li style="margin-bottom: 8px;">Choose from flexible dates and customizable packages</li>
+                    </ul>
+                </div>
+                <div style="width: 70%; display: flex; gap: 20px;">
+                    <div style="background: white; border-radius: 8px; overflow: hidden; width: 30%; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
+                        <img src="images/add6.jpg" alt="Tour Image" style="width: 100%; height: 180px; object-fit: cover;">
+                        <div style="padding: 15px;">
+                            <span style="background: #ff6347; color: white; display: inline-block; padding: 5px 10px; border-radius: 20px; font-size: 12px; font-weight: bold;">SAFARI TOUR</span>
+                            <p style="font-size: 14px; color: #666; margin: 10px 0;">7 days / 6 nights</p>
+                            <p style="color: #ffa500; font-size: 14px;">⭐⭐⭐⭐⭐ 4.9</p>
+                            <p style="font-size: 12px; color: #888;">May - Dec</p>
+                            <h3 style="margin: 10px 0;">MAASAI MARA & AMBOSELI EXPLORER</h3>
+                            <p style="font-size: 20px; font-weight: bold; color: #333; margin: 10px 0;">150,000 KES</p>
+                            <a href="#" style="display: block; color: red; text-decoration: none; font-weight: bold;">VIEW MAP <i class="fas fa-map-marker-alt"></i></a>
+                        </div>
+                    </div>
+                    <div style="background: white; border-radius: 8px; overflow: hidden; width: 30%; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
+                        <img src="images/add4.jpg" alt="Tour Image" style="width: 100%; height: 180px; object-fit: cover;">
+                        <div style="padding: 15px;">
+                            <span style="background: #ff6347; color: white; display: inline-block; padding: 5px 10px; border-radius: 20px; font-size: 12px; font-weight: bold;">SAFARI TOUR</span>
+                            <p style="font-size: 14px; color: #666; margin: 10px 0;">6 days / 5 nights</p>
+                            <p style="color: #ffa500; font-size: 14px;">⭐⭐⭐⭐⭐ 4.8</p>
+                            <p style="font-size: 12px; color: #888;">May - Dec</p>
+                            <h3 style="margin: 10px 0;">AMBOSELI & LAKE NAKURU ESCAPADE</h3>
+                            <p style="font-size: 20px; font-weight: bold; color: #333; margin: 10px 0;">120,000 KES</p>
+                            <a href="#" style="display: block; color: red; text-decoration: none; font-weight: bold;">VIEW MAP <i class="fas fa-map-marker-alt"></i></a>
+                        </div>
+                    </div>
+                    <div style="background: white; border-radius: 8px; overflow: hidden; width: 30%; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
+                        <img src="images/add2.jpg" alt="Tour Image" style="width: 100%; height: 180px; object-fit: cover;">
+                        <div style="padding: 15px;">
+                            <span style="background: #ff6347; color: white; display: inline-block; padding: 5px 10px; border-radius: 20px; font-size: 12px; font-weight: bold;">SAFARI TOUR</span>
+                            <p style="font-size: 14px; color: #666; margin: 10px 0;">5 days / 4 nights</p>
+                            <p style="color: #ffa500; font-size: 14px;">⭐⭐⭐⭐⭐ 4.7</p>
+                            <p style="font-size: 12px; color: #888;">May - Dec</p>
+                            <h3 style="margin: 10px 0;">SAMBURU & NAKURU HIGHLIGHTS</h3>
+                            <p style="font-size: 20px; font-weight: bold; color: #333; margin: 10px 0;">110,000 KES</p>
+                            <a href="#" style="display: block; color: red; text-decoration: none; font-weight: bold;">VIEW MAP <i class="fas fa-map-marker-alt"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div style="text-align: center; max-width: 200px;">
-            <i class="fas fa-user-check" style="font-size: 24px;"></i>
-            <h3>Trusted Local Travel Experts</h3>
-            <p>Professional service from trusted local experts</p>
+    </section>
+    
+
+    <!-- Tanzania Section -->
+    <section style="font-family: 'Jost', sans-serif; background-color: #f4f4f4; padding: 20px 0;">
+        <div style="width: 90%; max-width: 1200px; margin: auto; text-align: center;">
+            <!-- Country Name and Tagline for Tanzania -->
+            <h1 style="font-size: 36px; color: #333; margin-bottom: 10px;">TANZANIA</h1>
+            <p style="font-size: 18px; color: #666; margin-bottom: 40px;">Embark on an unforgettable adventure exploring the Serengeti and Mount Kilimanjaro</p>
+            
+            <div style="display: flex; gap: 20px; justify-content: space-between;">
+                <div style="width: 30%; background: white; padding: 20px; border-radius: 8px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
+                    <h2 style="font-size: 20px; margin-bottom: 10px;">WHY GO ON A TANZANIAN SAFARI ADVENTURE</h2>
+                    <ul style="padding-left: 20px;">
+                        <li style="margin-bottom: 8px;">Discover the Serengeti, home to the Great Migration</li>
+                        <li style="margin-bottom: 8px;">Hike Mount Kilimanjaro, the highest peak in Africa</li>
+                        <li style="margin-bottom: 8px;">Experience wildlife up close in Ngorongoro Crater</li>
+                        <li style="margin-bottom: 8px;">Choose from customizable tour packages</li>
+                    </ul>
+                </div>
+                <div style="width: 70%; display: flex; gap: 20px;">
+                    <div style="background: white; border-radius: 8px; overflow: hidden; width: 30%; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
+                        <img src="images/add1.jpg" alt="Tour Image" style="width: 100%; height: 180px; object-fit: cover;">
+                        <div style="padding: 15px;">
+                            <span style="background: #ff6347; color: white; display: inline-block; padding: 5px 10px; border-radius: 20px; font-size: 12px; font-weight: bold;">SAFARI TOUR</span>
+                            <p style="font-size: 14px; color: #666; margin: 10px 0;">8 days / 7 nights</p>
+                            <p style="color: #ffa500; font-size: 14px;">⭐⭐⭐⭐⭐ 4.9</p>
+                            <p style="font-size: 12px; color: #888;">May - Dec</p>
+                            <h3 style="margin: 10px 0;">SERENGETI & NGORONGORO CRATER TOUR</h3>
+                            <p style="font-size: 20px; font-weight: bold; color: #333; margin: 10px 0;">220,000 KES</p>
+                            <a href="#" style="display: block; color: red; text-decoration: none; font-weight: bold;">VIEW MAP <i class="fas fa-map-marker-alt"></i></a>
+                        </div>
+                    </div>
+                    <div style="background: white; border-radius: 8px; overflow: hidden; width: 30%; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
+                        <img src="images/add2.jpg" alt="Tour Image" style="width: 100%; height: 180px; object-fit: cover;">
+                        <div style="padding: 15px;">
+                            <span style="background: #ff6347; color: white; display: inline-block; padding: 5px 10px; border-radius: 20px; font-size: 12px; font-weight: bold;">SAFARI TOUR</span>
+                            <p style="font-size: 14px; color: #666; margin: 10px 0;">6 days / 5 nights</p>
+                            <p style="color: #ffa500; font-size: 14px;">⭐⭐⭐⭐⭐ 4.8</p>
+                            <p style="font-size: 12px; color: #888;">May - Dec</p>
+                            <h3 style="margin: 10px 0;">KILIMANJARO & TARANGIRE ESCAPADE</h3>
+                            <p style="font-size: 20px; font-weight: bold; color: #333; margin: 10px 0;">200,000 KES</p>
+                            <a href="#" style="display: block; color: red; text-decoration: none; font-weight: bold;">VIEW MAP <i class="fas fa-map-marker-alt"></i></a>
+                        </div>
+                    </div>
+                    <div style="background: white; border-radius: 8px; overflow: hidden; width: 30%; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
+                        <img src="images/add3.jpg" alt="Tour Image" style="width: 100%; height: 180px; object-fit: cover;">
+                        <div style="padding: 15px;">
+                            <span style="background: #ff6347; color: white; display: inline-block; padding: 5px 10px; border-radius: 20px; font-size: 12px; font-weight: bold;">SAFARI TOUR</span>
+                            <p style="font-size: 14px; color: #666; margin: 10px 0;">5 days / 4 nights</p>
+                            <p style="color: #ffa500; font-size: 14px;">⭐⭐⭐⭐ 4.7</p>
+                            <p style="font-size: 12px; color: #888;">May - Dec</p>
+                            <h3 style="margin: 10px 0;">SERENGETI & NGORONGORO EXPLORE</h3>
+                            <p style="font-size: 20px; font-weight: bold; color: #333; margin: 10px 0;">180,000 KES</p>
+                            <a href="#" style="display: block; color: red; text-decoration: none; font-weight: bold;">VIEW MAP <i class="fas fa-map-marker-alt"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div style="text-align: center; max-width: 200px;">
-            <i class="fas fa-star" style="font-size: 24px;"></i>
-            <h3>Great Reviews</h3>
-            <p>We are proud of our service quality and great reviews</p>
+    </section>
+    
+
+    <!-- Uganda Section -->
+    <section style="font-family: 'Jost', sans-serif; background-color: #f4f4f4; padding: 20px 0;">
+        <div style="width: 90%; max-width: 1200px; margin: auto; text-align: center;">
+            <!-- Country Name and Tagline -->
+            <h1 style="font-size: 36px; color: #333; margin-bottom: 10px;">UGANDA</h1>
+            <p style="font-size: 18px; color: #666; margin-bottom: 40px;">Experience otherworldly natural attractions on an exciting journey around Uganda</p>
+            
+            <div style="display: flex; gap: 20px; justify-content: space-between;">
+                <div style="width: 30%; background: white; padding: 20px; border-radius: 8px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
+                    <h2 style="font-size: 20px; margin-bottom: 10px;">WHY GO ON A UGANDA SAFARI ADVENTURE</h2>
+                    <ul style="padding-left: 20px;">
+                        <li style="margin-bottom: 8px;">Trek to see the famous mountain gorillas in Bwindi Impenetrable Forest</li>
+                        <li style="margin-bottom: 8px;">Explore the stunning wildlife in Queen Elizabeth National Park</li>
+                        <li style="margin-bottom: 8px;">Cruise on the Kazinga Channel to see wildlife along the shore</li>
+                        <li style="margin-bottom: 8px;">Customizable tours to suit every adventurer's needs</li>
+                    </ul>
+                </div>
+                <div style="width: 70%; display: flex; gap: 20px;">
+                    <div style="background: white; border-radius: 8px; overflow: hidden; width: 30%; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
+                        <img src="images/add3.jpg" alt="Tour Image" style="width: 100%; height: 180px; object-fit: cover;">
+                        <div style="padding: 15px;">
+                            <span style="background: #ff6347; color: white; display: inline-block; padding: 5px 10px; border-radius: 20px; font-size: 12px; font-weight: bold;">SAFARI TOUR</span>
+                            <p style="font-size: 14px; color: #666; margin: 10px 0;">8 days / 7 nights</p>
+                            <p style="color: #ffa500; font-size: 14px;">⭐⭐⭐⭐⭐ 4.9</p>
+                            <p style="font-size: 12px; color: #888;">May - Dec</p>
+                            <h3 style="margin: 10px 0;">GORILLA TREK & QUEEN ELIZABETH TOUR</h3>
+                            <p style="font-size: 20px; font-weight: bold; color: #333; margin: 10px 0;">200,000 KES</p>
+                            <a href="#" style="display: block; color: red; text-decoration: none; font-weight: bold;">VIEW MAP <i class="fas fa-map-marker-alt"></i></a>
+                        </div>
+                    </div>
+                    <div style="background: white; border-radius: 8px; overflow: hidden; width: 30%; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
+                        <img src="images/add1.jpg" alt="Tour Image" style="width: 100%; height: 180px; object-fit: cover;">
+                        <div style="padding: 15px;">
+                            <span style="background: #ff6347; color: white; display: inline-block; padding: 5px 10px; border-radius: 20px; font-size: 12px; font-weight: bold;">SAFARI TOUR</span>
+                            <p style="font-size: 14px; color: #666; margin: 10px 0;">6 days / 5 nights</p>
+                            <p style="color: #ffa500; font-size: 14px;">⭐⭐⭐⭐ 4.8</p>
+                            <p style="font-size: 12px; color: #888;">May - Dec</p>
+                            <h3 style="margin: 10px 0;">LAKE MBURO & BWINDI GORILLA TREK</h3>
+                            <p style="font-size: 20px; font-weight: bold; color: #333; margin: 10px 0;">180,000 KES</p>
+                            <a href="#" style="display: block; color: red; text-decoration: none; font-weight: bold;">VIEW MAP <i class="fas fa-map-marker-alt"></i></a>
+                        </div>
+                    </div>
+                    <div style="background: white; border-radius: 8px; overflow: hidden; width: 30%; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
+                        <img src="images/add2.jpg" alt="Tour Image" style="width: 100%; height: 180px; object-fit: cover;">
+                        <div style="padding: 15px;">
+                            <span style="background: #ff6347; color: white; display: inline-block; padding: 5px 10px; border-radius: 20px; font-size: 12px; font-weight: bold;">SAFARI TOUR</span>
+                            <p style="font-size: 14px; color: #666; margin: 10px 0;">5 days / 4 nights</p>
+                            <p style="color: #ffa500; font-size: 14px;">⭐⭐⭐⭐⭐ 4.7</p>
+                            <p style="font-size: 12px; color: #888;">May - Dec</p>
+                            <h3 style="margin: 10px 0;">KAZINGA CHANNEL & QUEEN ELIZABETH</h3>
+                            <p style="font-size: 20px; font-weight: bold; color: #333; margin: 10px 0;">150,000 KES</p>
+                            <a href="#" style="display: block; color: red; text-decoration: none; font-weight: bold;">VIEW MAP <i class="fas fa-map-marker-alt"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div style="text-align: center; max-width: 200px;">
-            <i class="fas fa-balance-scale" style="font-size: 24px;"></i>
-            <h3>Value for Money</h3>
-            <p>Exceptional quality for your money</p>
+    </section>
+    
+    
+    <section style="font-family: 'Jost', sans-serif; background-color: #f4f4f4; padding: 20px 0;">
+        <div style="width: 90%; max-width: 1200px; margin: auto; display: flex; gap: 20px;">
+            <div style="width: 30%; background: white; padding: 20px; border-radius: 8px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
+                <h2 style="font-size: 20px; margin-bottom: 10px;">WHY GO ON A RWANDAN SAFARI ADVENTURE</h2>
+                <ul style="padding-left: 20px;">
+                    <li style="margin-bottom: 8px;">Track the endangered mountain gorillas in Volcanoes National Park</li>
+                    <li style="margin-bottom: 8px;">Discover the beauty of Nyungwe Forest and its diverse wildlife</li>
+                    <li style="margin-bottom: 8px;">Visit Lake Kivu for stunning views and relaxing activities</li>
+                    <li style="margin-bottom: 8px;">Tailor your tour to suit your preferences and budget</li>
+                </ul>
+            </div>
+            <div style="width: 70%; display: flex; gap: 20px;">
+                <div style="background: white; border-radius: 8px; overflow: hidden; width: 30%; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
+                    <img src="images/add3.jpg" alt="Tour Image" style="width: 100%; height: 180px; object-fit: cover;">
+                    <div style="padding: 15px;">
+                        <span style="background: #ff6347; color: white; display: inline-block; padding: 5px 10px; border-radius: 20px; font-size: 12px; font-weight: bold;">SAFARI TOUR</span>
+                        <p style="font-size: 14px; color: #666; margin: 10px 0;">8 days / 7 nights</p>
+                        <p style="color: #ffa500; font-size: 14px;">⭐⭐⭐⭐⭐ 4.9</p>
+                        <p style="font-size: 12px; color: #888;">May - Dec</p>
+                        <h3 style="margin: 10px 0;">GORILLA TREK & NYUNGWE FOREST TOUR</h3>
+                        <p style="font-size: 20px; font-weight: bold; color: #333; margin: 10px 0;">210,000 KES</p>
+                        <a href="#" style="display: block; color: red; text-decoration: none; font-weight: bold;">VIEW MAP <i class="fas fa-map-marker-alt"></i></a>
+                    </div>
+                </div>
+                <div style="background: white; border-radius: 8px; overflow: hidden; width: 30%; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
+                    <img src="images/add1.jpg" alt="Tour Image" style="width: 100%; height: 180px; object-fit: cover;">
+                    <div style="padding: 15px;">
+                        <span style="background: #ff6347; color: white; display: inline-block; padding: 5px 10px; border-radius: 20px; font-size: 12px; font-weight: bold;">SAFARI TOUR</span>
+                        <p style="font-size: 14px; color: #666; margin: 10px 0;">7 days / 6 nights</p>
+                        <p style="color: #ffa500; font-size: 14px;">⭐⭐⭐⭐ 4.8</p>
+                        <p style="font-size: 12px; color: #888;">May - Dec</p>
+                        <h3 style="margin: 10px 0;">LAKE KIVU & VOLCANOES SAFARI</h3>
+                        <p style="font-size: 20px; font-weight: bold; color: #333; margin: 10px 0;">190,000 KES</p>
+                        <a href="#" style="display: block; color: red; text-decoration: none; font-weight: bold;">VIEW MAP <i class="fas fa-map-marker-alt"></i></a>
+                    </div>
+                </div>
+                <div style="background: white; border-radius: 8px; overflow: hidden; width: 30%; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
+                    <img src="images/add3.jpg" alt="Tour Image" style="width: 100%; height: 180px; object-fit: cover;">
+                    <div style="padding: 15px;">
+                        <span style="background: #ff6347; color: white; display: inline-block; padding: 5px 10px; border-radius: 20px; font-size: 12px; font-weight: bold;">SAFARI TOUR</span>
+                        <p style="font-size: 14px; color: #666; margin: 10px 0;">6 days / 5 nights</p>
+                        <p style="color: #ffa500; font-size: 14px;">⭐⭐⭐⭐⭐ 4.7</p>
+                        <p style="font-size: 12px; color: #888;">May - Dec</p>
+                        <h3 style="margin: 10px 0;">NYUNGWE FOREST & KIVU LAKE EXPLORER</h3>
+                        <p style="font-size: 20px; font-weight: bold; color: #333; margin: 10px 0;">180,000 KES</p>
+                        <a href="#" style="display: block; color: red; text-decoration: none; font-weight: bold;">VIEW MAP <i class="fas fa-map-marker-alt"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    
+
+    <!-- Qatar Section -->
+    <section id="qatar" style="font-family: 'Jost', sans-serif; background-color: #f4f4f4; padding: 20px 0;">
+        <div style="width: 90%; max-width: 1200px; margin: auto; display: flex; flex-wrap: wrap; gap: 20px;">
+            <div style="width: 100%; max-width: 300px; background: white; padding: 20px; border-radius: 8px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
+                <h2 style="font-size: 20px; margin-bottom: 10px;">WHY VISIT QATAR</h2>
+                <ul style="padding-left: 20px;">
+                    <li style="margin-bottom: 8px;">Explore the modern architecture of Doha</li>
+                    <li style="margin-bottom: 8px;">Visit the cultural hub, Museum of Islamic Art</li>
+                    <li style="margin-bottom: 8px;">Relax on the beaches of the Arabian Gulf</li>
+                    <li style="margin-bottom: 8px;">Experience desert safaris in the Qatari dunes</li>
+                </ul>
+            </div>
+            <div style="background: white; border-radius: 8px; overflow: hidden; width: 100%; max-width: 300px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
+                <img src="images/add5.jpg" alt="Tour Image" style="width: 100%; height: 180px; object-fit: cover;">
+                <div style="padding: 15px;">
+                    <span style="background: #ff6347; color: white; display: inline-block; padding: 5px 10px; border-radius: 20px; font-size: 12px; font-weight: bold;">CITY TOUR</span>
+                    <p style="font-size: 14px; color: #666; margin: 10px 0;">4 days / 3 nights</p>
+                    <p style="color: #ffa500; font-size: 14px;">⭐⭐⭐⭐⭐ 4.7</p>
+                    <p style="font-size: 12px; color: #777; margin: 0;">Jan-Dec</p>
+                    <h3 style="margin: 10px 0;">DOHA CITY EXPLORER</h3>
+                    <p style="font-size: 20px; font-weight: bold; color: #333; margin: 10px 0;">100,000 KES</p>
+                    <a href="#" style="display: flex; align-items: center; color: red; text-decoration: none; font-weight: bold;">
+                        VIEW MAP
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-map" viewBox="0 0 16 16" style="margin-left: 8px;">
+                            <path d="M10.5 0a.5.5 0 0 1 .5.5v2.383l4 2V14a.5.5 0 0 1-.276.447l-4 2a.5.5 0 0 1-.448-.027l-4-2a.5.5 0 0 1-.276-.447V5.883l4-2V.5a.5.5 0 0 1 .5-.5zM9 1.618l-4 2v9.764l4 2V3.618l4-2v9.764l-4 2V1.618z"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
         </div>
     </section>
 
-    <nav style="display: flex; justify-content: center; background: #ddd; padding: 10px;">
-        <a href="#iceland" style="margin: 0 15px; text-decoration: none; color: black;">ICELAND</a>
-        <a href="#scandinavia" style="margin: 0 15px; text-decoration: none; color: black;">SCANDINAVIA</a>
-        <a href="#norway" style="margin: 0 15px; text-decoration: none; color: black;">NORWAY</a>
-        <a href="#uk" style="margin: 0 15px; text-decoration: none; color: black;">THE UK</a>
-        <a href="#scotland" style="margin: 0 15px; text-decoration: none; color: black;">SCOTLAND</a>
-        <a href="#ireland" style="margin: 0 15px; text-decoration: none; color: black;">IRELAND</a>
-        <a href="#alps" style="margin: 0 15px; text-decoration: none; color: black;">THE ALPS</a>
-    </nav>
-    
-    <section id="iceland" style="padding: 20px; text-align: center;">
-        <h2>ICELAND</h2>
-        <p>Awe-inspiring natural wonders await you, including volcanoes, glaciers, and waterfalls.</p>
-        
-        <div style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap;">
-            <div style="background: #f8f8f8; padding: 20px; max-width: 250px;">
-                <h3>WHY TAKE A SMALL GROUP TOUR OF ICELAND</h3>
-                <ul style="text-align: left;">
-                    <li>Visit black sand beaches and glacier lagoons</li>
-                    <li>Explore the famous Golden Circle sightseeing route</li>
-                    <li>Treat yourself to relaxing excursions like the Blue Lagoon</li>
-                    <li>Chase the Northern Lights with an expert guide</li>
-                </ul>
-            </div>
-            <a href="/Natural-Wonders-of-Iceland" style="text-decoration: none; color: inherit;">
-                <div style="background: white; padding: 10px; max-width: 250px; text-align: left; border: 1px solid #ccc; cursor: pointer;">
-                    <img src="images/add5.jpg" alt="Natural Wonders of Iceland" style="width: 100%;">
-                    <span style="background: red; color: white; padding: 5px; display: inline-block;">BEST SELLER</span>
-                    <h4>Natural Wonders of Iceland</h4>
-                    <p>10 days / 9 nights</p>
-                    <p>Price: <del>5,000 EUR</del> <strong>4,694 EUR</strong></p>
-                    <button style="background: #007BFF; color: white; padding: 10px; border: none; cursor: pointer;">View Map</button>
-                </div>
-            </a>
-            
-            <div style="background: white; padding: 10px; max-width: 250px; text-align: left; border: 1px solid #ccc;">
-                <img src="images/add3.jpg" alt="Highlights of the Ring Road" style="width: 100%;">
-                <span style="background: red; color: white; padding: 5px; display: inline-block;">BEST SELLER</span>
-                <h4>Highlights of the Ring Road</h4>
-                <p>7 days / 6 nights</p>
-                <p>Price: <del>3,400 EUR</del> <strong>2,962 EUR</strong></p>
-                <button style="background: #007BFF; color: white; padding: 10px; border: none; cursor: pointer;">View Map</button>
-            </div>
-            <div style="background: white; padding: 10px; max-width: 250px; text-align: left; border: 1px solid #ccc;">
-                <img src="images/add1.jpg" alt="Best of South & West Iceland" style="width: 100%;">
-                <span style="background: red; color: white; padding: 5px; display: inline-block;">BEST SELLER</span>
-                <h4>Best of South & West Iceland</h4>
-                <p>7 days / 6 nights</p>
-                <p>Price: <del>3,225 EUR</del> <strong>2,986 EUR</strong></p>
-                <button style="background: #007BFF; color: white; padding: 10px; border: none; cursor: pointer;">View Map</button>
-            </div>
-        </div>
+</section>
+
     </section>
-</body>
-</html>
+    

@@ -1,0 +1,122 @@
+<script>
+    async function fetchTourData() {
+        try {
+            const response = await fetch('data/Riqstore.json'); // Ensure this path is correct
+            const data = await response.json();
+
+            // Assuming we want the first tour by default (can be changed)
+            const tour = data.tours[0]; // Change this logic as needed
+
+            if (!tour) {
+                console.error("No tour data found");
+                return;
+            }
+
+            // Extract necessary data
+            const { title, details, priceUSD, price, rating, duration } = tour;
+
+            // Populate the left section (Description)
+            document.getElementById("tour-description").innerHTML = `
+                <h2 style="font-size: 24px; font-weight: bold;">${title}</h2>
+                <p style="font-size: 16px; line-height: 1.6;">${details.description}</p>
+                
+                <div style="margin-top: 20px;">
+                    <h3 style="font-size: 18px; font-weight: bold;">TOUR HIGHLIGHTS</h3>
+                    <ul style="list-style: none; padding: 0;">
+                        ${details.highlights.map(highlight => `<li style="font-size: 16px; margin-bottom: 10px;"><i class="fas fa-check-circle" style="color: green; margin-right: 8px;"></i> ${highlight}</li>`).join('')}
+                    </ul>
+                </div>
+            `;
+
+            // Populate the right section (Pricing)
+            document.getElementById("tour-pricing").innerHTML = `
+                <div style="text-align: center;">
+                    <div style="color: gold;">
+                        ${'<i class="fas fa-star"></i>'.repeat(parseFloat(rating))}
+                        <span style="font-size: 16px; font-weight: bold;">${rating}</span>
+                    </div>
+                    <p style="margin: 5px 0; font-size: 16px;"><b>${duration}</b></p>
+                    <p style="font-size: 32px; font-weight: bold; margin: 10px 0;">${priceUSD} <span style="font-size: 18px;">USD</span></p>
+                    <p style="font-size: 14px; color: #777;">Approx ${price} KES</p>
+                    
+                    <div style="margin-top: 15px; text-align: center;">
+                        <button style="width: 90%; padding: 10px; margin: 5px; font-size: 16px; font-weight: bold; border: none; cursor: pointer; border-radius: 5px; background: #e57373; color: white;">
+                            <i class="fas fa-calendar-alt"></i> DATES & PRICES
+                        </button>
+                        <button style="width: 90%; padding: 10px; margin: 5px; font-size: 16px; font-weight: bold; border: none; cursor: pointer; border-radius: 5px; background: #5cb85c; color: white;">
+                            <i class="fas fa-info-circle"></i> REQUEST INFO
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Why Book with Us -->
+                <div style="margin-top: 20px; padding: 15px; background: #eef5f7; border-radius: 8px;">
+                    <h3 style="font-size: 18px; font-weight: bold;">Why book with Us</h3>
+                    <ul style="list-style: none; padding: 0;">
+                        ${details.whyBookWithUs.map(reason => `<li style="font-size: 16px; margin-bottom: 10px;"><i class="fas fa-check-circle" style="color: green; margin-right: 8px;"></i> ${reason}</li>`).join('')}
+                    </ul>
+                </div>
+            `;
+        } catch (error) {
+            console.error("Error fetching tour data:", error);
+        }
+    }
+
+    fetchTourData();
+</script>
+
+<div class="container">
+    <!-- Left Content -->
+    <div class="left-content">
+        <h2>TOUR HIGHLIGHTS</h2>
+        <ul class="highlights"></ul>
+
+        <div class="details"></div>
+    </div>
+
+    <!-- Right Content -->
+    <div class="right-content">
+        <h2>Why book with Us</h2>
+        <div class="why-book">
+            <ul></ul>
+            <a href="#" class="read-more">Read more</a>
+        </div>
+    </div>
+</div>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        fetch('/data/Riqstore.json')
+            .then(response => response.json())
+            .then(data => {
+                if (!data) throw new Error("No data found");
+
+                // Populate TOUR HIGHLIGHTS
+                const highlightsContainer = document.querySelector('.highlights');
+                data.tourHighlights.forEach(item => {
+                    const li = document.createElement('li');
+                    li.innerHTML = `<i class="fas fa-check-circle"></i> ${item}`;
+                    highlightsContainer.appendChild(li);
+                });
+
+                // Populate DETAILS Section
+                const detailsContainer = document.querySelector('.details');
+                data.details.forEach(detail => {
+                    const div = document.createElement('div');
+                    div.classList.add('detail-item');
+                    div.innerHTML = `<i class="${detail.icon}"></i> <strong>${detail.text}</strong>`;
+                    detailsContainer.appendChild(div);
+                });
+
+                // Populate WHY BOOK WITH US Section
+                const whyBookContainer = document.querySelector('.why-book ul');
+                data.whyBook.forEach(reason => {
+                    const li = document.createElement('li');
+                    li.innerHTML = `<i class="fas fa-check-circle"></i> ${reason}`;
+                    whyBookContainer.appendChild(li);
+                });
+            })
+            .catch(error => console.error("Error fetching tour data:", error));
+    });
+</script>
+

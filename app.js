@@ -37,9 +37,20 @@ app.get('/contact', (req, res) => {
   res.sendFile(path.join(__dirname, 'public', 'contact.html'));
 });
 
-app.get('/login', (req, res) => {
-  res.sendFile(path.join(__dirname, 'public', 'login.html'));
+app.get('/privately-guided-tours', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'privately-guided-tours.html'));
 });
+
+app.get('/about-us', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'about-us.html'));
+});
+
+app.get('/summer-tours', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'summer.html'));
+});app.get('/winter-tours', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'winter.html'));
+});
+
 app.get('/Natural-Wonders-of-Iceland', (req, res) => {
   res.sendFile(path.join(__dirname, 'public', 'Natural-Wonders-of-Iceland.html'));
 });

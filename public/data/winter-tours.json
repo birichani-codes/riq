@@ -1,0 +1,86 @@
+{
+  "country": "Kenya",
+  "tagline": "Explore the heart of East Africa with stunning safaris and breathtaking landscapes",
+  "why_go": [
+    "Experience the famous Maasai Mara National Reserve",
+    "Explore Amboseli National Park with stunning views of Mount Kilimanjaro",
+    "Visit the stunning Lake Nakuru for a glimpse of flamingos",
+    "Choose from flexible dates and customizable packages"
+  ],
+  "highlights": [
+    "Experience the breathtaking landscapes of the Maasai Mara, home to the Great Migration",
+    "Explore the stunning views of Mount Kenya, Africa’s second-highest peak",
+    "Witness the incredible wildlife at Amboseli National Park with Kilimanjaro in the background",
+    "Relax on the pristine white sand beaches of Diani and the Kenyan coast",
+    "Discover the flamingo-filled Lake Nakuru and its famous rhino sanctuary",
+    "Visit the vibrant capital, Nairobi, and experience its rich culture and history",
+    "Enjoy a boat safari on Lake Naivasha and spot hippos and exotic birdlife",
+    "Explore the unique landscapes of Hell’s Gate National Park, inspiration for The Lion King",
+    "Visit the historic town of Lamu, a UNESCO World Heritage Site",
+    "Experience the vast, untouched wilderness of Tsavo National Park"
+  ],
+  "details": {
+    "guidedSmallGroups": "Guided small groups",
+    "bestSeller": "Best Seller, Classic",
+    "difficultyLevels": {
+      "classic": "Level 2/3 (Classic)",
+      "easy": "Level 1/4 (Easy)"
+    },
+    "availableMonths": "Jan - Dec",
+    "maxGroupSize": 16,
+    "drivingDistance": "Approx 2000 KM"
+  },
+  "currency": "KES",
+  "languagesSpoken": ["English", "Swahili"],
+  "transportation": "4x4 safari vehicles with open rooftops",
+  "accommodationTypes": ["Luxury lodges", "Tented camps", "Mid-range hotels"],
+  "mealPlan": "Full-board (breakfast, lunch, and dinner included)",
+  "safetyMeasures": [
+    "Trained and experienced safari guides",
+    "24/7 emergency support",
+    "Medical assistance available in case of emergencies",
+    "Strict adherence to national park safety regulations"
+  ],
+  "whyBookWithUs": [
+    "Groups limited to 16 travellers",
+    "100% guaranteed departures",
+    "Experienced & knowledgeable local guides",
+    "Seamless safari experience",
+    "Handpicked lodges & routes designed by Kenyan travel experts",
+    "Best value for your money",
+    "Comprehensive itinerary, personalized map & travel guide",
+    "Service from trusted travel experts in Kenya",
+    "24/7 helpline during your safari",
+    "Excellent customer reviews",
+    "Responsible tourism & conservation support"
+  ],
+  "tours": [
+    {
+      "name": "MAASAI MARA & AMBOSELI EXPLORER",
+      "duration": "7 days / 6 nights",
+      "rating": 4.9,
+      "season": "May - Dec",
+      "price": "150,000 KES",
+      "image": "images/add6.jpg",
+      "category": "SAFARI TOUR"
+    },
+    {
+      "name": "AMBOSELI & LAKE NAKURU ESCAPADE",
+      "duration": "6 days / 5 nights",
+      "rating": 4.8,
+      "season": "May - Dec",
+      "price": "120,000 KES",
+      "image": "images/add4.jpg",
+      "category": "SAFARI TOUR"
+    },
+    {
+      "name": "SAMBURU & NAKURU HIGHLIGHTS",
+      "duration": "5 days / 4 nights",
+      "rating": 4.7,
+      "season": "May - Dec",
+      "price": "110,000 KES",
+      "image": "images/add2.jpg",
+      "category": "SAFARI TOUR"
+    }
+  ]
+}

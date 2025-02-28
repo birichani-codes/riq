@@ -1,0 +1,103 @@
+{
+    "country": {
+        "name": "KENYA",
+        "tagline": "Explore the heart of East Africa with stunning safaris and breathtaking landscapes"
+    },
+    "whyGo": {
+        "title": "WHY GO ON A KENYAN SAFARI ADVENTURE",
+        "points": [
+            "Experience the famous Maasai Mara National Reserve",
+            "Explore Amboseli National Park with stunning views of Mount Kilimanjaro",
+            "Visit the stunning Lake Nakuru for a glimpse of flamingos",
+            "Choose from flexible dates and customizable packages"
+        ]
+    },
+    "highlights": [
+        "Experience the breathtaking landscapes of the Maasai Mara, home to the Great Migration",
+        "Explore the stunning views of Mount Kenya, Africa’s second-highest peak",
+        "Witness the incredible wildlife at Amboseli National Park with Kilimanjaro in the background",
+        "Relax on the pristine white sand beaches of Diani and the Kenyan coast",
+        "Discover the flamingo-filled Lake Nakuru and its famous rhino sanctuary",
+        "Visit the vibrant capital, Nairobi, and experience its rich culture and history",
+        "Enjoy a boat safari on Lake Naivasha and spot hippos and exotic birdlife",
+        "Explore the unique landscapes of Hell’s Gate National Park, inspiration for The Lion King",
+        "Visit the historic town of Lamu, a UNESCO World Heritage Site",
+        "Experience the vast, untouched wilderness of Tsavo National Park"
+    ],
+    "details": {
+        "guidedSmallGroups": "Guided small groups",
+        "bestSeller": "Best Seller, Classic",
+        "difficultyLevels": {
+            "classic": "Level 2/3 (Classic)",
+            "easy": "Level 1/4 (Easy)"
+        },
+        "availableMonths": "Jan - Dec",
+        "maxGroupSize": 16,
+        "drivingDistance": "Approx 2000 KM"
+    },
+    "currency": "KES",
+    "languagesSpoken": ["English", "Swahili"],
+    "transportation": "4x4 safari vehicles with open rooftops",
+    "accommodationTypes": ["Luxury lodges", "Tented camps", "Mid-range hotels"],
+    "mealPlan": "Full-board (breakfast, lunch, and dinner included)",
+    "safetyMeasures": [
+        "Trained and experienced safari guides",
+        "24/7 emergency support",
+        "Medical assistance available in case of emergencies",
+        "Strict adherence to national park safety regulations"
+    ],
+    "whyBookWithUs": [
+        "Groups limited to 16 travellers",
+        "100% guaranteed departures",
+        "Experienced & knowledgeable local guides",
+        "Seamless safari experience",
+        "Handpicked lodges & routes designed by Kenyan travel experts",
+        "Best value for your money",
+        "Comprehensive itinerary, personalized map & travel guide",
+        "Service from trusted travel experts in Kenya",
+        "24/7 helpline during your safari",
+        "Excellent customer reviews",
+        "Responsible tourism & conservation support"
+    ],
+    "tours": [
+        {
+            "id": 1,
+            "title": "MAASAI MARA & AMBOSELI EXPLORER",
+            "duration": "7 days / 6 nights",
+            "rating": "⭐⭐⭐⭐⭐ 4.9",
+            "availability": "May - Dec",
+            "price": "150,000 KES",
+            "priceUSD": "1,125 USD",
+            "currencyInfo": "The amount will be charged in KES",
+            "image": "images/add6.jpg",
+            "category": "SAFARI TOUR",
+            "section": "maasai-mara-amboseli-explorer",
+            "details": {
+                "heroImage": "images/kenya-safari.jpg",
+                "tagline": "THE GREAT MIGRATION & BIG FIVE EXPERIENCE",
+                "reviews": "4.8 (315 reviews)",
+                "videoLink": "videos/tour-video.mp4",
+                "description": "Join an expert local guide and a small group of like-minded travellers on a classic Kenyan trip across the country. One of our 7-day Kenya tours, this journey has a focus on nature while also offering unique insights into the culture of this diverse and vibrant nation.",
+                "privateTourInfo": "To enjoy a more personal experience with your own guide, check out the private version of this tour.",
+                "highlights": [
+                    "Witness the breathtaking Great Migration in the Maasai Mara",
+                    "Explore the stunning Great Rift Valley and its beautiful lakes",
+                    "Relax on the pristine beaches of Diani and explore the historic streets of Lamu"
+                ],
+                "whyBookWithUs": [
+                    "Groups limited to 16 travellers",
+                    "100% guaranteed departures",
+                    "Experienced & knowledgeable tour guide",
+                    "Seamless travel experience"
+                ],
+                "itinerary": [
+                    { "day": 1, "title": "Arrival in Nairobi", "description": "Explore the vibrant city, visit the Nairobi National Museum and the Giraffe Centre." },
+                    { "day": 2, "title": "Maasai Mara Safari", "description": "Drive to the Maasai Mara National Reserve and enjoy an afternoon game drive." },
+                    { "day": 3, "title": "Full-Day Safari in Maasai Mara", "description": "Experience a full-day game drive, witnessing the Big Five and the Great Migration (seasonal)." },
+                    { "day": 4, "title": "Lake Nakuru National Park", "description": "Travel to Lake Nakuru to see flamingos and rhinos in their natural habitat." },
+                    { "day": 5, "title": "Amboseli National Park", "description": "Drive to Amboseli National Park for breathtaking views of Mount Kilimanjaro and wildlife." }
+                ]
+            }
+        }
+    ]
+}
